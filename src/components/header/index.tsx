@@ -19,7 +19,7 @@ export default function Header() {
   }, [open]);
   return (
     <>
-      <header className="max-w-[1800px] m-auto p-4 flex justify-between items-center">
+      <header className="max-w-[1800px] m-auto py-4 px-4 md:px-16  flex justify-between items-center">
         <Image
           src="/svg/logo.svg"
           alt="logo"
