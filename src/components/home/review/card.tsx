@@ -15,7 +15,6 @@ export default function ReviewCard(data: IPROPS) {
   return (
     <div className="flex flex-col px-4 items-center lg:flex-row gap-10 lg:gap-2 m-auto w-full xl:w-[1200px]">
       <Image
-
         src="/images/review.png"
         alt={id.toString()}
         width="650"
@@ -33,9 +32,10 @@ export default function ReviewCard(data: IPROPS) {
             />
           ))}
         </div>
-        <h2 className="font-[area] text-[1.25rem] sm:text-[1.5rem]  text-center">
-          "{review}
+        <h2 className="font-[area] text-[1.25rem] sm:text-[1.5rem] text-center">
+          {`"${review}"`}
         </h2>
+
         <Image
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA..."
           placeholder="blur"
