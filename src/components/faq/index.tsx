@@ -9,14 +9,14 @@ import Shipping from "./shipping";
 import General from "./general";
 import ContactUs from "./contact";
 import About from "./about";
-function _FAQ() {
+function FAQComponent() {
   const [active, toggle] = useState("about");
   const query = useSearchParams();
   useEffect(() => {
     const val = query.get("tab");
     if (val) toggle(val);
     else toggle("about");
-  }, [query.get("tab")]);
+  }, [query, query.get("tab")]);
 
   return (
     <div className="max-w-[1000px] w-[60%]  m-auto ">
@@ -43,7 +43,7 @@ export default function FAQ() {
   return (
     <>
       <Suspense fallback={<></>}>
-        <_FAQ />
+        <FAQComponent />
       </Suspense>
     </>
   );

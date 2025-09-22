@@ -10,7 +10,7 @@ export default function Orders() {
     <Accordion type="multiple" className="">
       <AccordionItem value="item-1" className="!border-b-2 border-black">
         <AccordionTrigger className="  !text-[1rem] font-[area] !font-extrabold">
-          I've placed an order, what next?
+          {"I've"} placed an order, what next?
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-[area] max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
@@ -46,7 +46,7 @@ export default function Orders() {
       </AccordionItem>
       <AccordionItem value="item-4" className="!border-b-2 border-black">
         <AccordionTrigger className="  !text-[1rem] font-[area] !font-extrabold">
-          What's your return and exchange policy?
+          {"What's"} your return and exchange policy?
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-[area] max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
