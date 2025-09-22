@@ -11,7 +11,7 @@ export default function Hero() {
         <p className="text-[1.2rem] sm:ext-[1.5rem]">
           Explore our curated collection of premium art prints
         </p>
-        <Button className="font-normal w-fit bg-[#F33C14] hover:bg-[#f0532f] transition-all duration-200 text-white !p-5 rounded-full">
+        <Button className="!text-[1rem] font-normal w-fit bg-[#F33C14] hover:bg-[#f0532f] transition-all duration-200 text-white !p-6 rounded-full">
           Add to basket
         </Button>
       </div>

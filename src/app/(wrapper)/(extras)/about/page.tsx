@@ -40,7 +40,7 @@ export default function page() {
         ></Image>
       </div>
 
-      <div className="lg:w-[1000px] lg:ml-auto flex flex-col gap-2">
+      <div className="lg:w-[1000px] lg:ml-auto flex flex-col gap-8">
         <p className=" font-[area] text-[1.5625rem] md:text-[2rem] xl:text-[2.25rem] leading-10 font-bold">
           We collaborate with independent artists to create collections spanning
           art prints, apparel, home objects and everyday carry. Each piece is

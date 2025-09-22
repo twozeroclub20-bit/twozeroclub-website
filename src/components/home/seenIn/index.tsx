@@ -8,7 +8,7 @@ export default function SeenIn() {
         As Seen In
       </h2>
 
-      <div className="max-w-[1000px] m-auto hidden lg:flex gap-10 xl:gap-15 items-center justify-between">
+      <div className=" m-auto hidden lg:flex gap-10 xl:gap-15 items-center justify-between">
         {StaticData.seenIn.map((ele, id) => (
           <SeenInCard key={id} {...ele} />
         ))}

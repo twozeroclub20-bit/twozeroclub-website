@@ -31,25 +31,25 @@ export default function Header() {
         <div className="gap-10 items-center justify-center hidden md:flex">
           <Link
             href="#"
-            className="font-[area] text-[0.85rem] xl:text-[1.125rem]"
+            className="font-[area] text-[0.8rem] xl:text-[1.125rem]"
           >
             Wall Decor
           </Link>
           <Link
             href="#"
-            className="font-[area] text-[0.85rem] xl:text-[1.125rem]"
+            className="font-[area] text-[0.8rem] xl:text-[1.125rem]"
           >
             Home & Living
           </Link>
           <Link
             href="#"
-            className="font-[area] text-[0.85rem] xl:text-[1.125rem]"
+            className="font-[area] text-[0.8rem] xl:text-[1.125rem]"
           >
             Tech Accessories
           </Link>
           <Link
             href="#"
-            className="font-[area] text-[0.85rem] xl:text-[1.125rem]"
+            className="font-[area] text-[0.8rem] xl:text-[1.125rem]"
           >
             Clothing
           </Link>
