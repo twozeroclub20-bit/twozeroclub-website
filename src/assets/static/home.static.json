@@ -113,13 +113,6 @@
       "description": "Learn how to mix colors, textures, and décor elements for a stunning home aesthetic.",
       "buttonTitle": "Learn More",
       "id": 3
-    },
-    {
-      "thumbnail": "/images/trending-4.png",
-      "title": "DIY & Decor",
-      "description": "Explore creative DIY projects and décor hacks to personalize every corner of your home.",
-      "buttonTitle": "Discover",
-      "id": 4
     }
   ],
   "testimony": {

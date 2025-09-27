@@ -20,8 +20,8 @@ export default function NewsletterCard(data: IPROPS) {
       <Image
         src={thumbnail}
         alt={id.toString()}
-        width="350"
-        height="650"
+        width="250"
+        height={0}
         className="w-full"
       ></Image>
 

@@ -1,0 +1,45 @@
+{
+  "classic": [
+    "#F33C14",
+    "#FFC107",
+    "#064BD6",
+    "#08814E",
+    "#7ABAD1",
+    "#EB9501",
+    "#EFE4D9",
+    "#EBC6AC",
+    "#FE7E93",
+    "#1C1714",
+    "#8BB25D",
+    "#B9B9F5",
+    "#C1D329",
+    "#A86187",
+    "#A86187",
+    "#32A497"
+  ],
+  "trending": [
+    "#FFFD88",
+    "#6F2228",
+    "#4F3265",
+    "#B6ABD4",
+    "#1D3C9F",
+    "#6F764C",
+    "#6F764C",
+    "#6F764C"
+  ],
+  "featured": ["New", "Bestsellers", "Trending", "As Seen on Social"],
+  "shop": [
+    "Bauhaus",
+    "Matisse",
+    "Pop Art",
+    "Bohemian",
+    "Cottage Core",
+    "Minimal",
+    "Scandinavian",
+    "Bauhaus",
+    "Matisse",
+    "Pop Art",
+    "Bohemian",
+    "Cottage Core"
+  ]
+}

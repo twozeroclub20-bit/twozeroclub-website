@@ -2,10 +2,10 @@ export default function page() {
   return (
     <>
       <section className="max-w-[1800px] m-auto py-8 px-4 md:px-16 flex flex-col  ">
-        <h4 className="font-[area] text-[1.125rem] font-bold">
+        <h4 className="font-[area] text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold">
           Home • Terms of Service
         </h4>
-        <div className="max-w-[1000px] w-[60%]  m-auto ">
+        <div className="max-w-[1000px] w-full lg:w-[60%]  m-auto ">
           <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-[editorial] mb-5">
             Terms of Service
           </h2>

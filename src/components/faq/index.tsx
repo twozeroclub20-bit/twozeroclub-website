@@ -19,7 +19,7 @@ function FAQComponent() {
   }, [query, query.get("tab")]);
 
   return (
-    <div className="max-w-[1000px] w-[60%]  m-auto ">
+    <div className="max-w-[1000px] w-full lg:w-[60%]  m-auto ">
       <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-[editorial] mb-5">
         Frequently Asked Questions
       </h2>

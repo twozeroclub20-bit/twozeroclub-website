@@ -17,21 +17,18 @@ export default function TrendingCard(data: IPROPS) {
   return (
     <div className="flex flex-col gap-2 w-full ">
       <Image
-      
         src={thumbnail}
         alt={id.toString()}
-        width="350"
-        height="650"
-        className="w-full"
+        width="250"
+        height={0}
+        className="w-full "
       ></Image>
-
       <h2 className="font-[area] text-[1.25rem] sm:text-[1.5rem] font-bold">
         {title}
       </h2>
-      <p className="font-[area] text-[0.8rem] sm:text-[1.125rem]">
+      <p className="font-[area] text-[0.8rem] sm:text-[1.125rem] ">
         {description}
       </p>
-
       <Button
         style={{ backgroundColor: colors[(id - 1) % colors.length] }}
         className=" w-fit rounded-full p-6 text-white font-[area]"

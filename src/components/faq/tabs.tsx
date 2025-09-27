@@ -38,7 +38,7 @@ export default function Tabs({
 }) {
   return (
     <div className="w-full ">
-      <div className="gap-4 md:gap-10 items-center justify-between flex">
+      <div className="gap-2 md:gap-10 items-center justify-between flex flex-wrap">
         <TabsList toggle={toggle} key="about" label="about" active={active}>
           About Us
         </TabsList>
