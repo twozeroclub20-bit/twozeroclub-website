@@ -4,7 +4,7 @@ import { useRouter, useParams } from "next/navigation";
 export default function Card(data: any) {
   const router = useRouter();
   const { collection, sub } = useParams();
-
+  
   return (
     <div
       className="w-full"

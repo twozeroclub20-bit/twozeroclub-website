@@ -1,45 +1,16 @@
 "use server";
 import { shopifyFetch } from "@/lib/store-front";
-import { ShopifyCollectionProductsOperation } from "@/lib/shopify/types";
-import { getCollectionProductsQuery } from "@/lib/shopify/queries/collection";
+import { ShopifyProductOperation, Product } from "@/lib/shopify/types";
+import { getProductQuery } from "@/lib/shopify/queries/product";
+import { reshapeProduct } from "@/lib/shopify/util";
 
-const removeEdgesAndNodes = <T>(array: { edges: { node: T }[] }) => {
-  return array?.edges?.map((edge) => edge.node) || [];
-};
-
-const reshapeProducts = (products: any[]) => {
-  return products.map((p) => ({
-    id: p.id,
-    title: p.title,
-    thumbnail: p.featuredImage.url || "",
-    description: p.description || "",
-    price: p.priceRange?.minVariantPrice?.amount || "0",
-  }));
-};
-
-export const getCollectionProducts = async ({
-  reverse = false,
-  collection,
-  sortKey = "CREATED_AT",
-}: {
-  reverse?: boolean;
-  collection: string;
-  sortKey?: string;
-}) => {
-  const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
-    query: getCollectionProductsQuery,
+export async function getProduct(handle: string): Promise<Product | undefined> {
+  const res = await shopifyFetch<ShopifyProductOperation>({
+    query: getProductQuery,
     variables: {
-      handle: collection,
-      reverse,
-      sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
+      handle,
     },
   });
 
-  if (!res.body.data.collection) {
-    console.log(`No collection found for \`${collection}\``);
-    return [];
-  }
-  return reshapeProducts(
-    removeEdgesAndNodes(res.body.data.collection.products)
-  );
-};
+  return reshapeProduct(res.body.data.product, false);
+}
