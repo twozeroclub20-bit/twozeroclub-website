@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -16,6 +16,26 @@ export default function Variant({ data }: { data: Product }) {
   const [selectedOptions, setSelectedOptions] = useState<
     Record<string, string>
   >({});
+
+  useEffect(() => {
+    if (options.length > 0) {
+      const initial = options.reduce((acc, opt) => {
+        if (opt.values.length > 0) {
+          acc[opt.name] = opt.values[0]; 
+        }
+        return acc;
+      }, {} as Record<string, string>);
+
+      setSelectedOptions(initial);
+
+
+      const formatted = Object.entries(initial).map(([n, v]) => ({
+        name: n,
+        value: v,
+      }));
+      selectVariant(formatted);
+    }
+  }, [options, selectVariant]);
 
   const handleChange = (name: string, value: string) => {
     const updated = { ...selectedOptions, [name]: value };
@@ -42,7 +62,7 @@ export default function Variant({ data }: { data: Product }) {
             value={selectedOptions[ele.name] ?? ""}
           >
             <SelectTrigger className="w-full border-1 py-1 border-black rounded-full">
-              <SelectValue placeholder="Select here..." />
+              <SelectValue />
             </SelectTrigger>
 
             <SelectContent className="max-h-56 rounded-2xl border-black">
