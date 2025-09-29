@@ -49,7 +49,7 @@ function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ArrowDown className="size-6" />
+        <ArrowDown className="size-6 stroke-black" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );

@@ -10,7 +10,7 @@ import {
 export default function ImageCarousel({ data }: { data: any }) {
   return (
     <>
-      <div className="w-1/2 lg:w-4/6 hidden md:grid grid-cols-1 lg:grid-cols-2 max-h-[800px] overflow-y-auto no-scrollbar">
+      <div className="w-1/2 lg:w-4/6 hidden md:grid grid-cols-1 lg:grid-cols-2">
         {data.images.map((ele: any) => (
           <Image
             key={ele.altText}
@@ -32,14 +32,13 @@ export default function ImageCarousel({ data }: { data: any }) {
                 src={ele.url}
                 alt={"image"}
                 width={200}
-                className="w-full rounded-md"
-                height={500}
+                className="w-full rounded-md "
+                height={0}
               ></Image>
             </CarouselItem>
           ))}
+          <CarouselDots className="mb-4" />
         </CarouselContent>
-
-        <CarouselDots className="mb-4" />
       </Carousel>
     </>
   );

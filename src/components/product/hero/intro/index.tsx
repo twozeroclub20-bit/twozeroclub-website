@@ -12,45 +12,47 @@ import Description from "./description";
 export default function Intro({ data }: { data: Product }) {
   const { variant } = useProduct();
   return (
-    <div className="w-full md:w-1/2 lg:w-2/6 flex gap-2 flex-col ">
-      <Breadcrump></Breadcrump>
-      <h1 className="font-[editorial] text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] leading-8">
-        {data.title}
-      </h1>
-      <Price data={data}></Price>
-      <Variant data={data}></Variant>
+    <div className="static top-0 md:sticky md:top-[110px] w-full md:w-1/2 lg:w-2/6 self-start">
+      <div className="  flex gap-2 flex-col ">
+        <Breadcrump></Breadcrump>
+        <h1 className="font-[editorial] text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] leading-8">
+          {data.title}
+        </h1>
+        <Price data={data}></Price>
+        <Variant></Variant>
 
-      {variant ? (
-        <>
-          {variant.availableForSale ? (
-            <>
-              <div className="flex gap-2 mt-3">
-                <Quantity></Quantity>
-                <Cart></Cart>
-              </div>
-              <div>
-                <Checkout></Checkout>
-              </div>
-            </>
-          ) : (
-            <>
-              <h2 className="text-center text-muted-foreground mt-5">
-                This product is out of stock right now.
-                <br />
-                Please try again later
-              </h2>
-            </>
-          )}
-        </>
-      ) : (
-        <>
-          <h2 className="text-center text-muted-foreground mt-5">
-            Please select a variant to continue
-          </h2>
-        </>
-      )}
+        {variant ? (
+          <>
+            {variant.availableForSale ? (
+              <>
+                <div className="flex gap-2 mt-3">
+                  <Quantity></Quantity>
+                  <Cart></Cart>
+                </div>
+                <div>
+                  <Checkout></Checkout>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 className="text-center text-muted-foreground mt-5">
+                  This product is out of stock right now.
+                  <br />
+                  Please try again later
+                </h2>
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            <h2 className="text-center text-muted-foreground mt-5">
+              Please select a variant to continue
+            </h2>
+          </>
+        )}
 
-      <Description></Description>
+        <Description></Description>
+      </div>
     </div>
   );
 }

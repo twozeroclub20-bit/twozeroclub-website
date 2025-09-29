@@ -13,7 +13,7 @@ export default function Grid() {
             src="/images/grid-1.png"
             alt="grid-1"
             fill
-            className="object-cover transition-transform duration-500 ease-in-out hover:scale-120"
+            className="object-cover transition-transform duration-500 ease-in-out hover:scale-110"
           />
         </div>
 
@@ -22,7 +22,7 @@ export default function Grid() {
             src="/images/grid-2.png"
             alt="grid-2"
             fill
-            className="object-cover transition-transform duration-500 ease-in-out hover:scale-120"
+            className="object-cover transition-transform duration-500 ease-in-out hover:scale-110"
           />
         </div>
 
@@ -31,7 +31,7 @@ export default function Grid() {
             src="/images/grid-3.png"
             alt="grid-3"
             fill
-            className="object-cover transition-transform duration-500 ease-in-out hover:scale-120"
+            className="object-cover transition-transform duration-500 ease-in-out hover:scale-110"
           />
         </div>
 
@@ -40,7 +40,7 @@ export default function Grid() {
             src="/images/grid-4.png"
             alt="grid-4"
             fill
-            className="object-cover transition-transform duration-500 ease-in-out hover:scale-120"
+            className="object-cover transition-transform duration-500 ease-in-out hover:scale-110"
           />
         </div>
       </div>

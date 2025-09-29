@@ -22,7 +22,7 @@ export default function Footer() {
           <ul className="!p-0 text-[1.125rem] flex flex-col ">
             <Link href="/faq">FAQ</Link>
             <Link href="/terms-service">Policies</Link>
-            <Link href="/faq?tab=contact">Contact Us</Link>
+            <Link href="/contact">Contact Us</Link>
           </ul>
         </div>
         <div className="flex flex-col gap-4 w-full sm:w-1/2 lg:w-1/4  p-4">

@@ -8,45 +8,36 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Product } from "@/lib/shopify/types";
 import { useProduct } from "@/provider/product.provider";
 
-export default function Variant({ data }: { data: Product }) {
+export default function Variant() {
   const { options, selectVariant } = useProduct();
   const [selectedOptions, setSelectedOptions] = useState<
     Record<string, string>
   >({});
-
   useEffect(() => {
-    if (options.length > 0) {
-      const initial = options.reduce((acc, opt) => {
-        if (opt.values.length > 0) {
-          acc[opt.name] = opt.values[0]; 
-        }
-        return acc;
-      }, {} as Record<string, string>);
+    if (!options || options.length === 0) return;
+    if (Object.keys(selectedOptions).length > 0) return;
 
-      setSelectedOptions(initial);
+    const initial: Record<string, string> = {};
+    options.forEach((opt) => {
+      initial[opt.name] = opt.values[0];
+    });
+    setSelectedOptions(initial);
+  }, [options, selectedOptions]);
+  useEffect(() => {
+    if (!options || options.length === 0) return;
 
-
-      const formatted = Object.entries(initial).map(([n, v]) => ({
-        name: n,
-        value: v,
-      }));
-      selectVariant(formatted);
-    }
-  }, [options, selectVariant]);
-
-  const handleChange = (name: string, value: string) => {
-    const updated = { ...selectedOptions, [name]: value };
-    setSelectedOptions(updated);
-
-    const formatted = Object.entries(updated).map(([n, v]) => ({
-      name: n,
-      value: v,
+    const formatted = options.map((opt) => ({
+      name: opt.name,
+      value: selectedOptions[opt.name] ?? opt.values[0],
     }));
 
     selectVariant(formatted);
+  }, [options, selectedOptions, selectVariant]);
+
+  const handleChange = (name: string, value: string) => {
+    setSelectedOptions((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -59,15 +50,19 @@ export default function Variant({ data }: { data: Product }) {
 
           <Select
             onValueChange={(val) => handleChange(ele.name, val)}
-            value={selectedOptions[ele.name] ?? ""}
+            value={selectedOptions[ele.name] ?? ele.values[0]}
           >
-            <SelectTrigger className="w-full border-1 py-1 border-black rounded-full">
+            <SelectTrigger className="w-full  font-[area] border-1 !py-4 border-black rounded-full font-semibold text-[1.125rem]">
               <SelectValue />
             </SelectTrigger>
 
             <SelectContent className="max-h-56 rounded-2xl border-black">
               {ele.values.map((option) => (
-                <SelectItem key={option} value={option}>
+                <SelectItem
+                  key={option}
+                  className="font-semibold text-[1.125rem] font-[area]"
+                  value={option}
+                >
                   {option}
                 </SelectItem>
               ))}

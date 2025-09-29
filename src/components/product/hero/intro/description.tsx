@@ -15,7 +15,7 @@ export default function Description() {
         color and artistic flair to your everyday routine!
       </p>
 
-      <div className="grid grid-cols-2 mt-5 gap-2 max-w-[450px] m-auto">
+      <div className="grid grid-cols-2 mt-5 gap-2  m-auto">
         <div className="bg-[#ECF4EC] rounded-[0.625rem] p-4 flex-col w-full flex items-center justify-center">
           <Image src="/svg/paint.svg" alt="" height={30} width={30}></Image>
           <p className="text-[0.875rem] font-[area] px-3 text-center pt-1">
