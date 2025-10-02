@@ -9,6 +9,7 @@ import WallDecor from "./hover/wallDecor";
 import Tech from "./hover/tech";
 import { useRouter } from "next/navigation";
 import Home from "./hover/home";
+import Cart from "./cart";
 export default function Header() {
   const router = useRouter();
   return (
@@ -70,7 +71,7 @@ export default function Header() {
           <div className="flex items-center gap-2 justify-center">
             <Search className=" w-5 h-5 xs:w-7 xs:h-7"></Search>
             <User className=" w-5 h-5 xs:w-7 xs:h-7"></User>
-            <ShoppingCart className=" w-5 h-5 xs:w-7 xs:h-7"></ShoppingCart>
+            <Cart></Cart>
             <Menu></Menu>
           </div>
         </div>

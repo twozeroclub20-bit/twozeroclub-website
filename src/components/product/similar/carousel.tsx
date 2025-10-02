@@ -7,10 +7,25 @@ import {
 } from "@/components/ui/carousel";
 import { useCollectionStore } from "@/store/collection.store";
 import Card from "./card";
+import Loading from "./loading";
 export default function CardCarousel() {
   const { products, isFetching, isError, isLoading } = useCollectionStore();
   if (isFetching || isLoading || !products) {
-    return <></>;
+    return (
+      <>
+        <Carousel>
+          <CarouselContent>
+            {Array.from([1, 2, 3]).map((item) => (
+              <CarouselItem key={item}>
+                <Loading />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <CarouselDots className="mb-4" />
+        </Carousel>
+      </>
+    );
   }
   return (
     <Carousel>

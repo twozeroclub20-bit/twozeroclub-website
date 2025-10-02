@@ -7,7 +7,11 @@ import { ProductProvider } from "@/provider/product.provider";
 export default function Hero() {
   const { product, isFetching, isError, isLoading } = useProductStore();
   if (isFetching || isLoading || !product) {
-    return <div>Loading...</div>;
+    return (
+      <div className="col-span-full text-center text-gray-foreground my-5 ">
+        Loading Product Info ...
+      </div>
+    );
   }
   return (
     <ProductProvider>

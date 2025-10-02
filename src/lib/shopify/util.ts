@@ -26,6 +26,10 @@ import {
   ShopifyUpdateCartOperation,
 } from "./types";
 
+import { shopifyFetch } from "@/lib/store-front";
+import {
+  createCartMutation,
+} from "@/lib/shopify/mutations/cart";
 
 
 import { HIDDEN_PRODUCT_TAG } from "../constants";
@@ -125,3 +129,27 @@ export const reshapeProduct = (
     variants: removeEdgesAndNodes(variants),
   };
 };
+
+export const reshapeCart = (cart: ShopifyCart): Cart => {
+  if (!cart.cost?.totalTaxAmount) {
+    cart.cost.totalTaxAmount = {
+      amount: "0.0",
+      currencyCode: cart.cost.totalAmount.currencyCode,
+    };
+  }
+
+  return {
+    ...cart,
+    lines: removeEdgesAndNodes(cart.lines),
+  };
+};
+
+
+
+export async function createCart(): Promise<Cart> {
+  const res = await shopifyFetch<ShopifyCreateCartOperation>({
+    query: createCartMutation,
+  });
+
+  return reshapeCart(res.body.data.cartCreate.cart);
+}
