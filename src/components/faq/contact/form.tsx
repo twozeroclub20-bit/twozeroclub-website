@@ -3,7 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import { submit } from "@/actions/contact/submit.action";
+import { Loader } from "lucide-react";
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name is required",
@@ -29,17 +30,19 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-
 export function ContactUsForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      email: "",
+      subject: "",
+      message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    await submit({ data: values });
   }
 
   return (
@@ -60,8 +63,6 @@ export function ContactUsForm() {
                   {...field}
                 />
               </FormControl>
-
-              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
@@ -80,8 +81,6 @@ export function ContactUsForm() {
                   {...field}
                 />
               </FormControl>
-
-              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
@@ -100,8 +99,6 @@ export function ContactUsForm() {
                   {...field}
                 />
               </FormControl>
-
-              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
@@ -121,13 +118,21 @@ export function ContactUsForm() {
                   {...field}
                 />
               </FormControl>
-
-              {/* <FormMessage /> */}
             </FormItem>
           )}
         />
-        <Button type="submit" className="px-6 py-2 rounded-full ">
-          Submit
+        <Button
+          type="submit"
+          className="px-6 py-2 rounded-full "
+          disabled={form.formState.isSubmitting || form.formState.isLoading}
+        >
+          {form.formState.isSubmitting || form.formState.isLoading ? (
+            <>
+              <Loader className="animate-spin duration-300"></Loader>
+            </>
+          ) : (
+            <>Submit</>
+          )}
         </Button>
       </form>
     </Form>
