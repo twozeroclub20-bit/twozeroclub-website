@@ -55,7 +55,7 @@ const submit = async ({
       subject: "Contact Us Form Submission",
       html: htmlContent,
     });
-    console.log(" Email sent successfully");
+    console.info(" Email sent successfully");
     return { success: true };
   } catch (err) {
     console.error(" Error while sending mail", err);

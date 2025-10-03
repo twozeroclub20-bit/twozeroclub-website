@@ -9,7 +9,7 @@ import Checkout from "./checkout";
 import { X } from "lucide-react";
 export default function Cart() {
   const { open, setOpen: toggle } = useCart();
-  const { cart, isLoading, isFetching } = useCartStore();
+  const { cart } = useCartStore();
 
   useEffect(() => {
     if (open) {

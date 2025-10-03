@@ -1,32 +1,35 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter, useParams } from "next/navigation";
-export default function Card(data: any) {
+
+export default function Card({ handle, images, title, price, thumbnail }: any) {
   const router = useRouter();
   const { collection, sub } = useParams();
-
   return (
     <div
-      className="w-full"
-      onClick={() => router.push(`/${collection}/${sub}/${data.handle}`)}
+      className="w-full cursor-pointer"
+      onClick={() => router.push(`/${collection}/${sub}/${handle}`)}
     >
       <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg">
         <Image
-          src={data.thumbnail || "/images/card.png"}
-          alt={data.title || "card"}
+          src={images?.[0].url || thumbnail || "/images/card.png"}
+          alt={title || "card"}
           fill
-          className="object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+          className="object-cover transition-opacity duration-1000 ease-in-out group-hover:opacity-0"
         />
-        <div className="bg-black text-white w-full p-2 text-center absolute bottom-0 font-[area] font-semibold opacity-0 transition-all duration-500 group-hover:opacity-100 ">
-          CLICK TO VIEW
-        </div>
+
+        {images?.[1] && (
+          <Image
+            src={images[1].url}
+            alt={title || "card"}
+            fill
+            className="object-cover opacity-0 transition-opacity duration-1000 ease-in-out group-hover:opacity-100"
+          />
+        )}
       </div>
-      <h2 className="text-[1.5rem] font-[area] mt-10 font-bold">
-        {data.title}
-      </h2>
-      <p className="text-[1.125rem] font-[area] font-light">
-        From ${data.price}
-      </p>
+
+      <h2 className="text-[1.5rem] font-[area] mt-10 font-bold">{title}</h2>
+      <p className="text-[1.125rem] font-[area] font-light">From ${price}</p>
     </div>
   );
 }

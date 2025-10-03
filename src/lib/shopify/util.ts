@@ -27,10 +27,7 @@ import {
 } from "./types";
 
 import { shopifyFetch } from "@/lib/store-front";
-import {
-  createCartMutation,
-} from "@/lib/shopify/mutations/cart";
-
+import { createCartMutation } from "@/lib/shopify/mutations/cart";
 
 import { HIDDEN_PRODUCT_TAG } from "../constants";
 export const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -95,6 +92,7 @@ export const reshapeProducts = (products: any[]) => {
     thumbnail: p.featuredImage.url || "",
     description: p.description || "",
     price: p.priceRange?.minVariantPrice?.amount || "0",
+    images: p.images.edges.map((edge: any) => edge.node),
   }));
 };
 
@@ -143,8 +141,6 @@ export const reshapeCart = (cart: ShopifyCart): Cart => {
     lines: removeEdgesAndNodes(cart.lines),
   };
 };
-
-
 
 export async function createCart(): Promise<Cart> {
   const res = await shopifyFetch<ShopifyCreateCartOperation>({

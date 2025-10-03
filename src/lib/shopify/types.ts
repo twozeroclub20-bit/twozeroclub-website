@@ -8,7 +8,7 @@ export type Edge<T> = {
   node: T;
 };
 
-export type Cart = Omit<ShopifyCart, 'lines'> & {
+export type Cart = Omit<ShopifyCart, "lines"> & {
   lines: CartItem[];
 };
 
@@ -68,7 +68,7 @@ export type Page = {
   updatedAt: string;
 };
 
-export type Product = Omit<ShopifyProduct, 'variants' | 'images'> & {
+export type Product = Omit<ShopifyProduct, "variants" | "images"> & {
   variants: ProductVariant[];
   images: Image[];
 };
@@ -93,6 +93,143 @@ export type ProductVariant = {
 export type SEO = {
   title: string;
   description: string;
+};
+
+export type ShopifyCustomer = {
+  id: string;
+  firstName?: string;
+  lastName?: string;
+  email: string;
+  phone?: string;
+  acceptsMarketing: boolean;
+  createdAt: string;
+  updatedAt: string;
+  metafields?: Connection<{
+    id: string;
+    key: string;
+    value: string;
+    type: string;
+    namespace: string;
+  }>;
+};
+export type ShopifyCustomerAccessToken = {
+  accessToken: string;
+  expiresAt: string;
+};
+
+export type ShopifyCustomerUserError = {
+  code?: string;
+  field?: string[];
+  message: string;
+};
+
+export type ShopifyNewsletterUpdateOperation = {
+  data: {
+    customerUpdate: {
+      customer: ShopifyCustomer;
+      customerUserErrors: ShopifyCustomerUserError[];
+    };
+  };
+  variables: {
+    customerAccessToken: string;
+    acceptsMarketing: boolean;
+  };
+};
+
+export type ShopifySignupCustomerOperation = {
+  data: {
+    customerCreate: {
+      customer: ShopifyCustomer;
+      customerUserErrors: ShopifyCustomerUserError[];
+    };
+  };
+  variables: {
+    input: {
+      firstName?: string;
+      lastName?: string;
+      email: string;
+      password: string;
+      acceptsMarketing?: boolean;
+    };
+  };
+};
+
+export type ShopifyLoginCustomerOperation = {
+  data: {
+    customerAccessTokenCreate: {
+      customerAccessToken: ShopifyCustomerAccessToken;
+      customerUserErrors: ShopifyCustomerUserError[];
+    };
+  };
+  variables: {
+    input: {
+      email: string;
+      password: string;
+    };
+  };
+};
+export type ShopifyUpdateCustomerMetafieldOperation = {
+  data: {
+    metafieldsSet: {
+      metafields: Array<{
+        id: string;
+        key: string;
+        namespace: string;
+        value: string;
+        type: string;
+      }>;
+      userErrors: Array<{
+        field: string[] | null;
+        message: string;
+      }>;
+    };
+  };
+  variables: {
+    metafields: Array<{
+      key: string;
+      namespace: string;
+      value: string;
+      type: string;
+      ownerId: string; // Shopify ID of the customer
+    }>;
+  };
+};
+
+export type ShopifyGetCustomerOperation = {
+  data: {
+    customer: ShopifyCustomer;
+  };
+  variables: {
+    customerAccessToken: string;
+  };
+};
+
+export type ShopifyRecoverCustomerOperation = {
+  data: {
+    customerRecover: {
+      customerUserErrors: ShopifyCustomerUserError[];
+    };
+  };
+  variables: {
+    email: string;
+  };
+};
+
+export type ShopifyResetCustomerOperation = {
+  data: {
+    customerReset: {
+      customer: ShopifyCustomer | null;
+      customerAccessToken: ShopifyCustomerAccessToken | null;
+      customerUserErrors: ShopifyCustomerUserError[];
+    };
+  };
+  variables: {
+    id: string;
+    input: {
+      password: string;
+      resetToken: string;
+    };
+  };
 };
 
 export type ShopifyCart = {

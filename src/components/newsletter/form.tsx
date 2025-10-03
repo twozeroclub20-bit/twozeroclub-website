@@ -30,7 +30,7 @@ export default function NewsletterForm() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    // console.log(values);
   }
   return (
     <Form {...form}>

@@ -53,8 +53,7 @@ export function ProductProvider({ children }: { children: ReactNode }) {
         )
       )
     );
-    console.log("FILTER", selectedOptions);
-    console.log("FOUND: ", found);
+
     setVariant(found ?? null);
   };
 
