@@ -21,28 +21,28 @@ export function QueryProvider({ children }: { children: ReactNode }) {
       })
   );
 
-  // const [isHydrated, setIsHydrated] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  // useEffect(() => {
-  //   const enablePersistence = async () => {
-  //     const localStoragePersister = createSyncStoragePersister({
-  //       storage: window.localStorage,
-  //       key: "react-query",
-  //     });
+  useEffect(() => {
+    const enablePersistence = async () => {
+      const localStoragePersister = createSyncStoragePersister({
+        storage: window.localStorage,
+        key: "react-query",
+      });
 
-  //     persistQueryClient({
-  //       queryClient,
-  //       persister: localStoragePersister,
-  //       maxAge: 1000 * 60 * 15,
-  //     });
+      persistQueryClient({
+        queryClient,
+        persister: localStoragePersister,
+        maxAge: 1000 * 60 * 15,
+      });
 
-  //     setIsHydrated(true);
-  //   };
+      setIsHydrated(true);
+    };
 
-  //   enablePersistence();
-  // }, [queryClient]);
+    enablePersistence();
+  }, [queryClient]);
 
-  // if (!isHydrated) return null;
+  if (!isHydrated) return null;
 
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
