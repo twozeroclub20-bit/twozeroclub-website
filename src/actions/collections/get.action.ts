@@ -5,28 +5,38 @@ import { getCollectionProductsQuery } from "@/lib/shopify/queries/collection";
 import { reshapeProducts, removeEdgesAndNodes } from "@/lib/shopify/util";
 
 export const getCollectionProducts = async ({
-  reverse = false,
-  collection,
-  sortKey = "CREATED_AT",
+  handle,
+  reverse = true,
+  sortKey = "CREATED",
+  first = 10,
+  after,
 }: {
+  handle: string;
   reverse?: boolean;
-  collection: string;
   sortKey?: string;
+  first?: number;
+  after?: string;
 }) => {
   const res = await shopifyFetch<ShopifyCollectionProductsOperation>({
     query: getCollectionProductsQuery,
     variables: {
-      handle: collection,
+      handle,
       reverse,
+      first,
+      after,
       sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
     },
   });
 
   if (!res.body.data.collection) {
-    console.warn(`No collection found for \`${collection}\``);
-    return [];
+    console.warn(`No collection found for \`${handle}\``);
+    return { products: [], pageInfo: { hasNextPage: false, endCursor: null } };
   }
-  return reshapeProducts(
-    removeEdgesAndNodes(res.body.data.collection.products)
-  );
+
+  const connection = res.body.data.collection.products;
+
+  return {
+    products: reshapeProducts(removeEdgesAndNodes(connection)),
+    pageInfo: connection.pageInfo,
+  };
 };

@@ -270,6 +270,7 @@ export type ShopifyProduct = {
   seo: SEO;
   tags: string[];
   updatedAt: string;
+  collection: string;
 };
 
 export type ShopifyCartOperation = {
@@ -340,13 +341,64 @@ export type ShopifyCollectionOperation = {
 export type ShopifyCollectionProductsOperation = {
   data: {
     collection: {
-      products: Connection<ShopifyProduct>;
+      products: Connection<ShopifyProduct> & {
+        pageInfo: {
+          hasNextPage: boolean;
+          endCursor: string | null;
+        };
+        edges: {
+          cursor: string;
+          node: ShopifyProduct;
+        }[];
+      };
     };
   };
   variables: {
     handle: string;
     reverse?: boolean;
     sortKey?: string;
+    first?: number;
+    after?: string;
+  };
+};
+
+export type ShopifyFullCollectionProductsOperation = {
+  data: {
+    collection: {
+      products: Connection<ShopifyProduct> & {
+        edges: {
+          cursor: string;
+          node: ShopifyProduct;
+        }[];
+      };
+    };
+  };
+  variables: {
+    handle: string;
+    reverse?: boolean;
+    sortKey?: string;
+  };
+};
+
+export type ShopifyProductsByTagOperation = {
+  data: {
+    products: {
+      pageInfo: {
+        hasNextPage: boolean;
+        endCursor: string | null;
+      };
+      edges: {
+        cursor: string;
+        node: ShopifyProduct;
+      }[];
+    };
+  };
+  variables: {
+    tag: string;
+    first?: number;
+    after?: string | null;
+    sortKey?: string;
+    reverse?: boolean;
   };
 };
 

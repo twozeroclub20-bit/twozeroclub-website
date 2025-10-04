@@ -5,11 +5,11 @@ import {
   CarouselItem,
   CarouselDots,
 } from "@/components/ui/carousel";
-import { useCollectionStore } from "@/store/collection.store";
+import { useSimilarStore } from "@/store/similar.store";
 import Card from "./card";
 import Loading from "./loading";
 export default function CardCarousel() {
-  const { products, isFetching, isError, isLoading } = useCollectionStore();
+  const { products, isFetching, isError, isLoading } = useSimilarStore();
   if (isFetching || isLoading || !products) {
     return (
       <>

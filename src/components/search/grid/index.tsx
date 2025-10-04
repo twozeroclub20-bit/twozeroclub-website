@@ -1,7 +1,7 @@
 "use client";
 
 import Card from "./card";
-import { useCollectionStore } from "@/store/collection.store";
+import { useSearchStore } from "@/store/search.store";
 import Loading from "./loading";
 import { useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -14,7 +14,7 @@ export default function Grid() {
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
-  } = useCollectionStore();
+  } = useSearchStore();
 
   const sentinelRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();

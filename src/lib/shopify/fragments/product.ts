@@ -1,5 +1,5 @@
-import imageFragment from './image';
-import seoFragment from './seo';
+import imageFragment from "./image";
+import seoFragment from "./seo";
 
 const productFragment = /* GraphQL */ `
   fragment product on Product {
@@ -56,6 +56,13 @@ const productFragment = /* GraphQL */ `
     }
     tags
     updatedAt
+    collections(first: 1) {
+      edges {
+        node {
+          title
+        }
+      }
+    }
   }
   ${imageFragment}
   ${seoFragment}

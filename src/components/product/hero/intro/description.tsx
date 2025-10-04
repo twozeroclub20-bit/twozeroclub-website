@@ -6,14 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Product } from "@/lib/shopify/types";
 
-export default function Description() {
+export default function Description(data: Product) {
   return (
     <div>
-      <p className="font-[area] mt-5">
-        Introducing our vibrant, eye-catching phone case that brings a burst of
-        color and artistic flair to your everyday routine!
-      </p>
+      <p className="font-[area] mt-5">{data.description}</p>
 
       <div className="grid grid-cols-2 mt-5 gap-2  m-auto">
         <div className="bg-[#ECF4EC] rounded-[0.625rem] p-4 flex-col w-full flex items-center justify-center">

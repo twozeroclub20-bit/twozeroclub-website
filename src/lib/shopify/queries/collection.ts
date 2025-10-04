@@ -1,5 +1,5 @@
-import productFragment from '../fragments/product';
-import seoFragment from '../fragments/seo';
+import productFragment from "../fragments/product";
+import seoFragment from "../fragments/seo";
 
 const collectionFragment = /* GraphQL */ `
   fragment collection on Collection {
@@ -41,14 +41,77 @@ export const getCollectionProductsQuery = /* GraphQL */ `
     $handle: String!
     $sortKey: ProductCollectionSortKeys
     $reverse: Boolean
+    $after: String
+    $first: Int = 20
   ) {
     collection(handle: $handle) {
-      products(sortKey: $sortKey, reverse: $reverse, first: 100) {
+      products(
+        sortKey: $sortKey
+        reverse: $reverse
+        first: $first
+        after: $after
+      ) {
         edges {
+          cursor
           node {
             ...product
           }
         }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
+    }
+  }
+  ${productFragment}
+`;
+
+export const getFullCollectionProductsQuery = /* GraphQL */ `
+  query getCollectionProducts(
+    $handle: String!
+    $sortKey: ProductCollectionSortKeys
+    $reverse: Boolean
+    $first: Int = 5
+  ) {
+    collection(handle: $handle) {
+      products(sortKey: $sortKey, reverse: $reverse, first: $first) {
+        edges {
+          cursor
+          node {
+            ...product
+          }
+        }
+      }
+    }
+  }
+  ${productFragment}
+`;
+
+export const getProductsByTag = /* GraphQL */ `
+  query getProductsByTag(
+    $tag: String!
+    $after: String
+    $first: Int = 20
+    $sortKey: ProductSortKeys = RELEVANCE
+    $reverse: Boolean = false
+  ) {
+    products(
+      first: $first
+      after: $after
+      query: $tag
+      sortKey: $sortKey
+      reverse: $reverse
+    ) {
+      edges {
+        cursor
+        node {
+          ...product
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
       }
     }
   }

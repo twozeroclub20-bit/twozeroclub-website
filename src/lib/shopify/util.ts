@@ -93,6 +93,7 @@ export const reshapeProducts = (products: any[]) => {
     description: p.description || "",
     price: p.priceRange?.minVariantPrice?.amount || "0",
     images: p.images.edges.map((edge: any) => edge.node),
+    collection: p.collections.edges[0].node.title,
   }));
 };
 
@@ -109,7 +110,7 @@ const reshapeImages = (images: Connection<Image>, productTitle: string) => {
 };
 
 export const reshapeProduct = (
-  product: ShopifyProduct,
+  product: any,
   filterHiddenProducts: boolean = true
 ) => {
   if (
@@ -119,12 +120,13 @@ export const reshapeProduct = (
     return undefined;
   }
 
-  const { images, variants, ...rest } = product;
+  const { images, variants, collections, ...rest } = product;
 
   return {
     ...rest,
     images: reshapeImages(images, product.title),
     variants: removeEdgesAndNodes(variants),
+    collection: collections.edges[0].node.title,
   };
 };
 

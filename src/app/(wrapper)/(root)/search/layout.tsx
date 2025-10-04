@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductStore } from "@/store/product.store";
+import { SearchStore } from "@/store/search.store";
 export default function layout({ children }: { children: React.ReactNode }) {
-  return <ProductStore>{children}</ProductStore>;
+  return <SearchStore>{children}</SearchStore>;
 }

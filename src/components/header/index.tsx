@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Search, User, ShoppingCart } from "lucide-react";
+
 import Image from "next/image";
 import Menu from "./menu";
 import Clothing from "./hover/clothing";
@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import Home from "./hover/home";
 import Cart from "./cart";
 import Customer from "./customer";
+import Search from "./search";
 export default function Header() {
   const router = useRouter();
   return (
@@ -70,7 +71,7 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center gap-2 justify-center">
-            <Search className=" w-5 h-5 xs:w-7 xs:h-7"></Search>
+            <Search></Search>
             <Cart></Cart>
             <Menu></Menu>
             <Customer></Customer>

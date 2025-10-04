@@ -11,10 +11,11 @@ import { useProduct } from "@/provider/product.provider";
 import Description from "./description";
 export default function Intro({ data }: { data: Product }) {
   const { variant } = useProduct();
+
   return (
     <div className="static top-0 md:sticky md:top-[110px] w-full md:w-1/2 lg:w-2/6 self-start">
       <div className="  flex gap-2 flex-col ">
-        <Breadcrump></Breadcrump>
+        <Breadcrump {...data}></Breadcrump>
         <h1 className="font-[editorial] text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] leading-8">
           {data.title}
         </h1>
@@ -51,7 +52,7 @@ export default function Intro({ data }: { data: Product }) {
           </>
         )}
 
-        <Description></Description>
+        <Description {...data}></Description>
       </div>
     </div>
   );

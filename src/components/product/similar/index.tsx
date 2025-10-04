@@ -2,10 +2,10 @@
 import React from "react";
 import Card from "./card";
 import CardCarousel from "./carousel";
-import { useCollectionStore } from "@/store/collection.store";
+import { useSimilarStore } from "@/store/similar.store";
 import Loading from "./loading";
 export default function Similar() {
-  const { products, isFetching, isError, isLoading } = useCollectionStore();
+  const { products, isFetching, isError, isLoading } = useSimilarStore();
   if (isFetching || isLoading || !products) {
     return (
       <section className="max-w-[1800px] px-4 md:px-16  w-full m-auto my-20">

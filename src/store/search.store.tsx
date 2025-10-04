@@ -2,10 +2,9 @@
 
 import React, { createContext, useContext } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useParams, useSearchParams } from "next/navigation";
-import { getCollectionProducts } from "@/actions/collections/get.action";
-
-interface CollectionStoreInterface {
+import { useSearchParams } from "next/navigation";
+import { getTagProducts } from "@/actions/collections/search.action";
+interface SearchStoreInterface {
   isFetching: boolean;
   isError: boolean;
   isLoading: boolean;
@@ -16,19 +15,12 @@ interface CollectionStoreInterface {
   isFetchingNextPage: boolean;
 }
 
-const CollectionStoreContext = createContext<CollectionStoreInterface | null>(
-  null
-);
+const SearchStoreContext = createContext<SearchStoreInterface | null>(null);
 
-export const CollectionStore = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  const { collection, sub } = useParams();
+export const SearchStore = ({ children }: { children: React.ReactNode }) => {
   const searchParams = useSearchParams();
   const pageCursor = searchParams.get("p") || undefined;
-
+  const q = searchParams.get("q") as string;
   const {
     data,
     isFetching,
@@ -39,29 +31,11 @@ export const CollectionStore = ({
     hasNextPage,
     isFetchingNextPage,
   } = useInfiniteQuery({
-    queryKey: ["collection", collection, sub],
+    queryKey: ["search", pageCursor, q],
     // @ts-ignore
     queryFn: async ({ pageParam }) => {
-      if (!collection || !sub) {
-        return {
-          products: [],
-          pageInfo: { hasNextPage: false, endCursor: null },
-        };
-      }
-
-      const decodedCollection = decodeURIComponent(collection.toString());
-      const decodedSub = decodeURIComponent(sub.toString());
-
-      const query = `${decodedSub
-        .split(" ")
-        .join("-")
-        .toLowerCase()}-${decodedCollection
-        .split(" ")
-        .join("-")
-        .toLowerCase()}`;
-
-      const res = await getCollectionProducts({
-        handle: "Test",
+      const res = await getTagProducts({
+        tag: q,
         first: 10,
         after: pageParam || pageCursor,
       });
@@ -72,7 +46,7 @@ export const CollectionStore = ({
     getNextPageParam: (lastPage) =>
       lastPage?.pageInfo?.hasNextPage ? lastPage.pageInfo.endCursor : undefined,
     initialPageParam: undefined,
-    enabled: !!sub && !!collection,
+    enabled: !!q,
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
@@ -81,7 +55,7 @@ export const CollectionStore = ({
   const products = data?.pages.flatMap((page: any) => page.products) ?? [];
 
   return (
-    <CollectionStoreContext.Provider
+    <SearchStoreContext.Provider
       value={{
         isLoading,
         isError,
@@ -94,13 +68,12 @@ export const CollectionStore = ({
       }}
     >
       {children}
-    </CollectionStoreContext.Provider>
+    </SearchStoreContext.Provider>
   );
 };
 
-export const useCollectionStore = () => {
-  const ctx = useContext(CollectionStoreContext);
-  if (!ctx)
-    throw new Error("useCollectionStore must be used inside CollectionStore");
+export const useSearchStore = () => {
+  const ctx = useContext(SearchStoreContext);
+  if (!ctx) throw new Error("useSearchStore must be used inside SearchStore");
   return ctx;
 };

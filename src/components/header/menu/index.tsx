@@ -61,12 +61,6 @@ export default function Menu() {
               Clothing
             </Link>
           </div>
-
-          <div className="pl-5 mt-auto mb-10 flex items-center gap-5 justify-center">
-            <Search className=" w-5 h-5 xs:w-7 xs:h-7"></Search>
-            <User className=" w-5 h-5 xs:w-7 xs:h-7"></User>
-            <ShoppingCart className=" w-5 h-5 xs:w-7 xs:h-7"></ShoppingCart>
-          </div>
         </div>
       </aside>
       <div

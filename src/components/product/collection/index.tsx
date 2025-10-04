@@ -3,9 +3,9 @@ import React from "react";
 import Card from "./card";
 import CardCarousel from "./carousel";
 import Loading from "./loading";
-import { useCollectionStore } from "@/store/collection.store";
+import { useFullCollectionStore } from "@/store/full-collection.store";
 export default function Collection() {
-  const { products, isFetching, isError, isLoading } = useCollectionStore();
+  const { products, isFetching, isError, isLoading } = useFullCollectionStore();
   if (isFetching || isLoading || !products) {
     return (
       <section className="max-w-[1800px] px-4 md:px-16  w-full m-auto my-20">
