@@ -18,16 +18,18 @@ export default function Quantity(data: CartItem) {
     <div className=" flex items-center ml-auto mt-auto pt-3 gap-3">
       <Minus
         className="size-3 cursor-pointer"
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           setQ((q) => (q > 1 ? q - 1 : 1));
         }}
       />
       <div className=" w-16 text-[1rem] md:text-[1.125rem] font-semibold flex-1 text-center">
-        {q}x
+        {q}
       </div>
       <Plus
         className="size-3 cursor-pointer"
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           setQ((q) => q + 1);
         }}
       ></Plus>

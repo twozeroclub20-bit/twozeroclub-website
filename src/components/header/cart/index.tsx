@@ -33,7 +33,9 @@ export default function Cart() {
           <></>
         ) : (
           <>
-            <span className="absolute -top-2 -right-1 bg-yellow-500 w-3 h-3 rounded-full text-center text-[0.75rem] xs:text-[0.875rem] text-white font-semibold"></span>
+            <span className="absolute -top-3 -right-2 bg-yellow-500 w-4 h-4 rounded-full flex items-center justify-center text-[0.6rem] text-white font-semibold">
+              {cart.lines.length === 0 ? "" : cart.lines.length}
+            </span>
           </>
         )}
       </span>
