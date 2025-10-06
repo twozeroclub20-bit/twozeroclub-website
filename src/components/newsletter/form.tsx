@@ -46,7 +46,7 @@ export default function NewsletterForm() {
               <FormControl>
                 <Input
                   placeholder="Enter your email address"
-                  className="p-4 pl-2 xs:pl-4 w-full sm:w-[400px] bg-[rgba(0,0,0,0.05)] rounded-full outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none"
+                  className="!py-[10px] !px-[30px] w-full sm:w-[400px] bg-[rgba(0,0,0,0.05)] rounded-full outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none"
                   {...field}
                 />
               </FormControl>

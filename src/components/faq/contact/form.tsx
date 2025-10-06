@@ -58,7 +58,7 @@ export function ContactUsForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  className="!border-black !rounded-full "
+                  className="!border-black !rounded-full !py-[10px] !px-[20px]  "
                   placeholder="Enter your full name..."
                   {...field}
                 />
@@ -76,7 +76,7 @@ export function ContactUsForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  className="!border-black !rounded-full "
+                  className="!border-black !rounded-full !py-[10px] !px-[20px]  "
                   placeholder="Enter your email..."
                   {...field}
                 />
@@ -94,7 +94,7 @@ export function ContactUsForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  className="!border-black !rounded-full "
+                  className="!border-black !rounded-full !py-[10px] !px-[20px] "
                   placeholder="Enter your subject of query..."
                   {...field}
                 />
@@ -113,7 +113,7 @@ export function ContactUsForm() {
               <FormControl>
                 <Textarea
                   rows={10}
-                  className="!border-black !rounded-[1.5rem] h-64 "
+                  className="!border-black !rounded-[1.5rem] h-64 !py-[10px] !px-[20px]  "
                   placeholder="Enter your message..."
                   {...field}
                 />
