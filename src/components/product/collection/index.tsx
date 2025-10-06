@@ -33,11 +33,8 @@ export default function Collection() {
       </h2>
 
       {products.length > 0 ? (
-        <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
-          {products.map((product) => (
-            <Card key={product.id} {...product} />
-          ))}
-          {isFetching && products && (
+        <>
+          {products && (
             <>
               <div className="hidden sm:grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
                 {products.slice(0, 5).map((ele) => {
@@ -53,7 +50,7 @@ export default function Collection() {
               </div>
             </>
           )}
-        </div>
+        </>
       ) : (
         <div className="col-span-full text-center text-gray-foreground">
           No products found.

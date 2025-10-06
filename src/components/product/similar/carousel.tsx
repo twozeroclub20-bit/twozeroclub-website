@@ -30,7 +30,7 @@ export default function CardCarousel() {
   return (
     <Carousel>
       <CarouselContent>
-        {products.map((item) => (
+        {products.slice(0, 5).map((item) => (
           <CarouselItem key={item.id}>
             <Card {...item} />
           </CarouselItem>
