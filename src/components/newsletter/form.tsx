@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { subscribe } from "@/actions/customer/subscribe.action";
+import { toast } from "sonner";
 const formSchema = z.object({
   email: z.email({
     message: "Please add a valid email",
@@ -31,7 +32,16 @@ export default function NewsletterForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    await subscribe(values);
+    try {
+      await subscribe(values);
+      toast.info(
+        "Thanks for subscribing! You’ll start receiving our latest updates soon."
+      );
+    } catch (err) {
+      toast.error(
+        "Sorry, we couldn’t add your email to our newsletter. Please try again later."
+      );
+    }
   }
   return (
     <Form {...form}>

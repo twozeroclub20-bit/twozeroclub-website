@@ -5,7 +5,6 @@ import {
   Image,
   ShopifyCart,
   ShopifyCreateCartOperation,
-
 } from "./types";
 
 import { shopifyFetch } from "@/lib/store-front";
@@ -133,3 +132,39 @@ export async function createCart(): Promise<Cart> {
 
   return reshapeCart(res.body.data.cartCreate.cart);
 }
+
+import { ShopifyArticle } from "./types";
+
+export const reshapeArticles = (blogs: any[]): ShopifyArticle[] => {
+  const allArticles: ShopifyArticle[] = [];
+
+  blogs.forEach((blog) => {
+    const articlesEdges = blog.articles?.edges || [];
+    articlesEdges.forEach((edge: any) => {
+      const article = edge.node;
+      allArticles.push({
+        id: article.id,
+        title: article.title,
+        handle: article.handle,
+        publishedAt: article.publishedAt,
+        authorV2: {
+          name: article.authorV2?.name || "",
+        },
+        contentHtml: article.contentHtml || "",
+        excerpt: article.excerpt || "",
+        url: article.url || "",
+        image: article.image
+          ? {
+              id: article.image.id,
+              url: article.image.url,
+              altText: article.image.altText,
+              width: article.image.width,
+              height: article.image.height,
+            }
+          : null,
+      });
+    });
+  });
+
+  return allArticles;
+};

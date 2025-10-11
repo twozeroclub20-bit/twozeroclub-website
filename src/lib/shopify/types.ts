@@ -168,32 +168,6 @@ export type ShopifyLoginCustomerOperation = {
     };
   };
 };
-export type ShopifyUpdateCustomerMetafieldOperation = {
-  data: {
-    metafieldsSet: {
-      metafields: Array<{
-        id: string;
-        key: string;
-        namespace: string;
-        value: string;
-        type: string;
-      }>;
-      userErrors: Array<{
-        field: string[] | null;
-        message: string;
-      }>;
-    };
-  };
-  variables: {
-    metafields: Array<{
-      key: string;
-      namespace: string;
-      value: string;
-      type: string;
-      ownerId: string; // Shopify ID of the customer
-    }>;
-  };
-};
 
 export type ShopifyGetCustomerOperation = {
   data: {
@@ -457,5 +431,77 @@ export type ShopifyProductsOperation = {
     query?: string;
     reverse?: boolean;
     sortKey?: string;
+  };
+};
+
+// blogs and articles
+
+export type ShopifyArticleImage = {
+  id: string;
+  url: string;
+  altText: string | null;
+  width: number;
+  height: number;
+};
+
+export type ShopifyArticle = {
+  id: string;
+  title: string;
+  handle: string;
+  publishedAt: string;
+  authorV2: {
+    name: string;
+  };
+
+  contentHtml: string;
+  excerpt: string;
+  url: string;
+  image?: ShopifyArticleImage | null;
+};
+
+export type ShopifyBlog = {
+  id: string;
+  title: string;
+  handle: string;
+  url: string;
+  articles: {
+    edges: {
+      node: ShopifyArticle;
+    }[];
+  };
+};
+
+export type ShopifyGetArticleByIdOperation = {
+  data: {
+    article: ShopifyArticle | null;
+  };
+  variables: {
+    id: string;
+  };
+};
+
+export type ShopifyBlogWithArticles = {
+  id: string;
+  title: string;
+  handle: string;
+  url: string;
+  articles: {
+    edges: {
+      node: ShopifyArticle;
+    }[];
+  };
+};
+
+export type ShopifyGetBlogsWithArticlesOperation = {
+  data: {
+    blogs: {
+      edges: {
+        cursor: string;
+        node: ShopifyBlogWithArticles;
+      }[];
+    };
+  };
+  variables: {
+    first?: number;
   };
 };

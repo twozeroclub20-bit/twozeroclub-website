@@ -17,28 +17,7 @@ export const customerAccessTokenFragment = /* GraphQL */ `
     expiresAt
   }
 `;
-export const newsletterUpdateMutation = /* GraphQL */ `
-  mutation newsletterUpdate(
-    $customerAccessToken: String!
-    $acceptsMarketing: Boolean!
-  ) {
-    customerUpdate(
-      customerAccessToken: $customerAccessToken
-      customer: { acceptsMarketing: $acceptsMarketing }
-    ) {
-      customer {
-        ...customerFields
-      }
-      customerUserErrors {
-        code
-        field
-        message
-      }
-    }
-  }
 
-  ${customerFragment}
-`;
 export const signupCustomerMutation = /* GraphQL */ `
   mutation customerCreate($input: CustomerCreateInput!) {
     customerCreate(input: $input) {

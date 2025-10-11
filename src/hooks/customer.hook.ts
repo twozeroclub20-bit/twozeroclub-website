@@ -3,6 +3,7 @@ import { login } from "@/actions/customer/login.action";
 import { signup } from "@/actions/customer/signup.action";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { recovery } from "@/actions/customer/forget.action";
 export function useSignup() {
   const queryClient = useQueryClient();
   const router = useRouter();
@@ -54,6 +55,27 @@ export function useLogin() {
         queryClient.invalidateQueries({ queryKey: ["cart"] });
       } else {
         toast.error("Login Failed! Please check your email and password");
+      }
+    },
+  });
+
+  return mutation;
+}
+
+export function useForgetPassword() {
+  const queryClient = useQueryClient();
+  const router = useRouter();
+  const mutation = useMutation({
+    mutationFn: async (data: { email: string }) => {
+      const res = await recovery(data);
+      return res;
+    },
+    onSuccess: (data) => {
+      if (data.success) {
+        toast.info(data.message);
+        // router.push("/");
+      } else {
+        toast.error(data.message || "Recovery Failed! Please check your email");
       }
     },
   });

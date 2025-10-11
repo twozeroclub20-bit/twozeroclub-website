@@ -76,3 +76,56 @@ export async function shopifyFetch<T>({
 }
 
 
+export async function shopifyAdminFetch<T>({
+  query,
+  variables,
+  headers,
+}: {
+  query: string;
+  variables?: Record<string, any>;
+  headers?: HeadersInit;
+}): Promise<{ status: number; body: T }> {
+  const endpoint = `https://${process.env.SHOPIFY_STORE_DOMAIN}/admin/api/2025-01/graphql.json`;
+  const token = process.env.SHOPIFY_ADMIN_API_ACCESS_TOKEN;
+
+  if (!token) {
+    throw new Error("Missing SHOPIFY_ADMIN_API_ACCESS_TOKEN in environment variables.");
+  }
+
+  try {
+    const result = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Shopify-Access-Token": token,
+        ...headers,
+      },
+      body: JSON.stringify({
+        query,
+        ...(variables && { variables }),
+      }),
+      cache: "no-store",
+    });
+
+    const contentType = result.headers.get("content-type");
+    let body: any;
+
+    if (contentType && contentType.includes("application/json")) {
+      body = await result.json();
+    } else {
+      const text = await result.text();
+      console.error("Non-JSON response from Shopify Admin API:", text);
+      throw new Error("Shopify Admin API returned non-JSON response");
+    }
+
+    if (body.errors) {
+      console.error("Shopify Admin API Error:", body.errors);
+      throw body.errors[0];
+    }
+
+    return { status: result.status, body };
+  } catch (e) {
+    console.error("Admin API fetch failed:", e);
+    throw e;
+  }
+}

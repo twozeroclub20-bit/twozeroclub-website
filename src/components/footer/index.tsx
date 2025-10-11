@@ -29,7 +29,7 @@ export default function Footer() {
           <h2 className="font-[editorial] text-[1.625rem]">About Us</h2>
           <ul className="!p-0 text-[1.125rem]">
             <Link href="/about">Our Story</Link>
-            <li>Journal</li>
+            <Link href="/blogs">Blogs</Link>
           </ul>
         </div>
         <div className="flex flex-col gap-4 w-full sm:w-1/2 lg:w-1/4  p-4">

@@ -161,6 +161,56 @@
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.blog-content {
+  all: unset; /* Removes inherited styles from Tailwind */
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.blog-content p,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6,
+.blog-content ul,
+.blog-content ol,
+.blog-content li,
+.blog-content blockquote,
+.blog-content pre,
+.blog-content code,
+.blog-content a,
+.blog-content img {
+  all: unset; /* Reset Tailwind styles */
+  display: revert; /* Restore default browser display */
+  margin: revert; /* Default margin */
+  padding: revert; /* Default padding */
+  font-weight: revert; /* Default font weight */
+  color: revert; /* Default text color */
+  line-height: revert; /* Default line height */
+  list-style: revert; /* Default list style */
+  text-decoration: revert; /* Default links */
+}
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-content a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+  color: #555;
 }
