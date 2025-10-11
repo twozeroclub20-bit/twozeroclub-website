@@ -15,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { subscribe } from "@/actions/customer/subscribe.action";
 const formSchema = z.object({
   email: z.email({
     message: "Please add a valid email",
@@ -29,14 +30,14 @@ export default function NewsletterForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    await subscribe(values);
   }
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className=" flex items-center  gap-2 w-full"
+        className="flex items-center gap-2 w-full"
       >
         <FormField
           control={form.control}
@@ -45,12 +46,11 @@ export default function NewsletterForm() {
             <FormItem>
               <FormControl>
                 <Input
-                  placeholder="Enter your email address"
+                  placeholder="Enter your email address ..."
                   className="!py-[10px] !px-[30px] w-full sm:w-[400px] bg-[rgba(0,0,0,0.05)] rounded-full outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none"
                   {...field}
                 />
               </FormControl>
-              {/* <FormMessage /> */}
             </FormItem>
           )}
         />

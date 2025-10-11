@@ -13,7 +13,7 @@ export async function getFullCollectionProducts(handle: string) {
     },
   });
   const data = reshapeProducts(
-    removeEdgesAndNodes(res.body.data.collection.products)
+    removeEdgesAndNodes(res.body.data?.collection?.products)
   );
   return data;
 }
