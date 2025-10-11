@@ -11,7 +11,7 @@ export default function Grid() {
 
   if (isLoading || !articles)
     return (
-      <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
+      <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-5">
         {Array.from([1, 2, 3])?.map((product) => (
           <Loading key={product} />
         ))}

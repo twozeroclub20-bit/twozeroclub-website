@@ -28,7 +28,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         </h2>
 
         <p
-          className="text-gray-600 text-sm mb-4 line-clamp-3"
+          className="text-gray-600 text-sm mb-4 font-[area] line-clamp-3"
           dangerouslySetInnerHTML={{ __html: excerpt }}
         />
 

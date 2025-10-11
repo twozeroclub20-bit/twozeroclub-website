@@ -1,21 +1,25 @@
 import React from "react";
-import Image from "next/image";
-import { useRouter, useParams } from "next/navigation";
-export default function Loading() {
-  const router = useRouter();
-  const { collection, sub } = useParams();
+import { Button } from "../ui/button";
 
+export default function Loading() {
   return (
-    <div className="w-full">
-      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg">
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse" />
+    <div className="w-full animate-pulse">
+      <div className="w-full h-64 bg-muted"></div>
+
+      <div className="py-2">
+        <h2 className="text-lg  font-[area] font-semibold text-muted-foreground mb-2">
+          Lorem Ipsum
+        </h2>
+
+        <div className="text-sm mb-4 font-[area] text-muted-foreground line-clamp-3">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus
+          modi non laboriosam autem labore, laudantium suscipit explicabo
+          voluptates iure assumenda!
+        </div>
+        <Button disabled className="!rounded-none cursor-not-allowed">
+          Read More
+        </Button>
       </div>
-      <h2 className="text-[1.5rem] font-[area] mt-10 font-bold text-muted-foreground">
-        Product Title
-      </h2>
-      <p className="text-[1.125rem] font-[area] font-light text-muted-foreground">
-        From $00.00
-      </p>
     </div>
   );
 }
