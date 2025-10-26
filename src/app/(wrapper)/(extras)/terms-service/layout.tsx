@@ -1,14 +1,10 @@
 import React, { ReactNode } from "react";
-import { TrendingStore } from "@/store/trending.store";
+import Newsletter from "@/components/newsletter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Two Zero Club",
+  title: "Terms and Service - Two Zero Club",
 };
 export default function layout({ children }: { children: ReactNode }) {
-  return (
-    <>
-      <TrendingStore>{children}</TrendingStore>
-    </>
-  );
+  return <>{children}</>;
 }

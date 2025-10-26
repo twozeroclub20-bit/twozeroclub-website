@@ -1,24 +1,51 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 import { useArticleStore } from "@/store/blog.store";
-
+import { useRouter } from "next/navigation";
 export default function BlogPage() {
   const { article, isLoading, isFetching } = useArticleStore();
+  const router = useRouter();
+  useEffect(() => {
+    if (isLoading || isFetching) {
+      // document.title = "Blog - Two Zero Club";
+    } else if (article === undefined || article === null) {
+      document.title = "404 Blog Not Found - Two Zero Club";
+    } else {
+      document.title = `${article.title} - Two Zero Club`;
+    }
+  }, [article, isLoading, isFetching]);
 
   if (isLoading || isFetching) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-gray-500 text-lg">Loading article...</p>
+      <div className="flex justify-center items-center h-40 bg-gradient-to-b from-white to-gray-50">
+        <div className="text-center">
+          <div className="relative w-16 h-16 mx-auto mb-4">
+            <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
+            <div className="absolute inset-0 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+          </div>
+          <p className="text-gray-700 font-medium">Loading article...</p>
+        </div>
       </div>
     );
   }
-
   if (!article) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-gray-500 text-lg">Article not found.</p>
+      <div className="flex flex-col justify-center items-center h-72 gap-6 px-4">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold text-gray-300 mb-4">404</h1>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+            Article Not Found
+          </h2>
+          <p className="text-gray-500 text-lg mb-6">
+            Sorry, we couldn't find the article you're looking for.
+          </p>
+          <Button onClick={() => router.push("/blogs")} className="">
+            Go Back
+          </Button>
+        </div>
       </div>
     );
   }
