@@ -42,7 +42,7 @@ export default function Menu() {
               <Tech close={toggle}></Tech>
               <Clothing close={toggle}></Clothing>
             </Accordion>
-            <ShopByFeature></ShopByFeature>
+            <ShopByFeature close={toggle}></ShopByFeature>
           </div>
         </div>
       </aside>

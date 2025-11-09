@@ -16,10 +16,10 @@ export default function Newsletter() {
         ></Image>
 
         <div className="w-full lg:w-[500px] space-y-2">
-          <h2 className="text-4xl xl:text-[2.75rem] leading-4xl xl:leading-[2.75rem] font-[editorial] ">
+          <h2 className="text-4xl xl:text-[2.75rem] leading-4xl xl:leading-[2.75rem] font-[editorial] w-full  ">
             Get updates, offers & special invites.
           </h2>
-          <p className="text-lg xl:text-[1.2rem] font-[area] leading-[120%] w-[80%]">
+          <p className="text-lg xl:text-[1.2rem] w-full sm:w-[80%] font-[area] leading-[120%] ">
             Join our newsletter & get 20% off your first order.
           </p>
           <NewsletterForm></NewsletterForm>

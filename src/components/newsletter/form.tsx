@@ -47,17 +47,17 @@ export default function NewsletterForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex items-center gap-1 w-full "
+        className="flex items-center gap-1"
       >
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="w-full! sm:w-[350px]!">
               <FormControl>
                 <Input
                   placeholder="Enter your email address"
-                  className="!p-[10px] h-11! !pl-[20px] w-full sm:w-[350px] bg-[rgba(0,0,0,0.05)] rounded-full outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none placeholder:text-[#00000040] text-[1rem]! leading-[150%]"
+                  className="!p-[10px] h-11! !pl-[20px]  bg-[rgba(0,0,0,0.05)] rounded-full outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none placeholder:text-[#00000040] text-[1rem]! leading-[150%]"
                   {...field}
                 />
               </FormControl>
