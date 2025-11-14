@@ -199,7 +199,7 @@ export default function page() {
           </h2>
           <p className="mt-2 font-[area] text-[1rem]">
             if you have any questions about these Terms, please contact us at:{" "}
-            <b>twozeroclub@gmail.comb</b>{" "}
+            <b>twozeroclub@gmail.com</b>
           </p>
           <br />
           <br />

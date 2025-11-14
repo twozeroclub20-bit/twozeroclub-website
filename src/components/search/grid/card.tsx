@@ -23,7 +23,7 @@ export default function Card({
         )
       }
     >
-      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg">
+      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg mb-5 sm:mb-[1.625rem]  ">
         <Image
           src={images?.[0]?.url || thumbnail || "/images/card.png"}
           alt={title || "card"}
@@ -41,10 +41,12 @@ export default function Card({
         )}
       </div>
 
-      <h2 className="text-[1.5rem] font-[area] mt-5 md:mt-10 font-bold">
+      <h2 className="text-[1rem] sm:text-[1.5rem] font-[area]  font-bold line-clamp-2">
         {title}
       </h2>
-      <p className="text-[1.125rem] font-[area] font-light">From ${price}</p>
+      <p className="text-[14px] sm:text-[1.125rem] font-[area] font-light mt-1">
+        From ${price}
+      </p>
     </div>
   );
 }

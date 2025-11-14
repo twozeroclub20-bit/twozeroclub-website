@@ -6,6 +6,9 @@ import Link from "next/link";
 
 export default function Tags() {
   const { collection, sub } = useParams();
+  const decodedCollection = collection
+    ? decodeURIComponent(collection.toString())
+    : "";
   const decodedSub = sub ? decodeURIComponent(sub.toString()) : "";
   const allTags = [
     ...(StaticData?.featured || []),
@@ -16,18 +19,11 @@ export default function Tags() {
   const allSelected = decodedSub === "" || !allTags.includes(decodedSub);
 
   return (
-    <div className="my-5">
-      <h2 className="text-[2.75rem] font-[editorial]">{decodedSub || "All"}</h2>
+    <div className="my-2 sm:my-5">
+      <h2 className="text-[2.75rem] font-[editorial]">
+        {decodedSub.toLowerCase() === "all" ? decodedCollection : decodedSub}
+      </h2>
       <div className="flex space-x-1 sm:space-x-3 flex-wrap">
-        <Link
-          href={"/" + collection + "/" + sub}
-          className={`font-[area] text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full border ${
-            allSelected ? "border-black" : "border-transparent"
-          }`}
-        >
-          All
-        </Link>
-
         {StaticData?.featured?.map((tag, idx) => (
           <Link
             href={"/" + collection + "/" + tag}

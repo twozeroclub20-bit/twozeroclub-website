@@ -8,7 +8,7 @@ export default function Similar() {
   const { products, isFetching, isError, isLoading } = useSimilarStore();
   if (isFetching || isLoading || !products) {
     return (
-      <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-20">
+      <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-5 sm:my-20">
         <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-[editorial] mb-5">
           {"You might also like this"}
         </h2>
@@ -27,7 +27,7 @@ export default function Similar() {
     );
   }
   return (
-    <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-20">
+    <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-5 sm:my-20">
       <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-[editorial] mb-5">
         {"You might also like this"}
       </h2>

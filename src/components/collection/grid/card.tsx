@@ -10,19 +10,15 @@ export default function Card(data: any) {
     <div
       className="w-full cursor-pointer"
       onClick={() =>
-        router.push(
-          `/product/${handle}?id=${id}&collection=${collection}&sub=${sub}`
-        )
+        router.push(`/product/${handle}?id=${id}&collection=${collection}`)
       }
     >
-      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg  mb-[1.625rem] ">
+      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg mb-5 sm:mb-[1.625rem]  ">
         <Image
           src={images?.[0]?.url || thumbnail || "/images/card.png"}
           alt={title || "card"}
           fill
-          className={`object-cover transition-opacity duration-1000 ease-in-out ${
-            images?.[1] && "group-hover:opacity-0"
-          } `}
+          className="object-cover transition-opacity duration-1000 ease-in-out group-hover:opacity-0"
         />
 
         {images?.[1] && (
@@ -34,8 +30,13 @@ export default function Card(data: any) {
           />
         )}
       </div>
-      <h2 className="text-[1.5rem] font-[area]  font-bold">{title}</h2>
-      <p className="text-[1.125rem] font-[area] font-light">From ${price}</p>
+
+      <h2 className="text-[1rem] sm:text-[1.5rem] font-[area]  font-bold line-clamp-2">
+        {title}
+      </h2>
+      <p className="text-[14px] sm:text-[1.125rem] font-[area] font-light mt-1">
+        From ${price}
+      </p>
     </div>
   );
 }

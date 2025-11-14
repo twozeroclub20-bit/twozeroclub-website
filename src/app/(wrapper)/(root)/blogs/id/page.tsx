@@ -51,35 +51,44 @@ export default function BlogPage() {
   }
 
   return (
-    <section className="max-w-[1200px] w-full mx-auto px-4 py-8 space-y-4 font-[area] font-semibold">
-      {article.image && (
-        <div className="relative rounded overflow-hidden  font-[area] w-full h-[300px] sm:h-[420px] lg:h-[520px]">
-          <Image
-            src={article.image.url}
-            alt={article.image.altText || article.title}
-            fill
-            className="object-cover "
-          />
-        </div>
-      )}
-      <h1 className="text-[1.6rem] sm:text-[2rem] lg:text-[2.5rem] font-extrabold text-gray-900">
-        {article.title}
-      </h1>
+    <>
+      <section className=" max-w-[1800px] mt-5  px-4 lg:px-16  gap-5 m-auto ">
+        <h4 className="font-[area]  text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold flex gap-2 cursor-pointer">
+          <span onClick={() => router.push("/")}>Home</span>
+          <span onClick={() => router.push("/blogs")}>• Blogs</span>
+          <span>• {article.title}</span>
+        </h4>
+      </section>
+      <section className="max-w-[1200px] w-full mx-auto px-4 py-2 sm:py-4 md:py-8 space-y-4 font-[area] font-semibold">
+        {article.image && (
+          <div className="relative rounded overflow-hidden  font-[area] w-full h-[300px] sm:h-[420px] lg:h-[520px]">
+            <Image
+              src={article.image.url}
+              alt={article.image.altText || article.title}
+              fill
+              className="object-cover "
+            />
+          </div>
+        )}
+        <h1 className="text-[1.6rem] sm:text-[2rem] lg:text-[2.5rem] font-extrabold">
+          {article.title}
+        </h1>
 
-      <div
-        className="blog-content !font-[area] prose max-w-full text-gray-700"
-        dangerouslySetInnerHTML={{ __html: article.contentHtml }}
-      />
-      <div className="text-gray-500 flex justify-end  flex-col font-[area]">
-        <span>By {article.authorV2?.name || "Unknown"}</span>
-        <span>
-          {new Date(article.publishedAt).toLocaleDateString("en-US", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
-        </span>
-      </div>
-    </section>
+        <div
+          className="blog-content !font-[area] prose max-w-full"
+          dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+        />
+        <div className="text-muted-foreground flex justify-end  flex-col font-[area]">
+          <span>By {article.authorV2?.name || "Unknown"}</span>
+          <span>
+            {new Date(article.publishedAt).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </span>
+        </div>
+      </section>
+    </>
   );
 }

@@ -14,7 +14,7 @@ export default function Checkout() {
         if (!variant || quantity < 1) return;
         buy({ merchandiseId: variant.id, quantity });
       }}
-      className="bg-[#5433EB] hover:bg-[#5031db] font-[area] rounded-full text-[0.75rem] md:text-[1rem] font-semibold px-5  w-full !h-[45px]"
+      className="bg-[#5433EB] hover:bg-[#5031db] font-[area] rounded-full text-[0.9rem] md:text-[1rem] font-semibold px-5  w-full !h-[45px]"
     >
       {loading ? (
         <>

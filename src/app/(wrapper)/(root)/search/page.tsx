@@ -4,7 +4,7 @@ import Tags from "@/components/search/tags";
 import Grid from "@/components/search/grid";
 export default function page() {
   return (
-    <section className=" max-w-[1800px] mt-10 md:mt-20 lg:mt-5 px-4  lg:px-16 my-10 gap-5 m-auto ">
+    <section className=" max-w-[1800px]  mt-0 sm:mt-10 md:mt-20 lg:mt-5 px-4 lg:px-16 mb-0 sm:mb-10 gap-2 sm:gap-5 m-auto ">
       <Breadcrump></Breadcrump>
       <Tags></Tags>
       <Grid></Grid>

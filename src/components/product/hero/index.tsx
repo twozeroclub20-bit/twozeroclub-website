@@ -23,7 +23,7 @@ export default function Hero() {
 
   return (
     <ProductProvider>
-      <section className="relative max-w-[1800px] min-h-[500px] px-4 lg:px-16 w-full m-auto my-10 flex justify-between gap-2 md:gap-10 flex-col sm:flex-row">
+      <section className="relative max-w-[1800px] min-h-[500px] px-4 lg:px-16 w-full m-auto my-0 sm:my-10 flex justify-between gap-1 md:gap-10 flex-col sm:flex-row">
         <ImageCarousel data={product}></ImageCarousel>
         <Intro data={product}></Intro>
       </section>

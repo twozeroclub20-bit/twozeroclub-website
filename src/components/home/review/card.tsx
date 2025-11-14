@@ -13,7 +13,7 @@ export interface IPROPS {
 export default function ReviewCard(data: IPROPS) {
   const { id, review, logo, rating } = data;
   return (
-    <div className="flex flex-col px-4 md:px-16 items-center lg:flex-row gap-10 lg:gap-2 m-auto w-full xl:w-[1200px]">
+    <div className="flex flex-col px-4 md:px-16 items-center lg:flex-row gap-4 sm:gap-6 md:gap-10 lg:gap-2 m-auto w-full xl:w-[1200px]">
       <Image
         src="/images/review.png"
         alt={id.toString()}

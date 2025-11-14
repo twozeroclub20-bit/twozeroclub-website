@@ -6,13 +6,18 @@ import {
   CarouselDots,
 } from "@/components/ui/carousel";
 import Card from "./card";
-export default function CardCarousel({ data }: { data: any[] }) {
+import { ShopifyArticle } from "@/lib/shopify/types";
+export default function CardCarousel({
+  data,
+}: {
+  data: ShopifyArticle[] | undefined;
+}) {
   return (
     <Carousel>
       <CarouselContent>
-        {data.map((item) => (
+        {data?.map((item) => (
           <CarouselItem key={item.id}>
-            <Card {...item} />
+            <Card article={item} />
           </CarouselItem>
         ))}
       </CarouselContent>

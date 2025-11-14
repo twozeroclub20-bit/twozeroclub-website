@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { TrendingStore } from "@/store/trending.store";
+import { BlogsStore } from "@/store/blogs.store";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
 export default function layout({ children }: { children: ReactNode }) {
   return (
     <>
-      <TrendingStore>{children}</TrendingStore>
+      <TrendingStore>
+        <BlogsStore>{children}</BlogsStore>
+      </TrendingStore>
     </>
   );
 }

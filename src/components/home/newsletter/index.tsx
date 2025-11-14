@@ -1,17 +1,21 @@
+"use client";
+
 import React from "react";
 import StaticData from "@/assets/static/home.static.json";
-import NewsletterCard from "./card";
+import ArticleCard from "./card";
 import CardCarousel from "./carousel";
+import { useBlogsStore } from "@/store/blogs.store";
 export default function Newsletter() {
+  const { articles, isLoading, isFetching } = useBlogsStore();
   return (
-    <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-20">
+    <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-8 md:my-20">
       <div
         className="hidden sm:grid 
-           sm:grid-cols-2
-            lg:grid-cols-3 place-items-start gap-4 "
+          
+            grid-cols-3 place-items-start gap-4 "
       >
-        {StaticData.newsletter.map((ele) => {
-          return <NewsletterCard {...ele} key={ele.id.toString()} />;
+        {articles?.map((ele) => {
+          return <ArticleCard article={ele} key={ele.id.toString()} />;
         })}
       </div>
 
@@ -19,7 +23,7 @@ export default function Newsletter() {
         className="block sm:hidden
           "
       >
-        <CardCarousel data={StaticData.newsletter}></CardCarousel>
+        <CardCarousel data={articles}></CardCarousel>
       </div>
     </section>
   );
