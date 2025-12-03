@@ -9,7 +9,6 @@ export default function Card(data: CartItem) {
   if (!data || !data.merchandise || !data.merchandise.product) return null;
   const { featuredImage, title } = data.merchandise.product;
 
-
   return (
     <div className=" gap-4 p-2 border-b border-muted-foreground w-full">
       <div className="flex gap-2 items-center ">
@@ -34,7 +33,7 @@ export default function Card(data: CartItem) {
           ></Trash2>
         </div>
         <div className="flex flex-col flex-1  min-h-32">
-          <h2 className="font-[area] text-[0.8rem] line-clamp-4">{title}</h2>
+          <h2 className="font-area text-[0.8rem] line-clamp-4">{title}</h2>
           <ul>
             {data.merchandise.selectedOptions.map((option) => (
               <li

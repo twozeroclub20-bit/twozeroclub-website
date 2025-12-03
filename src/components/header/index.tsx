@@ -35,7 +35,7 @@ export default function Header() {
             <div className="relative inline-block group  py-5">
               <Link
                 href="/Wall Decor/New"
-                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-[area] text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
+                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
               >
                 Wall Decor
               </Link>
@@ -46,7 +46,7 @@ export default function Header() {
             <div className="relative inline-block group  py-5">
               <Link
                 href="/Home Living/New"
-                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-[area] text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
+                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
               >
                 Home & Living
               </Link>
@@ -56,7 +56,7 @@ export default function Header() {
             <div className="relative inline-block group  py-5">
               <Link
                 href="/Tech Accessories/New"
-                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-[area] text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
+                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
               >
                 Tech & Accessories
               </Link>
@@ -66,7 +66,7 @@ export default function Header() {
             <div className="relative inline-block group  py-5">
               <Link
                 href="/Clothing Lifestyle/New"
-                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-[area] text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
+                className="peer font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
               >
                 Clothing
               </Link>

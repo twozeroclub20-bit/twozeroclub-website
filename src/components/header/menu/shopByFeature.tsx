@@ -12,28 +12,28 @@ export default function ShopByFeature({
         <Link
           onClick={() => close(false)}
           href="/footer/New"
-          className="text-[1rem] font-[area] font-extrabold "
+          className="text-[1rem] font-area font-extrabold "
         >
           New
         </Link>
         <Link
           onClick={() => close(false)}
           href="/footer/Trending"
-          className="text-[1rem] font-[area] font-extrabold "
+          className="text-[1rem] font-area font-extrabold "
         >
           Trending
         </Link>
         <Link
           onClick={() => close(false)}
           href="/footer/BestSellers"
-          className="text-[1rem] font-[area] font-extrabold "
+          className="text-[1rem] font-area font-extrabold "
         >
           BestSellers
         </Link>
         <Link
           onClick={() => close(false)}
           href="/footer/As seen on social"
-          className="text-[1rem] font-[area] font-extrabold "
+          className="text-[1rem] font-area font-extrabold "
         >
           As seen on Social
         </Link>
@@ -42,14 +42,14 @@ export default function ShopByFeature({
         <Link
           onClick={() => close(false)}
           href="/contact"
-          className=" font-bold font-[area]"
+          className=" font-bold font-area"
         >
           Contact Us
         </Link>
         <Link
           onClick={() => close(false)}
           href="/faq"
-          className=" font-bold font-[area]"
+          className=" font-bold font-area"
         >
           Help
         </Link>

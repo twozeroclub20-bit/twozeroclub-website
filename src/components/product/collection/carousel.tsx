@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import { useFullCollectionStore } from "@/store/full-collection.store";
 import Loading from "./loading";
-import Card from "@/components/common/card";
+import Card from "./card";
 export default function CardCarousel() {
   const { products, isFetching, isError, isLoading } = useFullCollectionStore();
 

@@ -56,7 +56,7 @@ export default function SignupForm() {
             name="firstName"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel className="font-[area]">First Name</FormLabel>
+                <FormLabel className="font-area">First Name</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter your first name..." {...field} />
                 </FormControl>
@@ -70,7 +70,7 @@ export default function SignupForm() {
             name="lastName"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel className="font-[area]">Last Name</FormLabel>
+                <FormLabel className="font-area">Last Name</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter your last name..." {...field} />
                 </FormControl>
@@ -86,7 +86,7 @@ export default function SignupForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area]">Email</FormLabel>
+              <FormLabel className="font-area">Email</FormLabel>
               <FormControl>
                 <Input placeholder="Enter your email..." {...field} />
               </FormControl>
@@ -101,7 +101,7 @@ export default function SignupForm() {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area]">Phone</FormLabel>
+              <FormLabel className="font-area">Phone</FormLabel>
               <FormControl>
                 <Input placeholder="Enter your phone..." {...field} />
               </FormControl>
@@ -116,7 +116,7 @@ export default function SignupForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area]">Password</FormLabel>
+              <FormLabel className="font-area">Password</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Enter your password"

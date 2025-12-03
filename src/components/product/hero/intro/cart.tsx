@@ -20,7 +20,7 @@ export default function Cart() {
     <Button
       disabled={isPending}
       onClick={handleClick}
-      className="bg-[#F33C14] hover:bg-[#ee3b13] flex items-center justify-center font-[area] rounded-full text-[0.9rem] md:text-[1rem] font-semibold px-5  flex-1 !h-[40px]"
+      className="bg-[#F33C14] hover:bg-[#ee3b13] flex items-center justify-center font-area rounded-full text-[0.9rem] md:text-[1rem] font-semibold px-5  flex-1 !h-[40px]"
     >
       {isPending ? (
         <>

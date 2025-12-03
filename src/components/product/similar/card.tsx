@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter, useParams, useSearchParams } from "next/navigation";
 
 export default function Card(data: any) {
   const { handle, images, title, price, thumbnail, id } = data;
   const router = useRouter();
-  const { collection, sub } = useParams();
+  const searchParams = useSearchParams();
+  const collection = searchParams.get("collection");
+  const sub = searchParams.get("sub");
   return (
     <div
       className="w-full cursor-pointer"

@@ -20,7 +20,7 @@ function TabsList({
         router.push(`/faq?tab=${label}`);
         toggle(label);
       }}
-      className={`font-[area] cursor-pointer py-0.5 px-4 border rounded-full  text-[0.85rem] xl:text-[1.125rem] font-bold list-none box-border ${
+      className={`font-area cursor-pointer py-0.5 px-4 border rounded-full  text-[0.85rem] xl:text-[1.125rem] font-bold list-none box-border ${
         label === active ? " border-black " : " border-transparent"
       } `}
     >

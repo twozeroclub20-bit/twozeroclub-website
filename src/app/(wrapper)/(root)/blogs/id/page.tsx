@@ -53,15 +53,15 @@ export default function BlogPage() {
   return (
     <>
       <section className=" max-w-[1800px] mt-5  px-4 lg:px-16  gap-5 m-auto ">
-        <h4 className="font-[area]  text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold flex gap-2 cursor-pointer">
+        <h4 className="font-area  text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold flex gap-2 cursor-pointer">
           <span onClick={() => router.push("/")}>Home</span>
           <span onClick={() => router.push("/blogs")}>• Blogs</span>
           <span>• {article.title}</span>
         </h4>
       </section>
-      <section className="max-w-[1200px] w-full mx-auto px-4 py-2 sm:py-4 md:py-8 space-y-4 font-[area] font-semibold">
+      <section className="max-w-[1200px] w-full mx-auto px-4 py-2 sm:py-4 md:py-8 space-y-4 font-area font-semibold">
         {article.image && (
-          <div className="relative rounded overflow-hidden  font-[area] w-full h-[300px] sm:h-[420px] lg:h-[520px]">
+          <div className="relative rounded overflow-hidden  font-area w-full h-[300px] sm:h-[420px] lg:h-[520px]">
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
@@ -77,10 +77,10 @@ export default function BlogPage() {
         </h1>
 
         <div
-          className="blog-content !font-[area] prose max-w-full"
+          className="blog-content !font-area prose max-w-full"
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
         />
-        <div className="text-muted-foreground flex justify-end  flex-col font-[area]">
+        <div className="text-muted-foreground flex justify-end  flex-col font-area">
           <span>By {article.authorV2?.name || "Unknown"}</span>
           <span>
             {new Date(article.publishedAt).toLocaleDateString("en-US", {

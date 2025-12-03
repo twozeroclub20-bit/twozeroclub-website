@@ -124,18 +124,15 @@
   }
 }
 
-@font-face {
-  font-family: "Area";
-  src: url("/fonts/Area/Area-Regular.otf") format("opentype"), local("Area"),
-    local("area"), url("https://use.typekit.net/dvb7dwt.css");
-  font-weight: 400;
+.font-area {
+  font-family: "area-normal";
+  /* font-weight: 400; */
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Editorial";
-  src: local("Instrument Serif"), local("instrument-serif");
+.font-editorial {
+  font-family: "instrument-serif", serif;
   font-weight: 400;
   font-style: normal;
   font-display: swap;

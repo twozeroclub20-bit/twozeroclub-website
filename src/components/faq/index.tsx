@@ -20,7 +20,7 @@ function FAQComponent() {
   const router = useRouter();
   return (
     <>
-      <h4 className="font-[area] flex gap-2 text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold cursor-pointer">
+      <h4 className="font-area flex gap-2 text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold cursor-pointer">
         <span onClick={() => router.push("/")}>Home</span>
         <span>•</span>
         <span>FAQ's</span>
@@ -34,7 +34,7 @@ function FAQComponent() {
         </span>
       </h4>
       <div className="max-w-[1000px] w-full lg:w-[60%]  m-auto ">
-        <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-[editorial] mb-5">
+        <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-editorial mb-5">
           {active === "contact" ? "Contact Us" : "Frequently Asked Questions"}
         </h2>
         <Tabs active={active} toggle={toggle}></Tabs>

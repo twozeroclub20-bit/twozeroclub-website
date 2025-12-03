@@ -56,7 +56,7 @@ export function ContactUsForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area] !text-[1rem] !font-extrabold">
+              <FormLabel className="font-area !text-[1rem] !font-extrabold">
                 Full Name*
               </FormLabel>
               <FormControl>
@@ -74,7 +74,7 @@ export function ContactUsForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area] !text-[1rem] !font-extrabold">
+              <FormLabel className="font-area !text-[1rem] !font-extrabold">
                 Email*
               </FormLabel>
               <FormControl>
@@ -92,7 +92,7 @@ export function ContactUsForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area] !text-[1rem] !font-extrabold">
+              <FormLabel className="font-area !text-[1rem] !font-extrabold">
                 Subject
               </FormLabel>
               <FormControl>
@@ -110,7 +110,7 @@ export function ContactUsForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="font-[area] !text-[1rem] !font-extrabold">
+              <FormLabel className="font-area !text-[1rem] !font-extrabold">
                 Message*
               </FormLabel>
               <FormControl>

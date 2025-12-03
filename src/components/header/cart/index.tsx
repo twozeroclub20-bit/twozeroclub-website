@@ -46,7 +46,7 @@ export default function Cart() {
       >
         <div className="w-72 sm:w-[350px] lg:w-[450px] bg-white shadow-2xl flex flex-col  items-start h-full p-4">
           <div className="my-2 flex justify-between items-center w-full ">
-            <h2 className="text-[0.75rem] xs:text-[1rem] md:text-[1.2rem] font-semibold font-[area] ">
+            <h2 className="text-[0.75rem] xs:text-[1rem] md:text-[1.2rem] font-semibold font-area ">
               Cart ({!cart ? "0" : cart.lines.length})
             </h2>
             <X className="w-4 h-4" onClick={() => toggle(false)}></X>

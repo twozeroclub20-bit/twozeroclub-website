@@ -8,7 +8,7 @@ export default function Empty() {
     <div className="flex flex-col items-center justify-center h-full w-full gap-4">
       <ShoppingCart className="w-12 h-12"></ShoppingCart>
 
-      <h2 className="font-[area]">Your cart is empty</h2>
+      <h2 className="font-area">Your cart is empty</h2>
 
       <Button onClick={() => setOpen(false)}>Continue Shopping</Button>
     </div>

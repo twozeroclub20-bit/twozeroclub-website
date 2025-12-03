@@ -7,7 +7,7 @@ module.exports = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
         area: ["Area", "serif"],
-        editorial: ["Editorial", "serif"],
+        editorial: ["Instrument Serif", "serif"],
       },
       colors: {
         brown: "#efe4d9",

@@ -20,7 +20,7 @@ export default function Tags() {
 
   return (
     <div className="my-2 sm:my-5">
-      <h2 className="text-[2.75rem] font-[editorial]">
+      <h2 className="text-[2.75rem] font-editorial">
         {decodedSub.toLowerCase() === "all" ? decodedCollection : decodedSub}
       </h2>
       <div className="flex space-x-1 sm:space-x-3 flex-wrap">
@@ -28,7 +28,7 @@ export default function Tags() {
           <Link
             href={"/" + collection + "/" + tag}
             key={`featured-${idx}`}
-            className={`font-[area] text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full border ${
+            className={`font-area text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full border ${
               isTagSelected(tag) ? "border-black" : "border-transparent"
             }`}
           >
@@ -40,7 +40,7 @@ export default function Tags() {
           <Link
             href={"/" + collection + "/" + tag}
             key={`shop-${idx}`}
-            className={`font-[area] text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full border ${
+            className={`font-area text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full border ${
               isTagSelected(tag) ? "border-black" : "border-transparent"
             }`}
           >

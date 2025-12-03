@@ -15,14 +15,14 @@ export default function Clothing({ close }: { close: (val: boolean) => void }) {
   }
   return (
     <AccordionItem value="item-4" className="!border-b-1 border-black/50">
-      <AccordionTrigger2 className="  !text-[1.125rem] font-[area] !font-black">
+      <AccordionTrigger2 className="  !text-[1.125rem] font-area !font-black">
         Clothing & Lifestyle
       </AccordionTrigger2>
-      <AccordionContent className="flex flex-col gap-2 font-[area] max-h-[10000px] overflow-y-auto !text-[1rem]">
-        <h2 className="text-[10px] font-bold  font-[area] text-[#F33C14]">
+      <AccordionContent className="flex flex-col gap-2 font-area max-h-[10000px] overflow-y-auto !text-[1rem]">
+        <h2 className="text-[10px] font-bold  font-area text-[#F33C14]">
           CLOTHING
         </h2>
-        <ul className="pl-0 font-[area] cursor-pointer">
+        <ul className="pl-0 font-area cursor-pointer">
           <li onClick={() => handleClick("Hoodies")}>Hoodies</li>
           <li onClick={() => handleClick("Sweatshirts")}>Sweatshirts </li>
           <li onClick={() => handleClick("Short Sleeve Tees")}>
@@ -32,10 +32,10 @@ export default function Clothing({ close }: { close: (val: boolean) => void }) {
             Long Sleeve Tees
           </li>
         </ul>
-        <h2 className="text-[10px] font-bold  font-[area] text-[#08814E]">
+        <h2 className="text-[10px] font-bold  font-area text-[#08814E]">
           LIFESTYLE
         </h2>
-        <ul className="pl-0 font-[area] cursor-pointer">
+        <ul className="pl-0 font-area cursor-pointer">
           <li onClick={() => handleClick("Beach Towels")}>Beach Towels</li>
           <li onClick={() => handleClick("Travel Mugs")}>Travel Mugs</li>
           <li onClick={() => handleClick("Water Bottles")}>Water Bottles</li>

@@ -28,7 +28,7 @@ function Card(data: IPROPS) {
   };
   return (
     <div
-      className="px-2.5 py-1 text-[0.8rem]  rounded-full font-[area] text-white "
+      className="px-2.5 py-1 text-[0.8rem]  rounded-full font-area text-white "
       style={{ backgroundColor: colors[data.id % 9] }}
       onClick={() => handleClick(data.label)}
     >
@@ -44,9 +44,7 @@ export default function Trends({
 }) {
   return (
     <div className=" w-full   border-r-1 border-b-1 pb-4 lg:pb-0 lg:pr-2 pr-0  border-b-black/50 border-r-transparent lg:border-b-transparent lg:border-r-black/50 ">
-      <h2 className="text-[1.4rem] font-[area] font-bold mb-5">
-        Shop by Trends
-      </h2>
+      <h2 className="text-[1.4rem] font-area font-bold mb-5">Shop by Trends</h2>
       <div className="flex gap-2 items-start flex-wrap">
         {StaticData.shopBy.map((ele, id) => (
           <Card onClick={onClick} key={id} label={ele} id={id}>

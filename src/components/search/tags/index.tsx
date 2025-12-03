@@ -13,13 +13,13 @@ export default function Tags() {
 
   return (
     <div className="my-2 sm:my-5">
-      <h2 className="text-[2.75rem] font-[editorial]">Search for {q}</h2>
+      <h2 className="text-[2.75rem] font-editorial">Search for {q}</h2>
       <div className="flex space-x-1 sm:space-x-3 flex-wrap">
         {StaticData?.featured?.map((tag, idx) => (
           <Link
             href={"/" + "footer" + "/" + tag}
             key={`featured-${idx}`}
-            className={`font-[area] text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full  `}
+            className={`font-area text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full  `}
           >
             {tag}
           </Link>
@@ -29,7 +29,7 @@ export default function Tags() {
           <Link
             href={"/" + collection + "/" + tag}
             key={`shop-${idx}`}
-            className={`font-[area] text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full `}
+            className={`font-area text-[0.8rem] xl:text-[1.125rem] px-3 min-w-14 text-center py-0.5 rounded-full `}
           >
             {tag}
           </Link>

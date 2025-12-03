@@ -20,7 +20,7 @@ export default function Breadcrumb() {
   }, [decodedCollection, decodedSub]);
 
   return (
-    <h4 className="font-[area] text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold flex gap-2 cursor-pointer">
+    <h4 className="font-area text-[0.75rem] sm:text-[1rem] lg:text-[1.125rem] font-bold flex gap-2 cursor-pointer">
       <span onClick={() => router.push("/")}>Home</span>
       <span
         onClick={() => router.push(`/${decodedCollection}/all`)}

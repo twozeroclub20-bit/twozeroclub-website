@@ -19,11 +19,11 @@ export default function WallDecor({
   }
   return (
     <AccordionItem value="item-1" className="!border-b-1 border-black/50">
-      <AccordionTrigger2 className="  !text-[1.125rem] font-[area] !font-black">
+      <AccordionTrigger2 className="  !text-[1.125rem] font-area !font-black">
         Wall Decor
       </AccordionTrigger2>
-      <AccordionContent className="flex flex-col gap-4 font-[area] max-h-[10000px] overflow-y-auto !text-[1rem]">
-        <div className="pl-0 font-[area] cursor-pointer flex flex-col gap-1">
+      <AccordionContent className="flex flex-col gap-4 font-area max-h-[10000px] overflow-y-auto !text-[1rem]">
+        <div className="pl-0 font-area cursor-pointer flex flex-col gap-1">
           <li onClick={() => handleClick("Art Prints")}>Art Prints</li>
           <li onClick={() => handleClick("Framed Prints")}>Framed Prints </li>
           <li onClick={() => handleClick("Posters Wall")}>Posters Wall </li>

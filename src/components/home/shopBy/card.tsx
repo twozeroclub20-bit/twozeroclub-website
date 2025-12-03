@@ -21,7 +21,7 @@ const colors = [
 export default function ShopByCard(data: IPROPS) {
   return (
     <div
-      className="px-4 py-2 rounded-full font-[area] text-white "
+      className="px-4 py-2 rounded-full font-area text-white "
       style={{ backgroundColor: colors[data.id % 9] }}
     >
       {data.filter}

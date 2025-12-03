@@ -6,7 +6,7 @@ import {
   CarouselDots,
 } from "@/components/ui/carousel";
 import { useSimilarStore } from "@/store/similar.store";
-import Card from "@/components/common/card";
+import Card from "./card";
 import Loading from "./loading";
 export default function CardCarousel() {
   const { products, isFetching, isError, isLoading } = useSimilarStore();

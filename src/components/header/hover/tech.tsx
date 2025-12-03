@@ -22,8 +22,8 @@ export default function Tech() {
       >
         <div className=" w-full grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 min-h-96 gap-5 space-y-5">
           <div className="border-r border-black/50 ">
-            <h2 className="text-[1.625rem] font-[editorial] mb-5">Featured</h2>
-            <ul className="pl-0 font-[area] cursor-pointer">
+            <h2 className="text-[1.625rem] font-editorial mb-5">Featured</h2>
+            <ul className="pl-0 font-area cursor-pointer">
               {StaticData.featured.map((item, index) => (
                 <List key={item + index} onClick={() => handleClick(item)}>
                   {item}
@@ -33,10 +33,8 @@ export default function Tech() {
           </div>
 
           <div className="border-r border-black/50 ">
-            <h2 className="text-[1.625rem] font-[editorial] mb-5">
-              Categories
-            </h2>
-            <ul className="pl-0 font-[area] cursor-pointer">
+            <h2 className="text-[1.625rem] font-editorial mb-5">Categories</h2>
+            <ul className="pl-0 font-area cursor-pointer">
               <List onClick={() => handleClick("Phone Cases")}>
                 Phone Cases
               </List>
@@ -47,10 +45,10 @@ export default function Tech() {
           </div>
 
           <div className="border-r border-black/50 ">
-            <h2 className="text-[1.625rem] font-[editorial] mb-5">
+            <h2 className="text-[1.625rem] font-editorial mb-5">
               Shop by Color
             </h2>
-            <h2 className="text-[14px] font-bold text-[#064BD6] font-[area] mb-2">
+            <h2 className="text-[14px] font-bold text-[#064BD6] font-area mb-2">
               CLASSICS
             </h2>
             <div className="grid grid-cols-4 gap-1 mb-4 place-items-start justify-center w-48 cursor-pointer">
@@ -63,7 +61,7 @@ export default function Tech() {
                 ></div>
               ))}
             </div>
-            <h2 className="text-[14px] font-bold text-[#FF004F] font-[area] mb-2">
+            <h2 className="text-[14px] font-bold text-[#FF004F] font-area mb-2">
               TRENDING
             </h2>
             <div className="grid grid-cols-4 gap-1 mb-4 w-48 cursor-pointer">
@@ -78,10 +76,10 @@ export default function Tech() {
             </div>
           </div>
           <div className="">
-            <h2 className="text-[1.625rem] font-[editorial] mb-5">
+            <h2 className="text-[1.625rem] font-editorial mb-5">
               Shop by Subject
             </h2>
-            <ul className="pl-0 font-[area] cursor-pointer">
+            <ul className="pl-0 font-area cursor-pointer">
               {StaticData.shop.map((item, index) => (
                 <List onClick={() => handleClick(item)} key={item + index}>
                   {item}

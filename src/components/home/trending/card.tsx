@@ -21,10 +21,10 @@ export default function TrendingCard(data: any) {
         />
       </div>
 
-      <h2 className="font-[area] text-[1.25rem] sm:text-[1.5rem] line-clamp-1 font-bold">
+      <h2 className="font-area text-[1.25rem] sm:text-[1.5rem] line-clamp-1 font-bold">
         {title}
       </h2>
-      <p className="font-[area] text-[0.8rem] sm:text-[1.125rem] font-light line-clamp-2">
+      <p className="font-area text-[0.8rem] sm:text-[1.125rem] font-light line-clamp-2">
         {description}
       </p>
       <Button
@@ -32,7 +32,7 @@ export default function TrendingCard(data: any) {
           push(`/product/${handle}?id=${id}&collection=footer-trending`)
         }
         style={{ backgroundColor: colors[idx % colors.length] }}
-        className="mt-[1.25rem] p-[18px]! md:p-[24px]! w-fit rounded-full text-[0.8rem] text-white font-[area]"
+        className="mt-[1.25rem] p-[18px]! md:p-[24px]! w-fit rounded-full text-[0.8rem] text-white font-area"
       >
         Explore More
       </Button>

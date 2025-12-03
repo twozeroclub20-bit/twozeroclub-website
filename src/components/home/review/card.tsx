@@ -35,7 +35,7 @@ export default function ReviewCard(data: IPROPS) {
             />
           ))}
         </div>
-        <h2 className="font-[area] text-[1.25rem] sm:text-[1.5rem] text-center">
+        <h2 className="font-area text-[1.25rem] sm:text-[1.5rem] text-center">
           {`"${review}"`}
         </h2>
       </div>

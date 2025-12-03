@@ -44,7 +44,7 @@ export default function Variant() {
     <div className="space-y-2 mt-0 sm:mt-2">
       {options.map((ele) => (
         <div key={ele.name}>
-          <h4 className="font-[area] font-semibold text-[12px] sm:text-[0.875rem] text-black/50 uppercase sm:mb-1">
+          <h4 className="font-area font-semibold text-[12px] sm:text-[0.875rem] text-black/50 uppercase sm:mb-1">
             {ele.name}
           </h4>
 
@@ -52,7 +52,7 @@ export default function Variant() {
             onValueChange={(val) => handleChange(ele.name, val)}
             value={selectedOptions[ele.name] ?? ele.values[0]}
           >
-            <SelectTrigger className="w-full  font-[area] border-1 !py-5 px-4 border-black rounded-full font-semibold text-[1rem] sm:text-[1.125rem]">
+            <SelectTrigger className="w-full  font-area border-1 !py-5 px-4 border-black rounded-full font-semibold text-[1rem] sm:text-[1.125rem]">
               <SelectValue />
             </SelectTrigger>
 
@@ -60,7 +60,7 @@ export default function Variant() {
               {ele.values.map((option) => (
                 <SelectItem
                   key={option}
-                  className="font-semibold text-[1rem] sm:text-[1.125rem] font-[area]"
+                  className="font-semibold text-[1rem] sm:text-[1.125rem] font-area"
                   value={option}
                 >
                   {option}

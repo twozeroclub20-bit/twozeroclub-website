@@ -28,10 +28,10 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       )}
 
       <div className="py-2 mt-2">
-        <h2 className="text-lg font-[area] font-semibold mb-2">{title}</h2>
+        <h2 className="text-lg font-area font-semibold mb-2">{title}</h2>
 
         <p
-          className="text-muted-foreground text-sm mb-4 font-[area] line-clamp-3"
+          className="text-muted-foreground text-sm mb-4 font-area line-clamp-3"
           dangerouslySetInnerHTML={{ __html: excerpt }}
         />
 
@@ -40,7 +40,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
             e.preventDefault(); // prevent Link click
             push(`/blogs/id?id=${id}`);
           }}
-          className="!font-[area] rounded-3xl p-5!"
+          className="!font-area rounded-3xl p-5!"
         >
           Read More
         </Button>

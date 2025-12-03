@@ -23,8 +23,8 @@ export const FullCollectionStore = ({
 }) => {
   const searchParams = useSearchParams();
 
-  const collection = searchParams.get("collection");
-
+  const collection = searchParams.get("collection") as string;
+  const sub = searchParams.get("sub") as string;
   const {
     isFetching,
     isError,
@@ -32,9 +32,17 @@ export const FullCollectionStore = ({
     data: products,
     error,
   } = useQuery<any | undefined>({
-    queryKey: ["product-collection", collection],
+    queryKey: ["product-collection", collection, sub],
     queryFn: async () => {
-      const res = await getFullCollectionProducts(collection?.toString() || "");
+      const decodedCollection = decodeURIComponent(collection.toString());
+      const decodedSub = decodeURIComponent(sub.toString());
+
+      const query = `${decodedSub
+        .split(" ")
+        .join("-")
+        .toLowerCase()}${decodedCollection.split(" ").join("-").toLowerCase()}`;
+      const res = await getFullCollectionProducts(query || "");
+
       return res;
     },
     enabled: !!collection,

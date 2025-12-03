@@ -9,7 +9,7 @@ export default function Trending() {
   const { products } = useTrendingStore();
   return (
     <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-8 md:my-20">
-      <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-[editorial] mb-4">
+      <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-editorial mb-4">
         {"What's Trending"}
       </h2>
       <div

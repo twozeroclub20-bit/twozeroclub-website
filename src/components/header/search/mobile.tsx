@@ -42,10 +42,10 @@ export default function MobileSearch() {
               <Features onClick={toggle}></Features>
             </div>
             <div className=" py-4 flex flex-col gap-1 cursor-pointer">
-              <Link href="/contact" className=" font-bold font-[area]">
+              <Link href="/contact" className=" font-bold font-area">
                 Contact Us
               </Link>
-              <Link href="/faq" className=" font-bold font-[area]">
+              <Link href="/faq" className=" font-bold font-area">
                 Help
               </Link>
             </div>

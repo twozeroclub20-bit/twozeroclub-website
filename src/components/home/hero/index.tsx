@@ -8,10 +8,10 @@ export default function Hero() {
   return (
     <section className="max-w-[1800px] mt-0 sm:mt-5 md:mt-20 lg:mt-5 px-4 lg:px-16 my-10 gap-5 m-auto flex justify-between items-start md:items-center flex-col-reverse md:flex-row">
       <div className="  flex flex-col gap-4 xl:w-[600px]  lg:mr-0">
-        <h2 className=" w-full  text-[3rem] sm:text-[3.5rem]  lg:text-[4rem] leading-[3rem] sm:leading-[3.5rem]  tracking-[-2%] lg:leading-[4rem] font-[editorial] ">
+        <h2 className=" w-full  text-[3rem] sm:text-[3.5rem]  lg:text-[4rem] leading-[3rem] sm:leading-[3.5rem]  tracking-[-2%] lg:leading-[4rem] font-editorial ">
           Art for Inspiring Spaces
         </h2>
-        <p className=" w-full lg:w-[80%] text-[1rem] md:text-[1.2rem] sm:text-[1.5rem] font-[area] leading-[120%] tracking-[-2%]">
+        <p className=" w-full lg:w-[80%] text-[1rem] md:text-[1.2rem] sm:text-[1.5rem] font-area leading-[120%] tracking-[-2%]">
           Explore our curated collection of premium art prints
         </p>
         <Button

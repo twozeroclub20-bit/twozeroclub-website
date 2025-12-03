@@ -14,10 +14,8 @@ export default function Colors({
   };
   return (
     <div className=" w-full    border-b-1 pb-4 lg:pb-0  lg:border-b-transparent   border-black/50">
-      <h2 className="text-[1.4rem] font-[area] font-bold mb-5">
-        Shop by Color
-      </h2>
-      <h2 className="text-[14px] font-bold text-[#064BD6] font-[area] mb-2">
+      <h2 className="text-[1.4rem] font-area font-bold mb-5">Shop by Color</h2>
+      <h2 className="text-[14px] font-bold text-[#064BD6] font-area mb-2">
         CLASSICS
       </h2>
       <div className="grid grid-cols-8 sm:grid-cols-12 md:grid-cols-16 lg:grid-cols-7 xl:grid-cols-8  gap-1 mb-4 place-items-start justify-center  cursor-pointer">
@@ -30,7 +28,7 @@ export default function Colors({
           ></div>
         ))}
       </div>
-      <h2 className="text-[14px] font-bold text-[#FF004F] font-[area] mb-2">
+      <h2 className="text-[14px] font-bold text-[#FF004F] font-area mb-2">
         TRENDING
       </h2>
       <div className="grid grid-cols-8 sm:grid-cols-12 lg:grid-cols-7 xl:grid-cols-8  gap-1 mb-4 cursor-pointer place-items-start justify-center">
