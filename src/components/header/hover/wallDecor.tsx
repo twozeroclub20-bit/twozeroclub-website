@@ -39,7 +39,7 @@ export default function WallDecor() {
               <List onClick={() => handleClick("Framed Prints")}>
                 Framed Prints
               </List>
-              <List onClick={() => handleClick("Posters")}>Posters</List>
+              <List onClick={() => handleClick("Poster")}>Posters</List>
               <List onClick={() => handleClick("Tapestries")}>Tapestries</List>
               <List onClick={() => handleClick("Canvas")}>Canvas</List>
             </ul>
