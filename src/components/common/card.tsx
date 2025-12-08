@@ -13,10 +13,7 @@ export default function ProductCard({
   const searchParams = useSearchParams();
   const query = searchParams.get("q");
   return (
-    <Link
-      className="w-full cursor-pointer"
-      href={`/product/${handle}?id=${id}&collection=Search&sub=${query}`}
-    >
+    <Link className="w-full cursor-pointer" href={`/products/${handle}`}>
       <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg mb-5 sm:mb-[1.625rem]  ">
         <Image
           draggable={false}

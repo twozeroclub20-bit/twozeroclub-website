@@ -39,9 +39,9 @@ export default function Tech() {
               <List onClick={() => handleClick("Phone Cases")}>
                 Phone Cases
               </List>
-              <List onClick={() => handleClick("Desk Mats")}>Desk Mats </List>
-              <List onClick={() => handleClick("Notebooks")}>Notebooks </List>
-              <List onClick={() => handleClick("Stickers")}>Stickers</List>
+              <List onClick={() => handleClick("Desk Mat")}>Desk Mats </List>
+              <List onClick={() => handleClick("Notebook")}>Notebooks </List>
+              <List onClick={() => handleClick("Sticker")}>Stickers</List>
             </ul>
           </div>
 

@@ -36,12 +36,12 @@ export default function WallDecor() {
           <div className="border-r border-black/50 ">
             <h2 className="text-[1.625rem] font-editorial mb-5">Categories</h2>
             <ul className="pl-0 font-area cursor-pointer">
-              <List onClick={() => handleClick("Art Prints")}>Art Prints</List>
-              <List onClick={() => handleClick("Framed Prints")}>
+              <List onClick={() => handleClick("Art Print")}>Art Prints</List>
+              <List onClick={() => handleClick("Framed Print")}>
                 Framed Prints
               </List>
               <List onClick={() => handleClick("Poster")}>Posters</List>
-              <List onClick={() => handleClick("Tapestries")}>Tapestries</List>
+              <List onClick={() => handleClick("Wall Tapestries")}>Wall Tapestries</List>
               <List onClick={() => handleClick("Canvas")}>Canvas</List>
             </ul>
           </div>

@@ -17,9 +17,9 @@ export default function Popular({
         Popular Products
       </h2>
       <ul className="pl-0  font-area cursor-pointer">
-        <List onClick={() => handleClick("Art Prints")}>Art Prints</List>
-        <List onClick={() => handleClick("Framed Prints")}>Framed Prints</List>
-        <List onClick={() => handleClick("Posters Wall")}>Posters Wall</List>
+        <List onClick={() => handleClick("Art Print")}>Art Prints</List>
+        <List onClick={() => handleClick("Framed Print")}>Framed Prints</List>
+        <List onClick={() => handleClick("Poster")}>Poster</List>
         <List onClick={() => handleClick("Phone Cases")}>Phone Cases </List>
         <List onClick={() => handleClick("T-Shirts")}>T-Shirts</List>
         <List onClick={() => handleClick("Hoodies")}>Hoodies</List>

@@ -43,7 +43,7 @@ export default function Home() {
               <List onClick={() => handleClick("Throw Blankets")}>
                 Throw Blankets{" "}
               </List>
-              <List onClick={() => handleClick("Throw Pillows")}>
+              <List onClick={() => handleClick("Throw Pillow")}>
                 Throw Pillows{" "}
               </List>
               {/* <List onClick={() => handleClick("Wall Clocks")}>
@@ -55,10 +55,10 @@ export default function Home() {
               BEDROOM
             </h2>
             <ul className="pl-0 font-area">
-              <List onClick={() => handleClick("Duvet Covers")}>
+              <List onClick={() => handleClick("Duvet Cover")}>
                 Duvet Covers
               </List>
-              <List onClick={() => handleClick("Pillow Covers")}>
+              <List onClick={() => handleClick("Pillow Cover")}>
                 Pillow Covers
               </List>
             </ul>
@@ -66,8 +66,8 @@ export default function Home() {
               BATHROOM
             </h2>
             <ul className="pl-0 font-area">
-              <List onClick={() => handleClick("Bath Mats")}>Bath Mats</List>
-              <List onClick={() => handleClick("Towels")}>Towels </List>
+              <List onClick={() => handleClick("Bath Mat")}>Bath Mats</List>
+              <List onClick={() => handleClick("Towel")}>Towels </List>
               <List onClick={() => handleClick("Shower Curtains")}>
                 Shower Curtains
               </List>
