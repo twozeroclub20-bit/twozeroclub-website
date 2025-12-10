@@ -7,18 +7,22 @@ export default function Hero() {
   const { push } = useRouter();
   return (
     <section className="max-w-[1800px] mt-0 sm:mt-5 md:mt-20 lg:mt-5 px-4 lg:px-16 my-10 gap-5 m-auto flex justify-between items-start md:items-center flex-col-reverse md:flex-row">
-      <div className="  flex flex-col gap-4 xl:w-[600px]  lg:mr-0">
-        <h2 className=" w-full  text-[3rem] sm:text-[3.5rem]  lg:text-[4rem] leading-[3rem] sm:leading-[3.5rem]  tracking-[-2%] lg:leading-[4rem] font-editorial ">
-          Art for Inspiring Spaces
-        </h2>
-        <p className=" w-full lg:w-[80%] text-[1rem] md:text-[1.2rem] sm:text-[1.5rem] font-area leading-[120%] tracking-[-2%]">
-          Explore our curated collection of premium art prints
-        </p>
+      <div className="space-y-[20px]">
+        <div className="space-y-[14px] xl:w-[600px] lg:mr-0">
+          <h2 className=" w-full  text-[3rem] sm:text-[3.5rem]  lg:text-[4rem] leading-[100%] tracking-[-2%] font-editorial ">
+            Art for Inspiring Spaces
+          </h2>
+          <p className=" w-full lg:w-[80%] text-[1rem] font-area leading-[120%] tracking-[-2%]">
+            Transform your home and everyday carry. Exclusive prints, posters,
+            phone cases & home decor – designed, curated and handpicked by our
+            team.
+          </p>
+        </div>
         <Button
-          onClick={() => push("/Wall Decor/New")}
-          className="!text-[1rem] font-normal w-fit bg-[#F33C14] hover:bg-[#f0532f] transition-all duration-200 text-white  p-[18px]! md:p-[24px]! rounded-full"
+          onClick={() => push("/collections/footer-trending")}
+          className="font-normal w-fit bg-[#F33C14] hover:bg-[#f0532f] transition-all duration-200 text-white  rounded-3xl px-[20px]! py-[10px]! h-auto!"
         >
-          Add to basket
+          Explore
         </Button>
       </div>
       <div

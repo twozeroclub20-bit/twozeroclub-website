@@ -452,7 +452,7 @@ export type ShopifyArticle = {
   authorV2: {
     name: string;
   };
-
+  blogHandle: string;
   contentHtml: string;
   excerpt: string;
   url: string;
@@ -471,12 +471,15 @@ export type ShopifyBlog = {
   };
 };
 
-export type ShopifyGetArticleByIdOperation = {
+export type ShopifyGetArticleByHandleOperation = {
   data: {
-    article: ShopifyArticle | null;
+    blogByHandle: {
+      articleByHandle: ShopifyArticle | null;
+    } | null;
   };
   variables: {
-    id: string;
+    blogHandle: string;
+    articleHandle: string;
   };
 };
 

@@ -24,7 +24,7 @@ export const TrendingStore = ({ children }: { children: React.ReactNode }) => {
   } = useQuery<any | undefined>({
     queryKey: ["trending"],
     queryFn: async () => {
-      const res = await getFullCollectionProducts("trendingfooter");
+      const res = await getFullCollectionProducts("trending-footer");
       return res;
     },
     staleTime: 1000 * 60 * 5,

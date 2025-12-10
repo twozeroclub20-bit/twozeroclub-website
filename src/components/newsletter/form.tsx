@@ -47,7 +47,7 @@ export default function NewsletterForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex items-center gap-1"
+        className="flex items-center gap-[13px]"
       >
         <FormField
           control={form.control}
@@ -64,7 +64,7 @@ export default function NewsletterForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="!rounded-[24px]">
+        <Button type="submit" className="p-[14px]! h-auto! rounded-full">
           <ArrowRight></ArrowRight>
         </Button>
       </form>

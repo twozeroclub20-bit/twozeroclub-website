@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-green pt-[53px] pb-[34px] ">
-      <div className="max-w-[1800px] m-auto   px-5 md:px-20 xl:px-32 flex justify-evenly items-start flex-wrap space-y-6 ">
+      <div className="max-w-[1800px]  m-auto px-5 md:px-20 xl:px-32 flex justify-evenly items-start flex-wrap ">
         <div className="flex flex-col gap-[20px] w-1/2 lg:w-1/4  ">
           <h2 className="font-editorial text-[1.4rem] sm:text-[1.625rem]">
             Shop
@@ -17,9 +17,9 @@ export default function Footer() {
               As seen on social
             </Link>
           </ul>
-          <h2 className="pt-[39px] text-muted-foreground hidden xl:block">
+          {/* <h2 className="pt-[39px] text-muted-foreground hidden xl:block">
             © 2025 Two Zero Club
-          </h2>
+          </h2> */}
         </div>
         <div className="flex flex-col gap-[20px] w-1/2 lg:w-1/4  ">
           <h2 className="font-editorial text-[1.4rem] sm:text-[1.625rem]">
@@ -80,8 +80,8 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-[1800px] pt-[39px]  m-auto  px-5 sm:px-20 xl:px-34 block xl:hidden ">
-        <h2 className="  text-muted-foreground">© 2025 Two Zero Club</h2>
+      <div className="max-w-[1800px] pt-[39px]  m-auto  px-5 sm:px-20 xl:px-32  ">
+        <h2 className=" text-muted-foreground">© 2025 Two Zero Club</h2>
       </div>
     </footer>
   );

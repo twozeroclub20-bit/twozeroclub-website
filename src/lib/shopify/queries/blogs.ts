@@ -50,10 +50,12 @@ export const getBlogsQuery = /* GraphQL */ `
   }
 `;
 
-export const getArticleByIdQuery = /* GraphQL */ `
-  query getArticleById($id: ID!) {
-    article(id: $id) {
-      ...article
+export const getArticleByHandleQuery = /* GraphQL */ `
+  query getArticleByHandle($blogHandle: String!, $articleHandle: String!) {
+    blogByHandle(handle: $blogHandle) {
+      articleByHandle(handle: $articleHandle) {
+        ...article
+      }
     }
   }
   ${articleFragment}

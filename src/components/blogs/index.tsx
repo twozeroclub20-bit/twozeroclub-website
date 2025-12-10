@@ -33,8 +33,8 @@ export default function Grid() {
       </h4>
       {articles.length > 0 ? (
         <div className="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-5">
-          {articles.map((content) => (
-            <Card key={content.id} article={content} />
+          {articles.map((content, idx) => (
+            <Card key={content.id} article={{ idx, ...content }} />
           ))}
         </div>
       ) : (

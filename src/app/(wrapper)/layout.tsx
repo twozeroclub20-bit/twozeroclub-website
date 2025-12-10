@@ -7,9 +7,10 @@ import { CartProvider } from "@/provider/cart.provider";
 import { CustomerStore } from "@/store/customer.store";
 import { CartStore } from "@/store/cart.store";
 import { HeaderProvider } from "@/provider/header.provider";
+import Loading from "@/components/common/loading";
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loading />}>
       <CustomerStore>
         <CartStore>
           <CartProvider>

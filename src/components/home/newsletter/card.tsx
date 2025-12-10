@@ -5,15 +5,21 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+
+const colors = ["#F33C14", "#064BD6", "#FFC107", "#08814E"];
+
 type ArticleCardProps = {
-  article: ShopifyArticle;
+  article: ShopifyArticle & { idx: number };
 };
 
 export default function ArticleCard({ article }: ArticleCardProps) {
-  const { image, title, excerpt, id, handle } = article;
+  const { image, title, idx, excerpt, handle, blogHandle } = article;
   const { push } = useRouter();
   return (
-    <Link className="w-full" href={`/blogs/id?id=${id}`}>
+    <Link
+      className="w-full space-y-[20px]"
+      href={`/blogs/${blogHandle}/${handle}`}
+    >
       {image && (
         <Image
           draggable={false}
@@ -22,25 +28,27 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           alt={image.altText || article.title}
           height={image.height}
           width={image.width}
-          className="w-full pointer-events-none object-cover "
+          className="w-full h-[400px] lg:h-[550px] rounded-2xl pointer-events-none object-cover "
         />
       )}
 
-      <div className="py-2 mt-2">
-        <h2 className="text-lg font-area font-semibold  mb-2">{title}</h2>
-
+      <div className="space-y-[5px]">
+        <h2 className="text-[1.5rem] line-clamp-1 font-area font-bold font-area">
+          {title}
+        </h2>
         <p
-          className="text-muted-foreground text-sm mb-4 font-area! line-clamp-3"
+          className=" font-area line-clamp-2"
           dangerouslySetInnerHTML={{ __html: excerpt }}
         />
-
-        <Button
-          onClick={() => push(`/blogs/id?id=${id}`)}
-          className="!font-area rounded-3xl p-5!"
-        >
-          Read More
-        </Button>
       </div>
+
+      <Button
+        style={{ backgroundColor: colors[idx % colors.length] }}
+        onClick={() => push(`/blogs/${blogHandle}/${handle}`)}
+        className=" rounded-3xl px-[20px]! py-[10px]! h-auto! w-auto!"
+      >
+        <span className="font-area -translate-y-[1.5px]">Read More</span>
+      </Button>
     </Link>
   );
 }

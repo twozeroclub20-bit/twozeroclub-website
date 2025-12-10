@@ -1,15 +1,14 @@
 "use client";
 
 import React from "react";
-import StaticData from "@/assets/static/home.static.json";
+
 import TrendingCard from "./card";
 import CardCarousel from "./carousel";
-import { useTrendingStore } from "@/store/trending.store";
+import StaticData from "@/assets/static/home.static.json";
 export default function Trending() {
-  const { products } = useTrendingStore();
   return (
-    <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-8 md:my-20">
-      <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-editorial mb-4">
+    <section className="max-w-[1800px] px-4 lg:px-16  w-full m-auto my-8 md:my-20 space-y-[1.5rem]">
+      <h2 className="text-[2rem] sm:text-[2.25rem] lg:text-[2.75rem] font-editorial">
         {"What's Trending"}
       </h2>
       <div
@@ -17,7 +16,7 @@ export default function Trending() {
       sm:grid-cols-2
        xl:grid-cols-4 place-items-start gap-4 "
       >
-        {products?.map((ele, idx) => {
+        {StaticData.trending?.map((ele, idx) => {
           return <TrendingCard idx={idx} {...ele} key={ele.id.toString()} />;
         })}
       </div>
@@ -26,7 +25,7 @@ export default function Trending() {
         className="block sm:hidden
      "
       >
-        <CardCarousel data={products ?? []}></CardCarousel>
+        <CardCarousel data={StaticData.trending ?? []}></CardCarousel>
       </div>
     </section>
   );

@@ -18,7 +18,8 @@ const ArticleStoreContext = createContext<ArticleStoreInterface | null>(null);
 
 export const ArticleStore = ({ children }: { children: React.ReactNode }) => {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  const { blog, article: articleHandler } = useParams();
+
   const {
     isFetching,
     isError,
@@ -26,12 +27,15 @@ export const ArticleStore = ({ children }: { children: React.ReactNode }) => {
     data: article,
     error,
   } = useQuery<ShopifyArticle | undefined>({
-    queryKey: ["article", id],
+    queryKey: ["article", blog, articleHandler],
     queryFn: async () => {
-      const res = await getArticle({ id: id?.toString() || "" });
+      const res = await getArticle({
+        blog: blog?.toString() || "",
+        article: articleHandler?.toString() || "",
+      });
       return res;
     },
-    enabled: !!id,
+    enabled: !!blog && !!articleHandler,
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,

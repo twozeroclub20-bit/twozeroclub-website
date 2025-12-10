@@ -137,7 +137,7 @@ import { ShopifyArticle } from "./types";
 
 export const reshapeArticles = (blogs: any[]): ShopifyArticle[] => {
   const allArticles: ShopifyArticle[] = [];
-
+  
   blogs.forEach((blog) => {
     const articlesEdges = blog.articles?.edges || [];
     articlesEdges.forEach((edge: any) => {
@@ -146,6 +146,7 @@ export const reshapeArticles = (blogs: any[]): ShopifyArticle[] => {
         id: article.id,
         title: article.title,
         handle: article.handle,
+        blogHandle: blog.handle,
         publishedAt: article.publishedAt,
         authorV2: {
           name: article.authorV2?.name || "",

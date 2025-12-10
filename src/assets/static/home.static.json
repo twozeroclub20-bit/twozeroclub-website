@@ -1,20 +1,92 @@
 {
   "collections": [
     {
-      "thumbnail": "/images/collection-1.png",
-      "id": 1
+      "image": "/images/collection-1.png",
+      "id": 1,
+      "collection": "framed-print-wall-decor",
+      "title": "Framed Prints",
+      "description": "Elevate your walls with unique & exclusive art prints available only with us. You won't find it anywhere else."
     },
     {
-      "thumbnail": "/images/collection-2.png",
-      "id": 2
+      "image": "/images/collection-2.png",
+      "id": 2,
+      "collection": "phone-cases-tech-accessories",
+      "title": "Phone Cases",
+      "description": "Shop our bestselling slim & tough phone cases - only on TwoZero. Serving only the freshest of designs, curated & made to order exclusively for you."
     },
     {
-      "thumbnail": "/images/collection-3.png",
-      "id": 3
+      "image": "/images/collection-3.png",
+      "id": 3,
+      "collection": "throw-pillow-home-living",
+      "title": "Throw Pillows & Cushions",
+      "description": "Spruce up your living room with out latest artistic collection of throw pillows, cushions and bedroom decor."
     },
     {
-      "thumbnail": "/images/collection-4.png",
-      "id": 4
+      "image": "/images/collection-4.png",
+      "id": 4,
+      "collection": "home-living",
+      "title": "Home & Living",
+      "description": "Don't settle for boring. Get our newest trending collection of home & living – Comforters, Duvets, Pillows, Blankets, Towels. We got you."
+    }
+  ],
+  "grid": [
+    {
+      "image": "/images/grid-1.png",
+      "id": 1,
+      "collection": "framed-print-wall-decor",
+      "title": "Kitchen, Food & Drinks Art",
+      "description": "Fresh, fun prints to spice up your kitchen and dining spaces."
+    },
+    {
+      "image": "/images/grid-2.png",
+      "id": 2,
+      "collection": "phone-cases-tech-accessories",
+      "title": "Mid-Century & Bauhaus ",
+      "description": "Smooth geometry, colour & balance that comes with that retro energy."
+    },
+    {
+      "image": "/images/grid-3.png",
+      "id": 3,
+      "collection": "throw-pillow-home-living",
+      "title": "Matisse Inspired",
+      "description": "Cutouts, nature, colour, calm – simple art that speaks serenity."
+    },
+    {
+      "image": "/images/grid-4.png",
+      "id": 4,
+      "collection": "home-living",
+      "title": "Bold Color",
+      "description": "Statement-making prints designed to spark conversations."
+    }
+  ],
+  "trending": [
+    {
+      "image": "/images/trending-1.png",
+      "id": 1,
+      "collection": "framed-print-wall-decor",
+      "title": "Framed Prints",
+      "description": "Elevate your walls with unique & exclusive art prints available only with us. You won't find it anywhere else."
+    },
+    {
+      "image": "/images/trending-2.png",
+      "id": 2,
+      "collection": "phone-cases-tech-accessories",
+      "title": "Phone Cases",
+      "description": "Shop our bestselling slim & tough phone cases - only on TwoZero. Serving only the freshest of designs, curated & made to order exclusively for you."
+    },
+    {
+      "image": "/images/trending-3.png",
+      "id": 3,
+      "collection": "throw-pillow-home-living",
+      "title": "Throw Pillows & Cushions",
+      "description": "Spruce up your living room with out latest artistic collection of throw pillows, cushions and bedroom decor."
+    },
+    {
+      "image": "/images/trending-4.png",
+      "id": 4,
+      "collection": "home-living",
+      "title": "Home & Living",
+      "description": "Don't settle for boring. Get our newest trending collection of home & living – Comforters, Duvets, Pillows, Blankets, Towels. We got you."
     }
   ],
   "seenIn": [
@@ -47,51 +119,25 @@
     "Bauhaus",
     "Pop Art",
     "Matisse",
-    "Swiss Design",
-    "Scandinavian",
-    "Retro",
+    "Retro Art",
+    "Japandi",
+    "Vintage",
     "Abstract",
-    "Whimsical",
-    "90s",
-    "Animals",
-    "Plants & Floral",
-    "Mid Century",
-    "Typography",
-    "Colorful",
-    "Bold",
-    "Cottage Core",
-    "Nature",
-    "70s",
-    "Food & Drinks",
     "Stripes",
-    "Modern"
+    "Typography",
+    "Plants & Floral",
+    "Food & Drinks",
+    "Mid Century",
+    "90s",
+    "Bold Color",
+    "Street Art",
+    "Pattern",
+    "Music",
+    "Western",
+    "Funny",
+    "Black & White"
   ],
-  "trending": [
-    {
-      "thumbnail": "/images/trending-1.png",
-      "title": "Summer Collection",
-      "description": "Discover our latest summer arrivals with fresh styles for every occasion.",
-      "id": 1
-    },
-    {
-      "thumbnail": "/images/trending-2.png",
-      "title": "Work Essentials",
-      "description": "Upgrade your daily wardrobe with our curated work-ready essentials.",
-      "id": 2
-    },
-    {
-      "thumbnail": "/images/trending-3.png",
-      "title": "Weekend Vibes",
-      "description": "Casual and comfy picks perfect for your laid-back weekends.",
-      "id": 3
-    },
-    {
-      "thumbnail": "/images/trending-4.png",
-      "title": "Exclusive Offers",
-      "description": "Shop limited-time deals and special discounts you don’t want to miss.",
-      "id": 4
-    }
-  ],
+
   "newsletter": [
     {
       "thumbnail": "/images/trending-1.png",

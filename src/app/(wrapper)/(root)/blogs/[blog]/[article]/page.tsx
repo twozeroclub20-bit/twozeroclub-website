@@ -20,13 +20,15 @@ export default function BlogPage() {
 
   if (isLoading || isFetching) {
     return (
-      <div className="flex justify-center items-center h-40 bg-gradient-to-b from-white to-gray-50">
+      <div className="flex justify-center items-center h-40 bg-gradient-to-b ">
         <div className="text-center">
           <div className="relative w-16 h-16 mx-auto mb-4">
             <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
             <div className="absolute inset-0 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
           </div>
-          <p className="text-gray-700 font-medium">Loading article...</p>
+          <p className="text-muted-foreground font-medium font-area">
+            Loading article...
+          </p>
         </div>
       </div>
     );
@@ -34,12 +36,10 @@ export default function BlogPage() {
   if (!article) {
     return (
       <div className="flex flex-col justify-center items-center h-72 gap-6 px-4">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold text-gray-300 mb-4">404</h1>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-            Article Not Found
-          </h2>
-          <p className="text-gray-500 text-lg mb-6">
+        <div className="text-center font-area">
+          <h1 className="text-6xl font-bold  mb-4">404</h1>
+          <h2 className="text-2xl font-semibold mb-2">Article Not Found</h2>
+          <p className="text-muted-foreground text-lg mb-6">
             Sorry, we couldn't find the article you're looking for.
           </p>
           <Button onClick={() => router.push("/blogs")} className="">
@@ -60,24 +60,12 @@ export default function BlogPage() {
         </h4>
       </section>
       <section className="max-w-[1200px] w-full mx-auto px-4 py-2 sm:py-4 md:py-8 space-y-4 font-area font-semibold">
-        {article.image && (
-          <div className="relative rounded overflow-hidden  font-area w-full h-[300px] sm:h-[420px] lg:h-[520px]">
-            <Image
-              draggable={false}
-              onContextMenu={(e) => e.preventDefault()}
-              src={article.image.url}
-              alt={article.image.altText || article.title}
-              fill
-              className="object-cover "
-            />
-          </div>
-        )}
         <h1 className="text-[1.6rem] sm:text-[2rem] lg:text-[2.5rem] font-extrabold">
           {article.title}
         </h1>
 
         <div
-          className="blog-content !font-area prose max-w-full"
+          className="blog-content font-area prose max-w-full"
           dangerouslySetInnerHTML={{ __html: article.contentHtml }}
         />
         <div className="text-muted-foreground flex justify-end  flex-col font-area">
