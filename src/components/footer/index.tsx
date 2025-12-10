@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="bg-green py-4 md:py-16 ">
-      <div className="max-w-[1800px] m-auto  px-5 md:px-20 xl:px-32 flex justify-evenly items-start flex-wrap">
-        <div className="flex flex-col gap-0 sm:gap-4 w-1/2 lg:w-1/4  p-2 sm:p-4">
+    <footer className="bg-green pt-[53px] pb-[34px] ">
+      <div className="max-w-[1800px] m-auto   px-5 md:px-20 xl:px-32 flex justify-evenly items-start flex-wrap space-y-6 ">
+        <div className="flex flex-col gap-[20px] w-1/2 lg:w-1/4  ">
           <h2 className="font-editorial text-[1.4rem] sm:text-[1.625rem]">
             Shop
           </h2>
@@ -17,11 +17,11 @@ export default function Footer() {
               As seen on social
             </Link>
           </ul>
-          <h2 className="mt-5 text-muted-foreground hidden xl:block">
+          <h2 className="pt-[39px] text-muted-foreground hidden xl:block">
             © 2025 Two Zero Club
           </h2>
         </div>
-        <div className="flex flex-col gap-0 sm:gap-4 w-1/2 lg:w-1/4  p-2 sm:p-4">
+        <div className="flex flex-col gap-[20px] w-1/2 lg:w-1/4  ">
           <h2 className="font-editorial text-[1.4rem] sm:text-[1.625rem]">
             Help
           </h2>
@@ -31,7 +31,7 @@ export default function Footer() {
             <Link href="/contact">Contact Us</Link>
           </ul>
         </div>
-        <div className="flex flex-col gap-0 sm:gap-4 w-1/2 lg:w-1/4  p-2 sm:p-4">
+        <div className="flex flex-col gap-[20px] w-1/2 lg:w-1/4  ">
           <h2 className="font-editorial text-[1.4rem] sm:text-[1.625rem]">
             About Us
           </h2>
@@ -40,7 +40,7 @@ export default function Footer() {
             <Link href="/blogs">Blogs</Link>
           </ul>
         </div>
-        <div className="flex flex-col gap-0 sm:gap-4 w-1/2 lg:w-1/4  p-2 sm:p-4">
+        <div className="flex flex-col gap-[20px] w-1/2 lg:w-1/4  ">
           <h2 className="font-editorial text-[1.4rem] sm:text-[1.625rem]">
             Stay Connected
           </h2>
@@ -80,8 +80,8 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="max-w-[2000px] pb-5 m-auto  px-12 sm:px-22 xl:px-34 block xl:hidden ">
-        <h2 className="mt-5 text-muted-foreground">© 2025 Two Zero Club</h2>
+      <div className="max-w-[1800px] pt-[39px]  m-auto  px-5 sm:px-20 xl:px-34 block xl:hidden ">
+        <h2 className="  text-muted-foreground">© 2025 Two Zero Club</h2>
       </div>
     </footer>
   );

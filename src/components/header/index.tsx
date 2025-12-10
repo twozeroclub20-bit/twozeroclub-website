@@ -31,35 +31,38 @@ export default function Header() {
           ></Image>
 
           <div className="lg:gap-10 gap-5 items-center justify-center hidden lg:flex">
-            <div className="relative inline-block group  py-5">
-              <Link
-                href="/collections/wall-decor"
-                className="peer font-bold leading-[0.9] px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
+            <div className="relative inline-block group py-5 cursor-pointer">
+              <p
+                onClick={() => router.push("/collections/wall-decor")}
+                className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
               >
-                Wall Decor
-              </Link>
-
-              <WallDecor></WallDecor>
+                <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.75px]">
+                  Wall Decor
+                </span>
+              </p>
+              <WallDecor />
             </div>
 
-            <div className="relative inline-block group  py-5">
-              <Link
-                href="/collections/home-living"
-                className="peer leading-[0.9] font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
+            <div className="relative inline-block group  py-5 cursor-pointer">
+              <p
+                onClick={() => router.push("/collections/home-living")}
+                className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
               >
-                Home & Living
-              </Link>
-
+                <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.5px]">
+                  Home & Living
+                </span>
+              </p>
               <Home></Home>
             </div>
             <div className="relative inline-block group  py-5">
-              <Link
-                href="/collections/tech-accessories"
-                className="peer leading-[0.9] font-bold px-[14px] transition-all duration-200 lg:px-2 py-[6px] rounded-full font-area text-[0.8rem] xl:text-[1.125rem] border border-transparent box-border group-hover:border-black"
+              <p
+                onClick={() => router.push("/collections/tech-accessories")}
+                className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
               >
-                Tech & Accessories
-              </Link>
-
+                <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.5px]">
+                  Tech & Accessories
+                </span>
+              </p>
               <Tech></Tech>
             </div>
             {/* <div className="relative inline-block group  py-5">

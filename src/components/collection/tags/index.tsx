@@ -9,27 +9,38 @@ import { parseNameToSlug, parseSlug } from "@/util/parseSlug";
 function TagItem({ active, tag }: { active: boolean; tag: string }) {
   const { collection } = useParams();
   const router = useRouter();
+
   const [c] = parseSlug(collection?.toString() || "");
   const slug =
     tag === "all"
       ? parseNameToSlug(c)
-      : tag.split(" ").join("-").toLowerCase() + "-" + parseNameToSlug(c);
+      : `${tag.split(" ").join("-").toLowerCase()}-${parseNameToSlug(c)}`;
+
   return (
-    <>
-      <div
-        onClick={() => router.push("/collections/" + slug)}
-        className={cn(
-          "font-area cursor-pointer text-[0.8rem] xl:text-[1.125rem] px-4 min-w-14 h-[36px] flex items-center justify-center rounded-full border transition-all",
-          active ? "border-black" : "border-transparent"
-        )}
-      >
-        <p key={`featured-all`} className="leading-[0.9] capitalize">
-          {tag}
-        </p>
-      </div>
-    </>
+    <div
+      onClick={() => router.push("/collections/" + slug)}
+      className={cn(
+        "font-area cursor-pointer text-[0.8rem] xl:text-[1.125rem] px-[10px] py-[6px]",
+        "flex items-center justify-center rounded-full border transition-all duration-200 select-none",
+
+        active ? "border-black " : "border-none"
+      )}
+    >
+      <span className=" capitalize leading-none -translate-y-[0.3px]">
+        {tag}
+      </span>
+    </div>
   );
 }
+
+//  <p
+//    onClick={() => router.push("/collections/wall-decor")}
+//    className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
+//  >
+//    <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.75px]">
+//      Wall Decor
+//    </span>
+//  </p>;
 
 export default function Tags() {
   const { collection } = useParams();
