@@ -15,9 +15,9 @@ export default function CardCarousel({
   return (
     <Carousel>
       <CarouselContent>
-        {data?.map((item) => (
+        {data?.map((item, idx) => (
           <CarouselItem key={item.id}>
-            <Card article={item} />
+            <Card article={{ ...item, idx }} />
           </CarouselItem>
         ))}
       </CarouselContent>
