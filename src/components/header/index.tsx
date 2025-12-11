@@ -34,9 +34,10 @@ export default function Header() {
             <div className="relative inline-block group py-5 cursor-pointer">
               <p
                 onClick={() => router.push("/collections/wall-decor")}
-                className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
+                className="peer font-bold  px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black   flex items-center justify-center   
+        leading-none  "
               >
-                <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.75px]">
+                <span className="font-bold font-area text-[0.8rem] xl:text-[1.125rem] ">
                   Wall Decor
                 </span>
               </p>
@@ -46,9 +47,10 @@ export default function Header() {
             <div className="relative inline-block group  py-5 cursor-pointer">
               <p
                 onClick={() => router.push("/collections/home-living")}
-                className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
+                className="peer font-bold  px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black  flex items-center justify-center   
+        leading-none "
               >
-                <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.5px]">
+                <span className="font-bold font-area text-[0.8rem] xl:text-[1.125rem] ">
                   Home & Living
                 </span>
               </p>
@@ -57,9 +59,10 @@ export default function Header() {
             <div className="relative inline-block group  py-5">
               <p
                 onClick={() => router.push("/collections/tech-accessories")}
-                className="peer font-bold leading-[0.9] px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black"
+                className="peer font-bold  px-[10px] transition-all duration-200  py-[6px]! rounded-full font-area text-[0.8rem] xl:text-[1.125rem]  border border-transparent box-border group-hover:border-black  flex items-center justify-center   
+        leading-none "
               >
-                <span className=" flex items-center font-bold font-area text-[0.8rem] xl:text-[1.125rem] leading-none -translate-y-[0.5px]">
+                <span className="font-bold font-area text-[0.8rem] xl:text-[1.125rem] ">
                   Tech & Accessories
                 </span>
               </p>

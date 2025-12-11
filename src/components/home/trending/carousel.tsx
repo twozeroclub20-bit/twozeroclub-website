@@ -10,9 +10,9 @@ export default function CardCarousel({ data }: { data: any[] }) {
   return (
     <Carousel>
       <CarouselContent>
-        {data.map((item) => (
+        {data.map((item, idx) => (
           <CarouselItem key={item.id}>
-            <Card {...item} />
+            <Card idx={idx} {...item} />
           </CarouselItem>
         ))}
       </CarouselContent>

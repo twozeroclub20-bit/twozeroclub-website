@@ -10,7 +10,7 @@ import {
 export default function ImageCarousel({ data }: { data: any }) {
   return (
     <>
-      <div className="w-1/2 xl:w-[77%] hidden md:grid grid-cols-1 xl:grid-cols-2">
+      <div className="w-1/2 xl:w-[72%] hidden md:grid grid-cols-1 xl:grid-cols-2">
         {data.images.map((ele: any) => (
           <Image
             draggable={false}

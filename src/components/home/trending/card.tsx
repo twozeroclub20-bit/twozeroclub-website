@@ -28,14 +28,14 @@ export default function TrendingCard(data: IPROPS) {
           alt={"collection"}
           height={400}
           width={600}
-          className="w-full h-[400px] rounded-2xl pointer-events-none object-cover "
+          className="w-full aspect-[3/4] rounded-2xl pointer-events-none object-cover "
         />
       )}
       <div className="space-y-[5px]">
         <h2 className="text-[1.5rem] font-area font-bold font-area line-clamp-1">
           {title}
         </h2>
-        <p className=" font-area line-clamp-2">{description}</p>
+        <p className=" font-area leading-[120%] line-clamp-2 w-[90%]">{description}</p>
       </div>
 
       <Button

@@ -1,17 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter, useParams, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Card(data: any) {
   const { handle, images, title, price, thumbnail, id } = data;
   const router = useRouter();
-  const searchParams = useSearchParams();
   return (
     <div
       className="w-full cursor-pointer"
       onClick={() => router.push(`/products/${handle}`)}
     >
-      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg mb-5 sm:mb-[1.625rem]  ">
+      <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg mb-5 sm:mb-[1.5rem]  ">
         <Image
           draggable={false}
           onContextMenu={(e) => e.preventDefault()}
@@ -33,10 +32,10 @@ export default function Card(data: any) {
         )}
       </div>
 
-      <h2 className="text-[1rem] sm:text-[1.5rem] font-area  font-bold line-clamp-2">
+      <h2 className="text-[1rem] leading-[120%] sm:text-[1.5rem] font-area  font-bold line-clamp-2">
         {title}
       </h2>
-      <p className="text-[14px] sm:text-[1.125rem] font-area font-light mt-1">
+      <p className="text-[14px] leading-[120%] sm:text-[1.125rem] font-area font-light mt-[10px]">
         From ${price}
       </p>
     </div>

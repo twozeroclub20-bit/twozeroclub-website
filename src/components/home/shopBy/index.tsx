@@ -8,7 +8,7 @@ export default function ShopBy() {
         Shop by
       </h2>
       <div className="flex gap-2 items-start flex-wrap">
-        {StaticData.shopBy.map((ele, id) => (
+        {StaticData.shopByV2.map((ele, id) => (
           <ShopByCard key={id} id={id} filter={ele} />
         ))}
       </div>

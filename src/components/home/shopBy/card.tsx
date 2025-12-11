@@ -2,29 +2,34 @@
 import React from "react";
 
 interface IPROPS {
-  filter: string;
+  filter: {
+    label: string;
+    collection: string;
+    color: string;
+  };
   id: number;
 }
-
-const colors = [
-  "#EB9501",
-  "#F33C14",
-  "#FDB306",
-  "#064BD6",
-  "#FE7E93",
-  "#08814E",
-  "#C1D329",
-  "#B9B9F5",
-  "#FE7E93",
-];
 
 export default function ShopByCard(data: IPROPS) {
   return (
     <div
-      className="px-[20px] py-2 leading-[150%]! rounded-full font-area text-white "
-      style={{ backgroundColor: colors[data.id % 9] }}
+      className="
+        rounded-full font-area text-white
+        flex items-center justify-center   
+        leading-none                      
+        
+        px-3 py-1.5           
+        text-sm               
+
+        sm:px-4 sm:py-2       
+        sm:text-base          
+
+        md:px-5 md:py-2.5     
+        md:text-lg
+      "
+      style={{ backgroundColor: data.filter.color }}
     >
-      {data.filter}
+      <span className="">{data.filter.label}</span>
     </div>
   );
 }

@@ -28,7 +28,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           alt={image.altText || article.title}
           height={image.height}
           width={image.width}
-          className="w-full h-[400px] lg:h-[550px] rounded-2xl pointer-events-none object-cover "
+          className="w-full aspect-[3/4] rounded-2xl pointer-events-none object-cover "
         />
       )}
 
@@ -37,7 +37,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
           {title}
         </h2>
         <p
-          className=" font-area line-clamp-2"
+          className=" font-area leading-[120%]  line-clamp-2 w-[90%]"
           dangerouslySetInnerHTML={{ __html: excerpt }}
         />
       </div>
