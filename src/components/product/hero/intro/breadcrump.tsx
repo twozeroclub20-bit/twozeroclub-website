@@ -3,7 +3,7 @@
 import React, { useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Product } from "@/lib/shopify/types";
-import { parseNameToSlug, parseSlug } from "@/util/parseSlug";
+import { parseNameToSlug, parseSlug } from "@/util/parse";
 
 export default function Breadcrump({ data }: { data: Product }) {
   const router = useRouter();

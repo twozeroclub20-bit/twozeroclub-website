@@ -39,21 +39,107 @@
       "label": "Read Clay"
     }
   ],
-  "featured": ["New", "Bestsellers", "Trending", "As Seen on Social"],
-  "shop": [
-    "Japandi",
-    "Plants & Floral",
-    "Bauhaus",
-    "Food & Drinks",
-    "Matisse",
-    "Typography",
-    "Pop Art",
-    "Retro Art",
-    "Bohemian",
-    "Abstract",
-    "Mid Century",
-    "Bold Color",
-    "Western",
-    "Street Art"
-  ]
+  "featured": [
+    { "label": "New", "ticker": "new" },
+    { "label": "Bestsellers", "ticker": "bestsellers" },
+    { "label": "trending", "ticker": "trending" },
+    { "label": "As Seen On Social", "ticker": "as-seen-on-social" }
+  ],
+  "shop": {
+    "wall-decor": [
+      { "label": "Japandi", "ticker": "japandi" },
+      { "label": "Plants & Floral", "ticker": "plants-floral" },
+      { "label": "Bauhaus", "ticker": "bauhaus" },
+      { "label": "Food & Drinks", "ticker": "food-drinks" },
+      { "label": "Matisse", "ticker": "matisee" },
+
+      { "label": "Typography", "ticker": "typography" },
+      { "label": "Pop Art", "ticker": "pop-art" },
+
+      { "label": "Retro Art", "ticker": "retro-art" },
+      { "label": "Bohemian", "ticker": "bohemian" },
+
+      { "label": "Abstract", "ticker": "abstract" },
+      { "label": "Mid Century", "ticker": "mid-century" },
+
+      { "label": "Bold Color", "ticker": "bold-color" },
+      { "label": "Western", "ticker": "western" },
+      { "label": "Street Art", "ticker": "street-art" }
+    ],
+    "home-living": [
+      { "label": "Japandi", "ticker": "japandi" },
+      { "label": "Patterns", "ticker": "patterns" },
+      { "label": "Strips", "ticker": "strips" },
+      { "label": "Black & White", "ticker": "black-white" },
+      { "label": "Plants & Floral", "ticker": "plants-floral" },
+      { "label": "Bauhaus", "ticker": "bauhaus" },
+      { "label": "Matisse", "ticker": "matisee" },
+      { "label": "Typography", "ticker": "typography" },
+      { "label": "Pop Art", "ticker": "pop-art" },
+      { "label": "Retro Art", "ticker": "retro-art" },
+      { "label": "Abstract", "ticker": "abstract" },
+      { "label": "Mid Century", "ticker": "mid-century" },
+      { "label": "Bold Color", "ticker": "bold-color" },
+      { "label": "Western", "ticker": "western" },
+      { "label": "90s", "ticker": "90s" },
+      { "label": "Vintage", "ticker": "vintage" }
+    ],
+    "clothing": [
+      { "label": "Japandi", "ticker": "japandi" },
+      { "label": "Plants & Floral", "ticker": "plants-floral" },
+      { "label": "Bauhaus", "ticker": "bauhaus" },
+      { "label": "Food & Drinks", "ticker": "food-drinks" },
+      { "label": "Matisse", "ticker": "matisee" },
+
+      { "label": "Typography", "ticker": "typography" },
+      { "label": "Pop Art", "ticker": "pop-art" },
+
+      { "label": "Retro Art", "ticker": "retro-art" },
+      { "label": "Bohemian", "ticker": "bohemian" },
+
+      { "label": "Abstract", "ticker": "abstract" },
+      { "label": "Mid Century", "ticker": "mid-century" },
+
+      { "label": "Bold Color", "ticker": "bold-color" },
+      { "label": "Western", "ticker": "western" },
+      { "label": "Street Art", "ticker": "street-art" }
+    ],
+    "tech-accessories": [
+      { "label": "Japandi", "ticker": "japandi" },
+      { "label": "Patterns", "ticker": "patterns" },
+      { "label": "Strips", "ticker": "strips" },
+      { "label": "Black & White", "ticker": "black-white" },
+      { "label": "Plants & Floral", "ticker": "plants-floral" },
+      { "label": "Bauhaus", "ticker": "bauhaus" },
+      { "label": "Matisse", "ticker": "matisee" },
+      { "label": "Typography", "ticker": "typography" },
+      { "label": "Pop Art", "ticker": "pop-art" },
+      { "label": "Retro Art", "ticker": "retro-art" },
+      { "label": "Abstract", "ticker": "abstract" },
+      { "label": "Bold Color", "ticker": "bold-color" }
+    ]
+  },
+  "categories": {
+    "footer": [],
+    "wall-decor": [
+      "art-prints",
+      "framed-prints",
+      "poster",
+      "wall-tapestries",
+      "canvas"
+    ],
+    "home-living": [
+      "rugs",
+      "throw-blankets",
+      "throw-pillows",
+      "wall-clock",
+      "tapestries",
+      "duvet-covers",
+      "pillow-covers",
+      "bath-mats",
+      "towels",
+      "shower-curtains"
+    ],
+    "tech-accessories": ["phone-cases", "desk-mats", "notebooks", "stickers"]
+  }
 }

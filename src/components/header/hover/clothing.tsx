@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function Clothing() {
   const router = useRouter();
   function handleClick(tag: string) {
-    const slug = tag.split(" ").join("-").toLowerCase() + "-clothing";
+    const slug = tag + "-clothing";
     router.push("/collections/" + slug);
   }
   return (
@@ -27,11 +27,10 @@ export default function Clothing() {
             <ul className="pl-0 font-area cursor-pointer">
               {StaticData.featured.map((item, index) => (
                 <List
-                  className=""
-                  key={item + index}
-                  onClick={() => handleClick(item)}
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
                 >
-                  {item}
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -108,9 +107,12 @@ export default function Clothing() {
               Shop by Subject
             </h2>
             <ul className="pl-0 font-area cursor-pointer">
-              {StaticData.shop.map((item, index) => (
-                <List onClick={() => handleClick(item)} key={item + index}>
-                  {item}
+              {StaticData.shop["clothing"].map((item, index) => (
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -120,7 +122,7 @@ export default function Clothing() {
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-full min-w-56"
+              className="h-full max-h-[400px]  rounded-sm aspect-[3/4] pointer-events-none object-cover "
               src={"/images/hover/clothing.png"}
               alt="menu-image"
               width="400"

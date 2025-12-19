@@ -1,24 +1,36 @@
 "use client";
-import StaticData from "@/assets/static/menu.static.json";
-import React from "react";
-import { useParams, useRouter } from "next/navigation";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { parseNameToSlug, parseSlug } from "@/util/parseSlug";
 
-function TagItem({ active, tag }: { active: boolean; tag: string }) {
+import MenuData from "@/assets/static/menu.static.json";
+import React, { useMemo } from "react";
+import { useParams, useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { parseSlug, prettifyTagName, toSlug } from "@/util/parse";
+function TagItem({
+  active,
+  tag,
+}: {
+  active: boolean;
+  tag: { ticker: string; label: string };
+}) {
   const { collection } = useParams();
   const router = useRouter();
 
-  const [c] = parseSlug(collection?.toString() || "");
+  const parts = parseSlug(collection?.toString() || "");
+
+  const category = toSlug(parts[0]);
+  // @ts-ignore
+  const categoryList = MenuData.categories[category];
+  const productType =
+    parts[1] &&
+    parts[1].toLowerCase() !== "all" &&
+    categoryList.includes(toSlug(parts[1]))
+      ? toSlug(parts[1])
+      : undefined;
+
   const slug =
-    tag === "all"
-      ? parseNameToSlug(c)
-      : `${tag
-          .replace(" & ", " ")
-          .split(" ")
-          .join("-")
-          .toLowerCase()}-${parseNameToSlug(c)}`;
+    tag.ticker === "all"
+      ? [productType, category].filter(Boolean).join("-")
+      : [productType, tag.ticker, category].filter(Boolean).join("-");
 
   return (
     <div
@@ -26,62 +38,54 @@ function TagItem({ active, tag }: { active: boolean; tag: string }) {
       className={cn(
         "cursor-pointer select-none",
         "inline-flex items-center justify-center",
-        "px-2.5 py-1",
-        "rounded-full border transition-all duration-200",
-        "leading-none",
+        "px-2.5 py-1 rounded-full border transition-all leading-none",
         active ? "border-black" : "border-transparent"
       )}
     >
       <span className="capitalize inline-flex items-center font-area text-[0.8rem] xl:text-[1.125rem]">
-        {tag}
+        {tag.label}
       </span>
     </div>
   );
 }
-
 export default function Tags() {
   const { collection } = useParams();
+
   const parts = parseSlug(collection?.toString() || "");
 
-  function prettifyTagName(name: string) {
-    const map: Record<string, string> = {
-      "plants floral": "Plants & Floral",
-      "food drinks": "Food & Drinks",
-    };
+  const category = toSlug(parts[0]);
 
-    const key = name.toLowerCase().trim();
-    return map[key] || name;
-  }
+  const tagList = [
+    ...(MenuData.featured || []),
+    // @ts-ignore
+    ...(MenuData.shop[category] || []),
+  ];
 
-  const isTagSelected = (tag: string) => {
-    console.log(tag.toLowerCase().replace(" & ", " ").replace(" ", "-"));
-    return (
-      parts[1]?.toLowerCase().replace(" & ", " ").replace(" ", "-").trim() ===
-      tag.toLowerCase().replace(" & ", " ").replace(" ", "-")
-    );
-  };
+  const isTagSelected = (ticker: string) =>
+    collection?.includes(ticker) || false;
 
   return (
     <div className="my-2 sm:my-5">
       <h2 className="text-[1.5rem] sm:text-[2.75rem] font-editorial capitalize">
-        {parts.length === 2 ? prettifyTagName(parts[1]) : parts[0]}
+        {parts.at(-1)?.toLowerCase() === "all" ? (
+          <>{prettifyTagName(parts.at(-2) || "")}</>
+        ) : (
+          <>{prettifyTagName(parts.at(-1) || "")}</>
+        )}
       </h2>
-      <div className="flex space-x-1 sm:space-x-3 flex-wrap mt-4 sm:mt-2">
-        <TagItem active={parts.length === 1} key="all" tag="all"></TagItem>
-        {StaticData?.featured?.map((tag, idx) => (
-          <TagItem
-            active={isTagSelected(tag)}
-            key={"feature" + idx}
-            tag={tag}
-          ></TagItem>
-        ))}
 
-        {StaticData?.shop?.map((tag, idx) => (
+      <div className="flex flex-wrap gap-2 mt-4">
+        <TagItem
+          active={parts.at(-1)?.toLowerCase() === "all"}
+          tag={{ ticker: "all", label: "All" }}
+        />
+
+        {tagList.map((tag) => (
           <TagItem
-            active={isTagSelected(tag)}
-            key={"feature-shop" + idx}
+            key={tag.ticker}
             tag={tag}
-          ></TagItem>
+            active={isTagSelected(tag.ticker)}
+          />
         ))}
       </div>
     </div>

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function WallDecor() {
   const router = useRouter();
   function handleClick(tag: string) {
-    const slug = tag.split(" ").join("-").toLowerCase() + "-wall-decor";
+    const slug = tag + "-wall-decor";
     router.push("/collections/" + slug);
   }
   return (
@@ -26,8 +26,11 @@ export default function WallDecor() {
             <h2 className="text-[1.625rem] font-editorial mb-5">Featured</h2>
             <ul className="pl-0 font-area cursor-pointer ">
               {StaticData.featured.map((item, index) => (
-                <List key={item + index} onClick={() => handleClick(item)}>
-                  {item}
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -36,13 +39,15 @@ export default function WallDecor() {
           <div className="border-r border-black/50 ">
             <h2 className="text-[1.625rem] font-editorial mb-5">Categories</h2>
             <ul className="pl-0 font-area cursor-pointer">
-              <List onClick={() => handleClick("Art Print")}>Art Prints</List>
-              <List onClick={() => handleClick("Framed Print")}>
+              <List onClick={() => handleClick("art-prints")}>Art Prints</List>
+              <List onClick={() => handleClick("framed-prints")}>
                 Framed Prints
               </List>
-              <List onClick={() => handleClick("Poster")}>Posters</List>
-              <List onClick={() => handleClick("Wall Tapestries")}>Wall Tapestries</List>
-              <List onClick={() => handleClick("Canvas")}>Canvas</List>
+              <List onClick={() => handleClick("posters")}>Posters</List>
+              <List onClick={() => handleClick("wall-tapestries")}>
+                Wall Tapestries
+              </List>
+              <List onClick={() => handleClick("canvas")}>Canvas</List>
             </ul>
           </div>
 
@@ -82,9 +87,12 @@ export default function WallDecor() {
               Shop by Subject
             </h2>
             <ul className="pl-0 font-area cursor-pointer">
-              {StaticData.shop.map((item, index) => (
-                <List onClick={() => handleClick(item)} key={item + index}>
-                  {item}
+              {StaticData.shop["wall-decor"].map((item, index) => (
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -94,7 +102,7 @@ export default function WallDecor() {
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-full min-w-56"
+              className="h-full max-h-[400px]  rounded-sm aspect-[3/4] pointer-events-none object-cover "
               src={"/images/hover/wall.png"}
               alt="menu-image"
               width="400"

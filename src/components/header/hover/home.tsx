@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   function handleClick(tag: string) {
-    const slug = tag.split(" ").join("-").toLowerCase() + "-home-living";
+    const slug = tag + "-home-living";
     router.push("/collections/" + slug);
   }
   return (
@@ -26,8 +26,11 @@ export default function Home() {
             <h2 className="text-[1.625rem] font-editorial mb-5">Featured</h2>
             <ul className="pl-0 font-area cursor-pointer">
               {StaticData.featured.map((item, index) => (
-                <List key={item + index} onClick={() => handleClick(item)}>
-                  {item}
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -39,26 +42,26 @@ export default function Home() {
               LIVING ROOM
             </h2>
             <ul className="pl-0 font-area cursor-pointer">
-              <List onClick={() => handleClick("Rugs")}>Rugs</List>
-              <List onClick={() => handleClick("Throw Blankets")}>
+              <List onClick={() => handleClick("rugs")}>Rugs</List>
+              <List onClick={() => handleClick("throw-blankets")}>
                 Throw Blankets{" "}
               </List>
-              <List onClick={() => handleClick("Throw Pillow")}>
+              <List onClick={() => handleClick("throw-pillow")}>
                 Throw Pillows{" "}
               </List>
               {/* <List onClick={() => handleClick("Wall Clocks")}>
                 Wall Clocks{" "}
               </List> */}
-              <List onClick={() => handleClick("Tapestries")}>Tapestries</List>
+              <List onClick={() => handleClick("tapestries")}>Tapestries</List>
             </ul>
             <h2 className="text-[14px] font-bold  font-area text-[#08814E]">
               BEDROOM
             </h2>
             <ul className="pl-0 font-area">
-              <List onClick={() => handleClick("Duvet Cover")}>
+              <List onClick={() => handleClick("duvet-cover")}>
                 Duvet Covers
               </List>
-              <List onClick={() => handleClick("Pillow Cover")}>
+              <List onClick={() => handleClick("pillow-covers")}>
                 Pillow Covers
               </List>
             </ul>
@@ -66,9 +69,9 @@ export default function Home() {
               BATHROOM
             </h2>
             <ul className="pl-0 font-area">
-              <List onClick={() => handleClick("Bath Mat")}>Bath Mats</List>
-              <List onClick={() => handleClick("Towel")}>Towels </List>
-              <List onClick={() => handleClick("Shower Curtains")}>
+              <List onClick={() => handleClick("bath-mats")}>Bath Mats</List>
+              <List onClick={() => handleClick("towels")}>Towels </List>
+              <List onClick={() => handleClick("shower-curtains")}>
                 Shower Curtains
               </List>
             </ul>
@@ -110,9 +113,12 @@ export default function Home() {
               Shop by Subject
             </h2>
             <ul className="pl-0 font-area cursor-pointer">
-              {StaticData.shop.map((item, index) => (
-                <List onClick={() => handleClick(item)} key={item + index}>
-                  {item}
+              {StaticData.shop["home-living"].map((item, index) => (
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -122,7 +128,7 @@ export default function Home() {
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-full min-w-56"
+              className="h-full max-h-[400px] rounded-sm aspect-[3/4] pointer-events-none object-cover "
               src={"/images/hover/home.png"}
               alt="menu-image"
               width="400"

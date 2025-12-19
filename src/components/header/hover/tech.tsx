@@ -6,7 +6,7 @@ import List from "@/components/common/list";
 export default function Tech() {
   const router = useRouter();
   function handleClick(tag: string) {
-    const slug = tag.split(" ").join("-").toLowerCase() + "-tech-accessories";
+    const slug = tag + "-tech-accessories";
     router.push("/collections/" + slug);
   }
   return (
@@ -26,8 +26,11 @@ export default function Tech() {
             <h2 className="text-[1.625rem] font-editorial mb-5">Featured</h2>
             <ul className="pl-0 font-area cursor-pointer">
               {StaticData.featured.map((item, index) => (
-                <List key={item + index} onClick={() => handleClick(item)}>
-                  {item}
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -36,12 +39,12 @@ export default function Tech() {
           <div className="border-r border-black/50 ">
             <h2 className="text-[1.625rem] font-editorial mb-5">Categories</h2>
             <ul className="pl-0 font-area cursor-pointer">
-              <List onClick={() => handleClick("Phone Cases")}>
+              <List onClick={() => handleClick("phone-cases")}>
                 Phone Cases
               </List>
-              <List onClick={() => handleClick("Desk Mat")}>Desk Mats </List>
-              <List onClick={() => handleClick("Notebook")}>Notebooks </List>
-              <List onClick={() => handleClick("Sticker")}>Stickers</List>
+              <List onClick={() => handleClick("desk-mats")}>Desk Mats </List>
+              <List onClick={() => handleClick("notebooks")}>Notebooks </List>
+              <List onClick={() => handleClick("stickers")}>Stickers</List>
             </ul>
           </div>
 
@@ -81,9 +84,12 @@ export default function Tech() {
               Shop by Subject
             </h2>
             <ul className="pl-0 font-area cursor-pointer">
-              {StaticData.shop.map((item, index) => (
-                <List onClick={() => handleClick(item)} key={item + index}>
-                  {item}
+              {StaticData.shop["tech-accessories"].map((item, index) => (
+                <List
+                  key={item.ticker + index}
+                  onClick={() => handleClick(item.ticker)}
+                >
+                  {item.label}
                 </List>
               ))}
             </ul>
@@ -93,7 +99,7 @@ export default function Tech() {
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-full min-w-56"
+              className="h-full max-h-[400px]  rounded-sm aspect-[3/4] pointer-events-none object-cover "
               src={"/images/hover/tech.png"}
               alt="menu-image"
               width="400"
