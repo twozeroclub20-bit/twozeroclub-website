@@ -43,35 +43,33 @@
       { "label": "Plants & Floral", "ticker": "plants-floral" },
       { "label": "Bauhaus", "ticker": "bauhaus" },
       { "label": "Food & Drinks", "ticker": "food-drinks" },
-      { "label": "Matisse", "ticker": "matisee" },
+      { "label": "Matisse", "ticker": "matisse" },
 
       { "label": "Typography", "ticker": "typography" },
       { "label": "Pop Art", "ticker": "pop-art" },
 
       { "label": "Retro Art", "ticker": "retro-art" },
-      { "label": "Bohemian", "ticker": "bohemian" },
-
       { "label": "Abstract", "ticker": "abstract" },
       { "label": "Mid Century", "ticker": "mid-century" },
 
-      { "label": "Bold Color", "ticker": "bold-color" },
+      { "label": "Bold Colour", "ticker": "bold-colour" },
       { "label": "Western", "ticker": "western" },
       { "label": "Street Art", "ticker": "street-art" }
     ],
     "home-living": [
       { "label": "Japandi", "ticker": "japandi" },
       { "label": "Patterns", "ticker": "patterns" },
-      { "label": "Strips", "ticker": "strips" },
+      { "label": "Stripes", "ticker": "stripes" },
       { "label": "Black & White", "ticker": "black-white" },
       { "label": "Plants & Floral", "ticker": "plants-floral" },
       { "label": "Bauhaus", "ticker": "bauhaus" },
-      { "label": "Matisse", "ticker": "matisee" },
+      { "label": "Matisse", "ticker": "matisse" },
       { "label": "Typography", "ticker": "typography" },
       { "label": "Pop Art", "ticker": "pop-art" },
       { "label": "Retro Art", "ticker": "retro-art" },
       { "label": "Abstract", "ticker": "abstract" },
       { "label": "Mid Century", "ticker": "mid-century" },
-      { "label": "Bold Color", "ticker": "bold-color" },
+      { "label": "Bold Colour", "ticker": "bold-colour" },
       { "label": "Western", "ticker": "western" },
       { "label": "90s", "ticker": "90s" },
       { "label": "Vintage", "ticker": "vintage" }
@@ -81,7 +79,7 @@
       { "label": "Plants & Floral", "ticker": "plants-floral" },
       { "label": "Bauhaus", "ticker": "bauhaus" },
       { "label": "Food & Drinks", "ticker": "food-drinks" },
-      { "label": "Matisse", "ticker": "matisee" },
+      { "label": "Matisse", "ticker": "matisse" },
 
       { "label": "Typography", "ticker": "typography" },
       { "label": "Pop Art", "ticker": "pop-art" },
@@ -92,23 +90,23 @@
       { "label": "Abstract", "ticker": "abstract" },
       { "label": "Mid Century", "ticker": "mid-century" },
 
-      { "label": "Bold Color", "ticker": "bold-color" },
+      { "label": "Bold Colour", "ticker": "bold-colour" },
       { "label": "Western", "ticker": "western" },
       { "label": "Street Art", "ticker": "street-art" }
     ],
     "tech-accessories": [
       { "label": "Japandi", "ticker": "japandi" },
       { "label": "Patterns", "ticker": "patterns" },
-      { "label": "Strips", "ticker": "strips" },
+      { "label": "Stripes", "ticker": "stripes" },
       { "label": "Black & White", "ticker": "black-white" },
       { "label": "Plants & Floral", "ticker": "plants-floral" },
       { "label": "Bauhaus", "ticker": "bauhaus" },
-      { "label": "Matisse", "ticker": "matisee" },
+      { "label": "Matisse", "ticker": "matisse" },
       { "label": "Typography", "ticker": "typography" },
       { "label": "Pop Art", "ticker": "pop-art" },
       { "label": "Retro Art", "ticker": "retro-art" },
       { "label": "Abstract", "ticker": "abstract" },
-      { "label": "Bold Color", "ticker": "bold-color" }
+      { "label": "Bold Colour", "ticker": "bold-colour" }
     ]
   },
   "categories": {
@@ -116,7 +114,7 @@
     "wall-decor": [
       "art-prints",
       "framed-prints",
-      "poster",
+      "posters",
       "wall-tapestries",
       "canvas"
     ],
