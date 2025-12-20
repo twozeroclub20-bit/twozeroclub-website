@@ -1,48 +1,40 @@
 {
   "classic": [
-    { "color": "#F33C14", "label": "Scarlet Red" },
-    { "color": "#FFC107", "label": "Canary Yellow" },
-    { "color": "#064BD6", "label": "French Blue" },
-    { "color": "#08814E", "label": "Pine Green" },
-    { "color": "#7ABAD1", "label": "Ice Blue" },
-    { "color": "#EB9501", "label": "Tiger Orange" },
-    { "color": "#EFE4D9", "label": "Ivory" },
-    { "color": "#EBC6AC", "label": "Oatmilk" },
-    { "color": "#FE7E93", "label": "Candy Pink" },
-    { "color": "#1C1714", "label": "Ink Black" },
-    { "color": "#1C1714", "label": "Lime Green" },
-    { "color": "#B9B9F5", "label": "Lavender" },
-    { "color": "#32A497", "label": "Aqua" },
-    { "color": "#FF7763", "label": "Coral" },
-    { "color": "#A86187", "label": "Plum" },
-    { "color": "#C1D329", "label": "Electric Green" }
+    { "color": "#F33C14", "label": "Scarlet Red", "ticker": "scarlet-red" },
+    { "color": "#FFC107", "label": "Canary Yellow", "ticker": "canary-yellow" },
+    { "color": "#064BD6", "label": "French Blue", "ticker": "french-blue" },
+    { "color": "#08814E", "label": "Pine Green", "ticker": "pine-green" },
+    { "color": "#7ABAD1", "label": "Ice Blue", "ticker": "ice-blue" },
+    { "color": "#EB9501", "label": "Tiger Orange", "ticker": "tiger-orange" },
+    { "color": "#EFE4D9", "label": "Ivory", "ticker": "ivory" },
+    { "color": "#EBC6AC", "label": "Oatmilk", "ticker": "oatmilk" },
+    { "color": "#FE7E93", "label": "Candy Pink", "ticker": "candy-pink" },
+    { "color": "#1C1714", "label": "Ink Black", "ticker": "ink-black" },
+    { "color": "#1C1714", "label": "Lime Green", "ticker": "lime-green" },
+    { "color": "#B9B9F5", "label": "Lavender", "ticker": "lavender" },
+    { "color": "#32A497", "label": "Aqua", "ticker": "aqua" },
+    { "color": "#FF7763", "label": "Coral", "ticker": "coral" },
+    { "color": "#A86187", "label": "Plum", "ticker": "plum" },
+    {
+      "color": "#C1D329",
+      "label": "Electric Green",
+      "ticker": "electric-green"
+    }
   ],
   "trending": [
-    { "color": "#FFFD88", "label": "Butter Cream" },
-    {
-      "color": "#6F2228",
-      "label": "Rockwood"
-    },
-    { "color": "#4F3265", "label": "Nightmoth" },
-    {
-      "color": "#B6ABD4",
-      "label": "Dusty Lilac"
-    },
-    { "color": "#1D3C9F", "label": "True Blue" },
-    {
-      "color": "#6F764C",
-      "label": "Palm Deco"
-    },
-    { "color": "#846D5E", "label": "Sequoia" },
-    {
-      "color": "#A1353C",
-      "label": "Read Clay"
-    }
+    { "color": "#FFFD88", "label": "Butter Cream", "ticker": "butter-cream" },
+    { "color": "#6F2228", "label": "Rockwood", "ticker": "rockwood" },
+    { "color": "#4F3265", "label": "Nightmoth", "ticker": "nightmoth" },
+    { "color": "#B6ABD4", "label": "Dusty Lilac", "ticker": "dusty-lilac" },
+    { "color": "#1D3C9F", "label": "True Blue", "ticker": "true-blue" },
+    { "color": "#6F764C", "label": "Palm Deco", "ticker": "palm-deco" },
+    { "color": "#846D5E", "label": "Sequoia", "ticker": "sequoia" },
+    { "color": "#A1353C", "label": "Read Clay", "ticker": "read-clay" }
   ],
   "featured": [
     { "label": "New", "ticker": "new" },
     { "label": "Bestsellers", "ticker": "bestsellers" },
-    { "label": "trending", "ticker": "trending" },
+    { "label": "Trending", "ticker": "trending" },
     { "label": "As Seen On Social", "ticker": "as-seen-on-social" }
   ],
   "shop": {

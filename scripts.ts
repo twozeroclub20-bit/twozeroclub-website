@@ -1,4 +1,4 @@
-import MenuData from "@/assets/static/menu.static.json";
+import MenuData from "./src/assets/static/menu.static.json";
 
 const toTitle = (str: string) =>
   str
@@ -15,7 +15,7 @@ export function parseSlug(slugStr: string): string[] {
   const categories = MenuData.categories;
   let categoryKey: string | undefined;
 
-  // 1️⃣ Detect category (always last)
+  // 1️etect category (always last)
   for (const key of Object.keys(categories)) {
     if (slug === key || slug.endsWith(`-${key}`)) {
       categoryKey = key;
@@ -80,19 +80,55 @@ export function parseSlug(slugStr: string): string[] {
   return result;
 }
 
-// ---------- Helpers (unchanged) ----------
-
-export const toSlug = (str: string) =>
-  str.replace(" & ", " ").split(" ").join("-").toLowerCase();
-
-export const parseNameToSlug = (str: string) =>
-  str.replace(" & ", " ").split(" ").join("-").toLowerCase();
-
-export const prettifyTagName = (name: string) => {
-  const map: Record<string, string> = {
-    "plants-floral": "Plants & Floral",
-    "food-drinks": "Food & Drinks",
-    "black-white": "Black & White",
-  };
-  return map[toSlug(name)] || name;
+type TestCase = {
+  slug: string;
+  expected: string[];
 };
+
+const tests: TestCase[] = [
+  {
+    slug: "wall-decor",
+    expected: ["Wall Decor", "All"],
+  },
+  {
+    slug: "ivory-wall-decor",
+    expected: ["Wall Decor", "Ivory"],
+  },
+  {
+    slug: "trending-wall-decor",
+    expected: ["Wall Decor", "Trending"],
+  },
+  {
+    slug: "art-prints-wall-decor",
+    expected: ["Wall Decor", "Art Prints", "All"],
+  },
+  {
+    slug: "art-prints-new-wall-decor",
+    expected: ["Wall Decor", "Art Prints", "New"],
+  },
+  {
+    slug: "art-prints-trending-wall-decor",
+    expected: ["Wall Decor", "Art Prints", "Trending"],
+  },
+];
+
+function arraysEqual(a: string[], b: string[]) {
+  return a.length === b.length && a.every((v, i) => v === b[i]);
+}
+
+console.log("🔍 Running parseSlug tests...\n");
+
+tests.forEach(({ slug, expected }) => {
+  const result = parseSlug(slug);
+  const pass = arraysEqual(result, expected);
+
+  if (pass) {
+    console.log("✅ PASS:", slug, "→", result);
+  } else {
+    console.error("❌ FAIL:", slug);
+    console.error("   Expected:", expected);
+    console.error("   Received:", result);
+  }
+});
+
+console.log("\n✅ Test run complete.");

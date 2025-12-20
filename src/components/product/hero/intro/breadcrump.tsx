@@ -19,18 +19,27 @@ export default function Breadcrump({ data }: { data: Product }) {
       >
         {parts[0]}
       </span>
+
       <>
-        {parts.slice(1).map((ele) => (
+        {parts.length > 1 && parts[1].toLowerCase() === "all" ? (
+          <></>
+        ) : (
           <>
-            <span
-              className="capitalize"
-              onClick={() => router.push("/collections/" + sub + "-" + main)}
-            >
-              {" "}
-              • {ele}
-            </span>
+            {parts.slice(1).map((ele) => (
+              <>
+                <span
+                  className="capitalize"
+                  onClick={() =>
+                    router.push("/collections/" + sub + "-" + main)
+                  }
+                >
+                  {" "}
+                  • {ele}
+                </span>
+              </>
+            ))}
           </>
-        ))}
+        )}
       </>
     </h4>
   );

@@ -1,15 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { useRouter, useParams } from "next/navigation";
-
+import Link from "next/link";
 export default function Card(data: any) {
   const { handle, images, title, price, thumbnail } = data;
-  const router = useRouter();
   return (
-    <div
-      className="w-full cursor-pointer"
-      onClick={() => router.push(`/products/${handle}`)}
-    >
+    <Link className="w-full cursor-pointer" href={`/products/${handle}`}>
       <div className="group relative w-full pb-[150%] overflow-hidden rounded-lg mb-5 sm:mb-[1.5rem]  ">
         <Image
           draggable={false}
@@ -38,6 +33,6 @@ export default function Card(data: any) {
       <p className="text-[14px] leading-[120%] sm:text-[1.125rem] font-area font-light mt-[10px]">
         From ${price}
       </p>
-    </div>
+    </Link>
   );
 }

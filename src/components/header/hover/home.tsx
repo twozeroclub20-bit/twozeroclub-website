@@ -46,7 +46,7 @@ export default function Home() {
               <List onClick={() => handleClick("throw-blankets")}>
                 Throw Blankets{" "}
               </List>
-              <List onClick={() => handleClick("throw-pillow")}>
+              <List onClick={() => handleClick("throw-pillows")}>
                 Throw Pillows{" "}
               </List>
               {/* <List onClick={() => handleClick("Wall Clocks")}>
@@ -58,7 +58,7 @@ export default function Home() {
               BEDROOM
             </h2>
             <ul className="pl-0 font-area">
-              <List onClick={() => handleClick("duvet-cover")}>
+              <List onClick={() => handleClick("duvet-covers")}>
                 Duvet Covers
               </List>
               <List onClick={() => handleClick("pillow-covers")}>
@@ -87,7 +87,7 @@ export default function Home() {
             <div className="grid grid-cols-4 gap-1 mb-4 place-items-start justify-center w-48 cursor-pointer">
               {StaticData.classic.map((color, index) => (
                 <div
-                  onClick={() => handleClick(color.label)}
+                  onClick={() => handleClick(color.ticker)}
                   style={{ backgroundColor: color.color }}
                   key={color + "classic" + index}
                   className="w-full h-[30px] rounded-full"
@@ -100,7 +100,7 @@ export default function Home() {
             <div className="grid grid-cols-4 gap-1 mb-4 w-48 cursor-pointer">
               {StaticData.trending.map((color, index) => (
                 <div
-                  onClick={() => handleClick(color.label)}
+                  onClick={() => handleClick(color.ticker)}
                   style={{ backgroundColor: color.color }}
                   key={color + "trending" + index}
                   className="w-full h-[30px] rounded-full"
@@ -128,7 +128,7 @@ export default function Home() {
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-full max-h-[400px] rounded-sm aspect-[3/4] pointer-events-none object-cover "
+              className="h-full w-full max-h-[400px] rounded-sm aspect-[3/4] pointer-events-none "
               src={"/images/hover/home.png"}
               alt="menu-image"
               width="400"
