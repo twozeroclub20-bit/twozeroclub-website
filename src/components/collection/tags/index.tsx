@@ -23,6 +23,7 @@ function TagItem({
   const productType =
     parts[1] &&
     parts[1].toLowerCase() !== "all" &&
+    categoryList &&
     categoryList.includes(toSlug(parts[1]))
       ? toSlug(parts[1])
       : undefined;
@@ -63,7 +64,26 @@ export default function Tags() {
 
   const isTagSelected = (ticker: string) =>
     collection?.includes(ticker) || false;
+  const showTags = useMemo(() => {
+    return ["home-living", "tech-accessories", "wall-decor"].includes(
+      toSlug(category)
+    );
+  }, [parts]);
 
+  if (!showTags)
+    return (
+      <>
+        <div className="my-2 sm:my-5">
+          <h2 className="text-[1.5rem] sm:text-[2.75rem] font-editorial capitalize">
+            {parts.at(-1)?.toLowerCase() === "all" ? (
+              <>{prettifyTagName(parts.at(-2) || "")}</>
+            ) : (
+              <>{prettifyTagName(parts.at(-1) || "")}</>
+            )}
+          </h2>
+        </div>
+      </>
+    );
   return (
     <div className="my-2 sm:my-5">
       <h2 className="text-[1.5rem] sm:text-[2.75rem] font-editorial capitalize">

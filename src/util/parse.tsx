@@ -25,7 +25,7 @@ export function parseSlug(slugStr: string): string[] {
 
   // Fallback if no category matched
   if (!categoryKey) {
-    return slug.split("-").map(toTitle);
+    return [slug.split("-").map(toTitle).join(" ")];
   }
 
   result.push(toTitle(categoryKey));
@@ -83,7 +83,7 @@ export function parseSlug(slugStr: string): string[] {
 // ---------- Helpers (unchanged) ----------
 
 export const toSlug = (str: string) =>
-  str.replace(" & ", " ").split(" ").join("-").toLowerCase();
+  str && str.replace(" & ", " ").split(" ").join("-").toLowerCase();
 
 export const parseNameToSlug = (str: string) =>
   str.replace(" & ", " ").split(" ").join("-").toLowerCase();
@@ -93,6 +93,7 @@ export const prettifyTagName = (name: string) => {
     "plants-floral": "Plants & Floral",
     "food-drinks": "Food & Drinks",
     "black-white": "Black & White",
+    "mid-century-bauhaus": "Mid Century & Bauhaus",
   };
   return map[toSlug(name)] || name;
 };

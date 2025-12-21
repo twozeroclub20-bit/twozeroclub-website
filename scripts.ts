@@ -25,15 +25,13 @@ export function parseSlug(slugStr: string): string[] {
 
   // Fallback if no category matched
   if (!categoryKey) {
-    return slug.split("-").map(toTitle);
+    return [slug.split("-").map(toTitle).join(" ")];
   }
 
   result.push(toTitle(categoryKey));
 
   // Remove category from slug
   let remaining = slug.replace(new RegExp(`-?${categoryKey}$`), "");
-
-  console.log(remaining);
 
   // 2️⃣ Detect filter / style / color FIRST (important fix)
   const filterMatch =
@@ -109,6 +107,23 @@ const tests: TestCase[] = [
   {
     slug: "art-prints-trending-wall-decor",
     expected: ["Wall Decor", "Art Prints", "Trending"],
+  },
+  {
+    slug: "japandi",
+    expected: ["Japandi"],
+  },
+
+  {
+    slug: "mid-century",
+    expected: ["Mid Century"],
+  },
+  {
+    slug: "flower-market",
+    expected: ["Flower Market"],
+  },
+  {
+    slug: "new",
+    expected: ["New"],
   },
 ];
 

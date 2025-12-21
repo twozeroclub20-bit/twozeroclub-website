@@ -3,7 +3,7 @@
     {
       "image": "/images/collection-1.png",
       "id": 1,
-      "collection": "framed-print-wall-decor",
+      "collection": "framed-prints-wall-decor",
       "title": "Framed Prints",
       "description": "Elevate your walls with unique & exclusive art prints available only with us. You won't find it anywhere else."
     },
@@ -17,7 +17,7 @@
     {
       "image": "/images/collection-3.png",
       "id": 3,
-      "collection": "throw-pillow-home-living",
+      "collection": "throw-pillows-home-living",
       "title": "Throw Pillows & Cushions",
       "description": "Spruce up your living room with out latest artistic collection of throw pillows, cushions and bedroom decor."
     },
@@ -33,29 +33,29 @@
     {
       "image": "/images/grid-1.png",
       "id": 1,
-      "collection": "framed-print-wall-decor",
+      "collection": "food-drinks",
       "title": "Kitchen, Food & Drinks Art",
       "description": "Fresh, fun prints to spice up your kitchen and dining spaces."
     },
     {
       "image": "/images/grid-2.png",
       "id": 2,
-      "collection": "phone-cases-tech-accessories",
-      "title": "Mid-Century & Bauhaus ",
+      "collection": "bauhaus",
+      "title": "Mid-Century & Bauhaus",
       "description": "Smooth geometry, colour & balance that comes with that retro energy."
     },
     {
       "image": "/images/grid-3.png",
       "id": 3,
-      "collection": "throw-pillow-home-living",
+      "collection": "matisse",
       "title": "Matisse Inspired",
       "description": "Cutouts, nature, colour, calm – simple art that speaks serenity."
     },
     {
       "image": "/images/grid-4.png",
       "id": 4,
-      "collection": "home-living",
-      "title": "Bold Color",
+      "collection": "bold-colour",
+      "title": "Bold Colour",
       "description": "Statement-making prints designed to spark conversations."
     }
   ],
@@ -63,28 +63,28 @@
     {
       "image": "/images/trending-1.png",
       "id": 1,
-      "collection": "framed-print-wall-decor",
+      "collection": "mid-century",
       "title": "Mid Century",
       "description": "Mid-century prints that bring that vintage warmth to your walls."
     },
     {
       "image": "/images/trending-2.png",
       "id": 2,
-      "collection": "phone-cases-tech-accessories",
+      "collection": "flower-market",
       "title": "Flower Market",
       "description": "Botanical prints that stay in bloom all year. You're welcome."
     },
     {
       "image": "/images/trending-3.png",
       "id": 3,
-      "collection": "throw-pillow-home-living",
+      "collection": "japandi",
       "title": "Japandi",
       "description": "Minimal, serene Japandi art - because your space deserves zen."
     },
     {
       "image": "/images/trending-4.png",
       "id": 4,
-      "collection": "home-living",
+      "collection": "western",
       "title": "Western",
       "description": "Saddle-up vibes - Western prints for bold, lived-in spaces."
     }
@@ -150,17 +150,17 @@
     { "label": "Typography", "collection": "typography", "color": "#F8C731" },
     {
       "label": "Plants & Floral",
-      "collection": "plants-and-floral",
+      "collection": "plants-floral",
       "color": "#C8C4F7"
     },
     {
       "label": "Food & Drinks",
-      "collection": "food-and-drinks",
+      "collection": "food-drinks",
       "color": "#FE7E93"
     },
     { "label": "Mid Century", "collection": "mid-century", "color": "#2459E5" },
     { "label": "90s", "collection": "90s", "color": "#FE7E93" },
-    { "label": "Bold Color", "collection": "bold-color", "color": "#0F8E56" },
+    { "label": "Bold Colour", "collection": "bold-colour", "color": "#0F8E56" },
     { "label": "Street Art", "collection": "street-art", "color": "#C8C4F7" },
     { "label": "Pattern", "collection": "pattern", "color": "#F7A22B" },
     { "label": "Music", "collection": "music", "color": "#F4421A" },
@@ -168,7 +168,7 @@
     { "label": "Funny", "collection": "funny", "color": "#0F8E56" },
     {
       "label": "Black & White",
-      "collection": "black-and-white",
+      "collection": "black-white",
       "color": "#F8C731"
     }
   ],

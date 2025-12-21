@@ -27,7 +27,7 @@ export default function Breadcrumb() {
             onClick={() => router.push(`/collections/${toSlug(parts[0])}`)}
             className="capitalize"
           >
-            • {parts[0]}
+            • {prettifyTagName(parts[0])}
           </span>
         </>
       )}

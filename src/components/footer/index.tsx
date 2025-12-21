@@ -10,12 +10,10 @@ export default function Footer() {
             Shop
           </h2>
           <ul className="!p-0 text-[1rem] sm:text-[1.125rem] flex flex-col font-area">
-            <Link href="/collections/new-footer">New</Link>
-            <Link href="/collections/bestsellers-footer">Bestsellers</Link>
-            <Link href="/collections/trending-footer">Trending</Link>
-            <Link href="/collections/as-seen-on-social-footer">
-              As seen on social
-            </Link>
+            <Link href="/collections/new">New</Link>
+            <Link href="/collections/bestsellers">Bestsellers</Link>
+            <Link href="/collections/trending">Trending</Link>
+            <Link href="/collections/as-seen-on-social">As seen on social</Link>
           </ul>
           {/* <h2 className="pt-[39px] text-muted-foreground hidden xl:block">
             © 2025 Two Zero Club

@@ -3,7 +3,7 @@
 import React, { useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Product } from "@/lib/shopify/types";
-import { parseNameToSlug, parseSlug } from "@/util/parse";
+import { parseNameToSlug, parseSlug, prettifyTagName } from "@/util/parse";
 
 export default function Breadcrump({ data }: { data: Product }) {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function Breadcrump({ data }: { data: Product }) {
         onClick={() => router.push("/collections/" + main)}
         className="capitalize"
       >
-        {parts[0]}
+        {prettifyTagName(parts[0])}
       </span>
 
       <>
@@ -34,7 +34,7 @@ export default function Breadcrump({ data }: { data: Product }) {
                   }
                 >
                   {" "}
-                  • {ele}
+                  • {prettifyTagName(ele)}
                 </span>
               </>
             ))}

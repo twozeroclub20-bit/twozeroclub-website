@@ -29,7 +29,7 @@
     { "color": "#1D3C9F", "label": "True Blue", "ticker": "true-blue" },
     { "color": "#6F764C", "label": "Palm Deco", "ticker": "palm-deco" },
     { "color": "#846D5E", "label": "Sequoia", "ticker": "sequoia" },
-    { "color": "#A1353C", "label": "Read Clay", "ticker": "read-clay" }
+    { "color": "#A1353C", "label": "Red Clay", "ticker": "red-clay" }
   ],
   "featured": [
     { "label": "New", "ticker": "new" },

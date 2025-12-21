@@ -102,7 +102,7 @@ export default function WallDecor() {
             <Image
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-full w-full max-h-[400px]  rounded-sm aspect-[3/4] pointer-events-none "
+              className=" w-full h-[360px]  rounded-sm aspect-[3/4] pointer-events-none "
               src={"/images/hover/wall.png"}
               alt="menu-image"
               width="400"

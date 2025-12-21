@@ -12,17 +12,28 @@ export default function Hero() {
           <h2 className=" w-full  text-[3rem] sm:text-[3.5rem]  lg:text-[4rem] leading-[100%] tracking-[-2%] font-editorial ">
             Art for Inspiring Spaces
           </h2>
-          <p className=" w-full lg:w-[80%] text-[1rem] font-area leading-[120%] tracking-[-2%]">
+          <p className=" w-full font-medium lg:w-[80%] text-[1rem] font-area leading-[120%] tracking-[-2%]">
             Transform your home and everyday carry. Exclusive prints, posters,
             phone cases & home decor – designed, curated and handpicked by our
             team.
           </p>
         </div>
         <Button
-          onClick={() => push("/collections/footer-trending")}
-          className="font-normal w-fit bg-[#F33C14] hover:bg-[#f0532f] transition-all duration-200 text-white  rounded-3xl px-[20px]! py-[10px]! h-auto!"
+          onClick={() => push("/collections/trending")}
+          className="
+    font-semibold
+    bg-[#F33C14] hover:bg-[#f0532f]
+    transition-all duration-200
+    text-white
+    rounded-3xl
+font-area
+    px-[20px]! py-[10px]!
+    h-auto!
+    flex items-center justify-center
+    leading-[150%]
+  "
         >
-          Explore
+          <span className=" inline-flex -translate-y-[1px]">Explore</span>
         </Button>
       </div>
       <div

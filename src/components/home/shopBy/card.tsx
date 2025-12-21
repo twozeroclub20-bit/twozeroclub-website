@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface IPROPS {
@@ -11,9 +12,14 @@ interface IPROPS {
 }
 
 export default function ShopByCard(data: IPROPS) {
+  const router = useRouter();
   return (
     <div
+      onClick={() => {
+        router.push(`/collections/${data.filter.collection}`);
+      }}
       className="
+      cursor-pointer
         rounded-full font-area text-white
         flex items-center justify-center   
         leading-none                      
