@@ -9,7 +9,8 @@ export default function Quantity() {
         className="size-3 cursor-pointer"
         onClick={() => setQuantity((q) => (q > 1 ? q - 1 : 1))}
       />
-      <span className="text-[1rem] sm:text-[1.125rem] font-semibold flex-1 text-center">
+
+      <span className=" bg-yellow-400 leading-0 text-[1rem] sm:text-[1.125rem] font-semibold flex-1 text-center">
         {quantity}
       </span>
       <Plus

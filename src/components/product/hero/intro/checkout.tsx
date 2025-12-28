@@ -22,7 +22,7 @@ export default function Checkout() {
         </>
       ) : (
         <>
-          Pay with
+          <span className="-translate-y-[1px]">Pay with</span>
           <Image
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}

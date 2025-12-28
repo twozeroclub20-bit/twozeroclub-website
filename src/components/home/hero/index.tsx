@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="max-w-[1800px] mt-0 sm:mt-5 md:mt-20 lg:mt-5 px-4 lg:px-16 my-10 gap-5 m-auto flex justify-between items-start md:items-center flex-col-reverse md:flex-row">
       <div className="space-y-[20px]">
-        <div className="space-y-[14px] xl:w-[600px] lg:mr-0">
+        <div className="space-y-[14px]  xl:w-[600px] lg:mr-0">
           <h2 className=" w-full  text-[3rem] sm:text-[3.5rem]  lg:text-[4rem] leading-[100%] tracking-[-2%] font-editorial ">
             Art for Inspiring Spaces
           </h2>
@@ -59,7 +59,7 @@ font-area
         alt="hero-image"
         width="1200"
         height="1000"
-        className=" w-full  hidden sm:block md:w-[400px] lg:w-[700px] xl:w-[900px] rounded-[10px]"
+        className=" w-full  hidden aspect-[4/3] sm:block md:w-[400px] lg:w-[500px] 2xl:w-[700px]  rounded-[10px]"
       ></Image>
     </section>
   );

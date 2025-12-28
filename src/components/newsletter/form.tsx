@@ -14,6 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { subscribe } from "@/actions/customer/subscribe.action";
 import { toast } from "sonner";
@@ -53,20 +54,41 @@ export default function NewsletterForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem className="w-full! sm:w-[350px]!">
+            <FormItem className="">
               <FormControl>
-                <Input
-                  placeholder="Enter your email address"
-                  className="!p-[10px] h-11! !pl-[20px]  bg-[rgba(0,0,0,0.05)] rounded-full outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none placeholder:text-[#00000040] text-[1rem]! leading-[150%]"
-                  {...field}
-                />
+                <div className="bg-[rgba(0,0,0,0.05)] h-[30px]! w-[140px]! md:h-[32px]! md:w-[180px]! xl:h-[44px]! xl:w-[237px]! box-border flex items-center justify-center rounded-full ">
+                  <input
+                    placeholder="Enter your email address"
+                    className=" font-area text-[10px]! md:text-[12px]! xl:text-base! outline-none ring-0 focus:ring-0 focus:outline-none focus-within:ring-0 focus-within:outline-none placeholder:text-[#00000040] leading-[150%]"
+                    {...field}
+                  />
+                </div>
               </FormControl>
             </FormItem>
           )}
         />
-        <Button type="submit" className="p-[14px]! h-auto! rounded-full">
-          <ArrowRight></ArrowRight>
-        </Button>
+        <button
+          type="submit"
+          className="
+    h-[30px]! w-[31.2px]! rounded-full
+    md:h-[36px]! md:w-[37.2px]!
+    xl:h-[45px]! xl:w-[46.7px]!
+    bg-black
+    flex items-center justify-center
+  "
+        >
+          <Image
+            src="/svg/right-logo.svg"
+            alt="right-logo"
+            width={12}
+            height={12}
+            className="
+      w-[10px] h-[10px]
+      md:w-[12px] md:h-[12px]
+      xl:w-[12px] xl:h-[12px]
+    "
+          />
+        </button>
       </form>
     </Form>
   );

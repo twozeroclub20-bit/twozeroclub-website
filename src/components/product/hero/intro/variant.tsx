@@ -60,7 +60,7 @@ export default function Variant() {
               {ele.values.map((option) => (
                 <SelectItem
                   key={option}
-                  className="font-semibold text-[1rem] sm:text-[1.125rem] font-area"
+                  className="font-semibold leading-0 text-[1rem] sm:text-[1.125rem] font-area"
                   value={option}
                 >
                   {option}

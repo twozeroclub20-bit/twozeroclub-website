@@ -48,7 +48,7 @@ export default function page() {
         ></Image>
       </div>
 
-      <div className="lg:w-[1000px] lg:ml-auto flex flex-col gap-8">
+      <div className="xl:w-[1000px] xl:ml-auto flex flex-col gap-8">
         <p className=" font-area text-[1.5625rem] leading-[120%] font-bold">
           We collaborate with independent artists to create collections spanning
           art prints, apparel, home objects and everyday carry. Each piece is
@@ -112,7 +112,7 @@ export default function page() {
         ></Image>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6  gap-3">
         <Image
           src="/images/instagram/instagram-1.png"
           alt="instagram-1"
@@ -181,6 +181,42 @@ export default function page() {
           draggable={false}
           src="/images/instagram/instagram-8.png"
           alt="instagram-8"
+          width="1000"
+          height="1000"
+          className="w-full"
+        ></Image>
+        <Image
+          src="/images/instagram/instagram-9.png"
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          alt="instagram-9"
+          width="1000"
+          height="1000"
+          className="w-full"
+        ></Image>
+        <Image
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          src="/images/instagram/instagram-10.png"
+          alt="instagram-10"
+          width="1000"
+          height="1000"
+          className="w-full"
+        ></Image>
+        <Image
+          src="/images/instagram/instagram-11.png"
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          alt="instagram-11"
+          width="1000"
+          height="1000"
+          className="w-full"
+        ></Image>
+        <Image
+          onContextMenu={(e) => e.preventDefault()}
+          draggable={false}
+          src="/images/instagram/instagram-12.png"
+          alt="instagram-12"
           width="1000"
           height="1000"
           className="w-full"
