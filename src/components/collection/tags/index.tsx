@@ -37,13 +37,15 @@ function TagItem({
     <div
       onClick={() => router.push("/collections/" + slug)}
       className={cn(
-        "cursor-pointer select-none",
+        "cursor-pointer select-none relative",
         "inline-flex items-center justify-center",
-        "px-2.5 py-1 rounded-full border transition-all leading-none",
+        "px-2.5 py-1 rounded-full border transition-all leading-none ",
         active ? "border-black" : "border-transparent"
       )}
     >
-      <span className="capitalize inline-flex items-center font-area text-[0.8rem] xl:text-[1.125rem]">
+     
+
+      <span className="capitalize  -translate-y-[0.6px]  inline-flex items-center font-area text-[0.8rem] xl:text-[1.125rem]">
         {tag.label}
       </span>
     </div>

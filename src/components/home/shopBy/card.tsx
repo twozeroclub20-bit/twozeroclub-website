@@ -35,7 +35,7 @@ export default function ShopByCard(data: IPROPS) {
       "
       style={{ backgroundColor: data.filter.color }}
     >
-      <span className="">{data.filter.label}</span>
+      <span className="-translate-y-[0.6px]">{data.filter.label}</span>
     </div>
   );
 }
