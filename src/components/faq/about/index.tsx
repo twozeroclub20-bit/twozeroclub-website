@@ -26,9 +26,8 @@ export default function About() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            We are proudly based out of Toronto, Canada - working with vendors
+            and printing partners all over the world.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -38,9 +37,9 @@ export default function About() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            100%. Supporting independent artists is at the core of what we do -
+            every piece starts with an artist. All of our designs are
+            proprietary and we design everything in-house.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -50,9 +49,10 @@ export default function About() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Yes. Everything is made to order, which means less waste, no
+            overproduction, and a more sustainable way to create. It's more
+            sustainable than traditional retail. We only make what's ordered,
+            helping reduce excess inventory and waste.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -62,9 +62,8 @@ export default function About() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            You can reach us anytime at <b>twozeroclub@gmail.com</b> — we will
+            try out best to reply within 24 hours.
           </p>
         </AccordionContent>
       </AccordionItem>

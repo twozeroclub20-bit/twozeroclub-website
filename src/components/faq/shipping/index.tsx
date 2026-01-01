@@ -14,9 +14,7 @@ export default function Shipping() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            We ship worldwide. Wherever you are, we'll get it to you.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -26,9 +24,9 @@ export default function Shipping() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Production times take 2-7 business days, followed by shipping that
+            vary by location. However, we aim to get the items delivered between
+            5-15 business days to most locations globally.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -38,9 +36,8 @@ export default function Shipping() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Shipping costs vary by product and destination and are calculated at
+            checkout.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -50,9 +47,8 @@ export default function Shipping() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Absolutely. You'll receive tracking details as soon as your order is
+            on its way.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -62,9 +58,9 @@ export default function Shipping() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            We work with a number of vendors and fulfillment partners across the
+            world. The orders will be shipped out to the one closest to your
+            delivery address.
           </p>
         </AccordionContent>
       </AccordionItem>

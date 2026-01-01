@@ -14,9 +14,9 @@ export default function Orders() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            After checkout, your order goes straight into production. We'll
+            email you updates every step of the way. You'll receive an order
+            confirmation and a shipping email as soon as it's ready to go.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -26,9 +26,8 @@ export default function Orders() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Absolutely. You'll receive tracking details as soon as your order is
+            on its way.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -38,9 +37,8 @@ export default function Orders() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Don't worry about it. Email us at <b>twozeroclub@gmail.com</b>{" "}
+            within 7 days with photos of the issue, and we'll make it right.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -50,9 +48,9 @@ export default function Orders() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            Because everything is made to order, we don't offer returns or
+            exchanges for change of mind, unless the item arrives faulty or
+            damaged from our end.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -62,9 +60,11 @@ export default function Orders() {
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 font-area max-h-40 overflow-y-auto !text-[1rem]">
           <p className="w-fit">
-            A design-driven lifestyle brand. We create art prints, apparel, and
-            objects in collaboration with independent artists. Everything is
-            made to order — not mass produced, not for everyone.
+            You can request changes or cancellations shortly after placing your
+            order, before production begins. Email us at{" "}
+            <b>twozeroclub@gmail.com</b> to make any amendments. Unfortunately,
+            if the items have been sent to production or has been shipped, we
+            won't be able to change/cancel the order.
           </p>
         </AccordionContent>
       </AccordionItem>
