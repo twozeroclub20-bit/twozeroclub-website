@@ -25,7 +25,9 @@ export default function Checkout() {
         {isLoading || isFetching || updating || loading ? (
           <Loader className="mr-2 h-4 w-4 animate-spin" />
         ) : (
-          <>Proceed to Pay ${cart?.cost.totalAmount.amount}</>
+          <>
+            Proceed to Pay ${parseInt(cart?.cost.totalAmount.amount).toFixed(2)}
+          </>
         )}
       </Button>
     </>
