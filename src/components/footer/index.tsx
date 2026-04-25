@@ -80,10 +80,10 @@ export default function Footer() {
       </div>
       <div className="max-w-[1800px] pt-[39px]  m-auto  px-5 sm:px-20 xl:px-32  ">
         <h2 className=" text-muted-foreground">
-          © 2025 Two Zero Club Developed by{" "}
-          <Link className="underline" href={"https://makeamine.com"}>
+          © 2025 Two Zero Club
+          {/* <Link className="underline" href={"https://makeamine.com"}>
             Make A Mine
-          </Link>
+          </Link> */}
         </h2>
       </div>
     </footer>

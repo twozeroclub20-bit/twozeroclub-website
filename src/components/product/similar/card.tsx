@@ -32,7 +32,7 @@ export default function Card(data: any) {
         )}
       </div>
 
-      <h2 className="text-[1rem] leading-[120%] sm:text-[1.5rem] font-area  font-bold line-clamp-2">
+      <h2 className="text-[1rem] leading-[120%] sm:text-[1.2rem] font-area  font-bold line-clamp-2">
         {title}
       </h2>
       <p className="text-[14px] leading-[120%] sm:text-[1.125rem] font-area font-light mt-[10px]">
